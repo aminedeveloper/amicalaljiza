@@ -41,4 +41,19 @@ class HomeController extends Controller
     {
        return view('v1.web.pages.nouveautes');
     }
+    
+    public function projects()
+    {
+       return view('v1.web.pages.projects');
+    }
+
+    public function tranches($id)
+    {
+       return view('v1.web.pages.single.project');
+    }
+
+    public function galleries($id)
+    {
+       return view('v1.web.pages.single.gallery');
+    }
 }

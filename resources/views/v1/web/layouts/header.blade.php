@@ -26,31 +26,31 @@
                     </ul>
                 </li>
                 <li class="menu-item"><a href="{{route('nouveautes')}}" class="menu-link">Nouveautés</a></li>
-                <li class="menu-item"><a href="projects.html" class="menu-link">Projets</a>
+                <li class="menu-item"><a href="{{route('projects')}}" class="menu-link">Projets</a>
                     <ul class="dropdown">
-                        <li class="menu-item"><a href="#">Tranche 1</a></li>
-                        <li class="menu-item"><a href="#">Tranche 2</a></li>
-                        <li class="menu-item"><a href="#">Tranche 3</a></li>
-                        <li class="menu-item"><a href="#">Tranche 4</a></li>
-                        <li class="menu-item"><a href="#">Tranche 5</a></li>
-                        <li class="menu-item"><a href="#">Tranche 6</a></li>
-                        <li class="menu-item"><a href="#">Tranche 7</a></li>
-                        <li class="menu-item"><a href="#">Tranche 8</a></li>
-                        <li class="menu-item"><a href="#">Tranche 9</a></li>
-                        <li class="menu-item"><a href="#">Tranche 10</a></li>
-                        <li class="menu-item"><a href="#">Tranche 11</a></li>
-                        <li class="menu-item"><a href="#">Tranche 12</a></li>
+                        <li class="menu-item"><a href="{{route('tranches',1)}}">Tranche 1</a></li>
+                        <li class="menu-item"><a href="{{route('tranches',2)}}">Tranche 2</a></li>
+                        <li class="menu-item"><a href="{{route('tranches',3)}}">Tranche 3</a></li>
+                        <li class="menu-item"><a href="{{route('tranches',4)}}">Tranche 4</a></li>
+                        <li class="menu-item"><a href="{{route('tranches',5)}}">Tranche 5</a></li>
+                        <li class="menu-item"><a href="{{route('tranches',6)}}">Tranche 6</a></li>
+                        <li class="menu-item"><a href="{{route('tranches',7)}}">Tranche 7</a></li>
+                        <li class="menu-item"><a href="{{route('tranches',8)}}">Tranche 8</a></li>
+                        <li class="menu-item"><a href="{{route('tranches',9)}}">Tranche 9</a></li>
+                        <li class="menu-item"><a href="{{route('tranches',10)}}">Tranche 10</a></li>
+                        <li class="menu-item"><a href="{{route('tranches',11)}}">Tranche 11</a></li>
+                        <li class="menu-item"><a href="{{route('tranches',12)}}">Tranche 12</a></li>
                     </ul>
                 </li>
-                <li class="menu-item"><a href="blog.html" class="menu-link">Galeries</a>
+                <li class="menu-item"><a href="#" class="menu-link">Galeries</a>
                     <ul class="dropdown">
-                        <li class="menu-item"><a href="#">AG 1</a></li>
-                        <li class="menu-item"><a href="#">AG 2</a></li>
-                        <li class="menu-item"><a href="#">AG 3</a></li>
+                        <li class="menu-item"><a href="{{route('galleries',1)}}">AG 1</a></li>
+                        <li class="menu-item"><a href="{{route('galleries',2)}}">AG 2</a></li>
+                        <li class="menu-item"><a href="{{route('galleries',3)}}">AG 3</a></li>
                     </ul>
                 </li>
-                <li class="menu-item"><a href="contact.html" class="menu-link">Contact</a></li>
-                <li class="menu-item"><a href="contact.html" class="menu-link">Mosquee</a></li>
+                <li class="menu-item"><a href="{{route('contact')}}" class="menu-link">Contact</a></li>
+                <li class="menu-item"><a href="{{route('mosquee')}}" class="menu-link">Mosquee</a></li>
             </ul>
         </nav>
         <!-- NAVIGATION END -->

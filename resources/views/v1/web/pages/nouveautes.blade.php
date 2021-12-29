@@ -81,7 +81,7 @@
                             <h4 class="widget-title"><span class="wrap-1">Dernier </span><span class="wrap-2">Nouvelles </span></h4>
                         </div>
                         <ul class="nav nav-tabs clearfix" role="tablist" id="newsTabs">
-                            <li role="presentation"><a href="#default" aria-controls="default" role="tab" data-toggle="tab" class="active" aria-selected="true">Latest</a></li>
+                            <li role="presentation"><a href="#default" aria-controls="default" role="tab" data-toggle="tab" class="active" aria-selected="true">Dernier</a></li>
                         </ul>
                         <div class="tab-content clearfix">
                             <div role="tabpanel" class="recent-news tab-pane active" id="default">

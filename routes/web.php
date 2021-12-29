@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\v1\dashboard\DashboardController;
 use App\Http\Controllers\v1\web\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,10 +22,18 @@ Route::get('/partners', [HomeController::class,'partners'])->name('partners');
 Route::get('/mosquee', [HomeController::class,'mosquee'])->name('mosquee');
 Route::get('/contact', [HomeController::class,'contact'])->name('contact');
 Route::get('/nouveautes', [HomeController::class,'nouveautes'])->name('nouveautes');
+Route::get('/projects', [HomeController::class,'projects'])->name('projects');
+Route::get('/tranches/{id}', [HomeController::class,'tranches'])->name('tranches');
+Route::get('/galleries/{id}', [HomeController::class,'galleries'])->name('galleries');
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::middleware(['auth'])->group(function(){
 
+  
+    Route::prefix('admin')->name('admin.')->group(function () {
+        Route::get('/', [DashboardController::class,'index'])->name('index');
+    });
+
+
+});
 require __DIR__.'/auth.php';
