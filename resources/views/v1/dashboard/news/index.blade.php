@@ -4,7 +4,7 @@
         <div class="card-header border-0 pt-6">
             <div class="card-toolbar">
                 <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_user">
+                    <a href="{{route('admin.nouveautes.create')}}" type="button" class="btn btn-primary">
                         <span class="svg-icon svg-icon-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1"
@@ -12,8 +12,8 @@
                                 <rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="black"></rect>
                             </svg>
                         </span>
-                        Add User
-                    </button>
+                        Ajouter des nouvelles
+                    </a>
                 </div>
             </div>
         </div>

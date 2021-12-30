@@ -27,7 +27,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-        //
+        return view('v1.dashboard.news.create');
     }
 
     /**
