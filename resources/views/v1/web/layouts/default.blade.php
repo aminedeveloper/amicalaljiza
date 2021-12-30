@@ -18,7 +18,8 @@
     <link rel="stylesheet" href="/assets/web/css/plugin.css" type="text/css" />
     <link rel="stylesheet" href="/assets/web/css/style.css" type="text/css" />
     <link rel="stylesheet" href="/assets/web/css/responsive.css" type="text/css" />
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
 
     <link rel="icon" href="/assets/web//assets/web/img/fav-icon.jpg">
@@ -37,24 +38,40 @@
             display: block;
         }
 
-        #main-menu{
+        #main-menu {
             background: #FFC31D;
             padding-bottom: 10px;
             padding-left: 20px;
-            padding-right: 20px; 
+            padding-right: 20px;
             border-radius: 30px;
         }
-       
-        .background-overlay{
+
+        .background-overlay {
             background-color: rgba(0, 0, 0, 0.3);
         }
-        .image-title{
+
+        .image-title {
             background-image: url('/assets/web/img/slide1.jpg');
             background-repeat: no-repeat;
-            background-size: cover;z-index: 1;  
+            background-size: cover;
+            z-index: 1;
         }
-        .header-clear{
+
+        .header-clear {
             width: max-content;
+        }
+
+        .main-hero {
+            height: 71vh !important;
+        }
+
+        .news-articles {
+            z-index: 33;
+            margin-top: -155px;
+            width: 69%;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: rgba(255, 255, 255, 0.568);
         }
     </style>
 </head>
@@ -78,14 +95,16 @@
                         <h2>
                             Fournir Une solution Innovante </h2>
                         <div class="button-view" data-aos="fade-up">
-                            <a style="background-color: #FFC31D" href="projects.html" class="button-basic-1">Photos Recentes</a>
-                            <a style="background-color: #0c1f38" href="projects.html" class="button-basic-1">Videos Recentes</a>
-            
+                            <a style="background-color: #FFC31D" href="projects.html" class="button-basic-1">Photos
+                                Recentes</a>
+                            <a style="background-color: #0c1f38" href="projects.html" class="button-basic-1">Videos
+                                Recentes</a>
+
                         </div>
                     </div>
                 </div>
                 <div class="background-overlay"> </div>
-            </div>            
+            </div>
             @yield('content')
         </section>
         <!-- SECTION END -->
@@ -108,9 +127,7 @@
     <script src="/assets/web/js/isotope.pkgd.js"></script>
     <script src="/assets/web/js/aos.js"></script>
 
-    <script>
-        
-    </script>
+  
 </body>
 
 </html>

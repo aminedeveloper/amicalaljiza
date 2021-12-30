@@ -1,6 +1,64 @@
 @extends('v1.web.layouts.default')
 
 @section('content')
+<!-- BANNER GOAL -->
+<div class="banner-goal news-articles">
+    <div class="container">
+        <div class="banner-goal-wrap grid grid-cols-12 gap-20">
+            <div class="col-span-8 sm:col-span-12 res:col-span-12">
+                <div class="col-span-8 sm:col-span-12 res:col-span-6" data-aos="fade-right">
+                    <img src="/assets/web/img/vue1.jpg" alt="contractor">
+                </div>
+                <div class="head-title col-span-8 sm:col-span-12 res:col-span-6">
+                    <h2>  Votre Meilleur Entreprise Du Logement .</h2>
+                    <span class="line"></span>
+                    <p>
+                        Amicale AL JIZA s’est fixée comme objectif des développer des projets immobiliers novateurs ayant
+                        deux dénominateurs communs : Un emplacement stratégique et un rapport qualité prix excellent.
+
+                        L’AMICALE AL JIZA est une association qui a été créée en 2014 par des enseignants des médecins et
+                        des professionnels libérales, dans un but de promouvoir l’habitat à caractère associatif.
+                    </p>
+                </div>
+            </div>
+            <div class="col-span-3 sm:col-span-12 res:col-span-12">
+                <div class="col-span-3 sm:col-span-12 res:col-span-12 grid grid-cols-12 gap-12">
+                    <div class="client-content col-span-12 sm:col-span-4 res:col-span-4">
+                        <a href="">
+                            <img src="/assets/web/img/logo.png" alt="client-1">
+                        </a>
+                        <p>hfh</p>
+                        <span class="line"></span>
+                    </div>
+                    <div class="client-content col-span-12 sm:col-span-4 res:col-span-4">
+                        <a href="">
+                            <img src="/assets/web/img/logo.png" alt="client-1">
+                        </a>
+                        <p>hfh</p>
+                        <span class="line"></span>
+                    </div>
+                    <div class="client-content col-span-12 sm:col-span-4 res:col-span-4">
+                        <a href="">
+                            <img src="/assets/web/img/logo.png" alt="client-1">
+                        </a>
+                        <p>hfh</p>
+                        <span class="line"></span>
+                    </div>
+                    <div class="client-content col-span-12 sm:col-span-4 res:col-span-4">
+                        <a href="">
+                            <img src="/assets/web/img/logo.png" alt="client-1">
+                        </a>
+                        <p>hfh</p>
+                        <span class="line"></span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- BANNER GOAL END -->
+
     <!-- BANNER GOAL -->
     <div class="banner-goal">
         <div class="container">

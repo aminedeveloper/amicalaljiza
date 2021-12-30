@@ -1,6 +1,12 @@
 <?php
 
+use App\Http\Controllers\v1\dashboard\AlbumsController;
 use App\Http\Controllers\v1\dashboard\DashboardController;
+use App\Http\Controllers\v1\dashboard\NewsController;
+use App\Http\Controllers\v1\dashboard\PhotosController;
+use App\Http\Controllers\v1\dashboard\ProjectsController;
+use App\Http\Controllers\v1\dashboard\TranchesController;
+use App\Http\Controllers\v1\dashboard\VideosController;
 use App\Http\Controllers\v1\web\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,6 +38,12 @@ Route::middleware(['auth'])->group(function(){
   
     Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/', [DashboardController::class,'index'])->name('index');
+        Route::resource('nouveautes',NewsController::class);
+        Route::resource('tranches',TranchesController::class);
+        Route::resource('projects',ProjectsController::class);
+        Route::resource('albums',AlbumsController::class);
+        Route::resource('photos',PhotosController::class);
+        Route::resource('videos',VideosController::class);
     });
 
 

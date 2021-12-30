@@ -7,7 +7,7 @@
             </div>
         </div>
         <div class="menu-item">
-            <a class="menu-link active" href="../../demo8/dist/index.html">
+            <a class="menu-link @if(Route::is('admin.index'))  active @endif" href="{{route('admin.index')}}">
                 <span class="menu-icon">
                     <i class="fas fa-tachometer-alt"></i>
                 </span>
@@ -15,7 +15,7 @@
             </a>
         </div>
         <div class="menu-item">
-            <a class="menu-link" href="../../demo8/dist/dashboards/only-header.html">
+            <a class="menu-link @if(Route::is('admin.nouveautes.*'))  active @endif" href="{{route('admin.nouveautes.index')}}">
                 <span class="menu-icon">
                     <i class="fas fa-newspaper"></i>
                 </span>
@@ -23,7 +23,15 @@
             </a>
         </div>
         <div class="menu-item">
-            <a class="menu-link" href="../../demo8/dist/landing.html">
+            <a class="menu-link @if(Route::is('admin.tranches.*'))  active @endif" href="{{route('admin.tranches.index')}}">
+                <span class="menu-icon">
+                    <i class="fas fa-building"></i>
+                </span>
+                <span class="menu-title">Les Tranches</span>
+            </a>
+        </div>
+        <div class="menu-item">
+            <a class="menu-link @if(Route::is('admin.projects.*'))  active @endif" href="{{route('admin.projects.index')}}">
                 <span class="menu-icon">
                     <i class="fas fa-passport"></i>
                 </span>
@@ -31,7 +39,7 @@
             </a>
         </div>
         <div class="menu-item">
-            <a class="menu-link" href="../../demo8/dist/landing.html">
+            <a class="menu-link @if(Route::is('admin.albums.*'))  active @endif" href="{{route('admin.albums.index')}}">
                 <span class="menu-icon">
                     <i class="fas fa-passport"></i>
                 </span>
@@ -39,7 +47,7 @@
             </a>
         </div>
         <div class="menu-item">
-            <a class="menu-link" href="../../demo8/dist/landing.html">
+            <a class="menu-link @if(Route::is('admin.photos.*'))  active @endif" href="{{route('admin.photos.index')}}">
                 <span class="menu-icon">
                     <i class="fas fa-images"></i>
                 </span>
@@ -47,7 +55,7 @@
             </a>
         </div>
         <div class="menu-item">
-            <a class="menu-link" href="../../demo8/dist/landing.html">
+            <a class="menu-link" href="{{route('admin.videos.index')}}">
                 <span class="menu-icon">
                     <i class="fas fa-film"></i>
                 </span>
