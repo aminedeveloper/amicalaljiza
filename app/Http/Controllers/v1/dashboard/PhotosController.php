@@ -14,7 +14,7 @@ class PhotosController extends Controller
      */
     public function index()
     {
-        //
+       return view('v1.dashboard.photos.index');
     }
 
     /**

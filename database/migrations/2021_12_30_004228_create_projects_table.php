@@ -17,6 +17,8 @@ class CreateProjectsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('tranche_id');
             $table->foreign('tranche_id')->references('id')->on('tranches')->onDelete('cascade');
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
 
             $table->string('name');
             $table->string('description');

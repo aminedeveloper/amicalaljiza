@@ -4,10 +4,8 @@ namespace App\Http\Controllers\v1\dashboard;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Project;
-use App\Models\Tranche;
 use App\Models\Category;
-class ProjectsController extends Controller
+class CategoriesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +14,8 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        $projects = Project::get();
-        return view('v1.dashboard.projects.index',compact('projects'));
+        $categories = Category::get();
+        return view('v1.dashboard.categories.index',compact('categories'));
     }
 
     /**
@@ -27,10 +25,7 @@ class ProjectsController extends Controller
      */
     public function create()
     {
-        $categories = Category::get();
-        $tranches = Tranche::get();
-        return view('v1.dashboard.projects.create',compact('categories','tranches'));
-
+        return view('v1.dashboard.categories.create');
     }
 
     /**
@@ -41,7 +36,11 @@ class ProjectsController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->)
+       $category = new Category();
+       $category->name = $request->name;
+       $category->save();
+       alert()->success('Félicitation','Categorie a été bien ajouté');
+       return redirect(route('admin.categories.index'));
     }
 
     /**
@@ -63,7 +62,8 @@ class ProjectsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::where('id',$id)->first() ?? abort(404);
+        return view('v1.dashboard.categories.edit',compact('category'));
     }
 
     /**
@@ -75,7 +75,11 @@ class ProjectsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $category = Category::where('id',$id)->first() ?? abort(404);
+        $category->name = $request->name;
+        $category->save();
+        alert()->success('Félicitation','Categorie a été bien modifié');
+        return redirect(route('admin.categories.index'));
     }
 
     /**
@@ -86,6 +90,9 @@ class ProjectsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Category::where('id',$id)->first() ?? abort(404);
+        $category->delete();
+        alert()->success('Félicitation','Categorie a été bien supprimé');
+        return redirect(route('admin.categories.index'));
     }
 }

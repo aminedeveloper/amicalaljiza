@@ -122,6 +122,7 @@
     <script src="/assets/dashboard/js/custom/modals/create-app.js"></script>
     <script src="/assets/dashboard/js/custom/modals/upgrade-plan.js"></script>
     <script src="/assets/dashboard/plugins/custom/datatables/datatables.bundle.js"></script>
+    @include('sweetalert::alert')
     <script>
         $(document).ready(function() {
             $('.dataTable').DataTable();

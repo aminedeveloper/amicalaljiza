@@ -4,6 +4,7 @@ namespace App\Http\Controllers\v1\dashboard;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Tranche;
 
 class TranchesController extends Controller
 {
@@ -14,7 +15,8 @@ class TranchesController extends Controller
      */
     public function index()
     {
-        //
+        $tranches = Tranche::get();
+        return view('v1.dashboard.tranches.index',compact('tranches'));
     }
 
     /**
@@ -24,7 +26,7 @@ class TranchesController extends Controller
      */
     public function create()
     {
-        //
+        return view('v1.dashboard.tranches.create');
     }
 
     /**
@@ -35,7 +37,11 @@ class TranchesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $tranche = new Tranche();
+       $tranche->name = $request->name;
+       $tranche->save();
+       alert()->success('Félicitation','tranche a été bien modifié');
+       return redirect(route('admin.tranches.index'));
     }
 
     /**
@@ -57,7 +63,8 @@ class TranchesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $tranche = Tranche::where('id',$id)->first() ?? abort(404);
+        return view('v1.dashboard.tranches.edit',compact('tranche'));
     }
 
     /**
@@ -69,7 +76,11 @@ class TranchesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $tranche = Tranche::where('id',$id)->first() ?? abort(404);
+        $tranche->name = $request->name;
+        $tranche->save();
+        alert()->success('Félicitation','tranche a été bien modifié');
+        return redirect(route('admin.tranches.index'));
     }
 
     /**
@@ -80,6 +91,9 @@ class TranchesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tranche = Tranche::where('id',$id)->first() ?? abort(404);
+        $tranche->delete();
+        alert()->success('Félicitation','Tranche a été bien supprimé');
+        return redirect(route('admin.tranches.index'));
     }
 }

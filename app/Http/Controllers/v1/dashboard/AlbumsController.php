@@ -4,6 +4,7 @@ namespace App\Http\Controllers\v1\dashboard;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Album;
 
 class AlbumsController extends Controller
 {
@@ -14,7 +15,8 @@ class AlbumsController extends Controller
      */
     public function index()
     {
-        //
+        $albums = Album::get();
+        return view('v1.dashboard.albums.index',compact('albums'));
     }
 
     /**
@@ -24,7 +26,7 @@ class AlbumsController extends Controller
      */
     public function create()
     {
-        //
+        return view('v1.dashboard.albums.create');
     }
 
     /**
@@ -35,7 +37,12 @@ class AlbumsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $album = new Album();
+       $album->name = $request->name;
+       $album->save();
+       alert()->success('Félicitation','Album a été bien ajouté');
+       return redirect(route('admin.albums.index'));
+
     }
 
     /**
@@ -57,7 +64,9 @@ class AlbumsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $album = Album::where('id',$id)->first() ?? abort(404);
+        return view('v1.dashboard.albums.edit',compact('album'));
+
     }
 
     /**
@@ -69,7 +78,11 @@ class AlbumsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $album = Album::where('id',$id)->first() ?? abort(404); 
+        $album->name = $request->name;
+        $album->save();
+        alert()->success('Félicitation','Album a été bien modifié');
+        return redirect(route('admin.albums.index'));
     }
 
     /**
@@ -80,6 +93,9 @@ class AlbumsController extends Controller
      */
     public function destroy($id)
     {
-        //
-    }
+     $album = Album::where('id',$id)->first() ?? abort(404);
+     $album->delete();
+     alert()->success('Félicitation','Album a été bien supprimé');
+     return redirect(route('admin.albums.index'));
+    } 
 }

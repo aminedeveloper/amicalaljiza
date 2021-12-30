@@ -30,6 +30,14 @@
                 <span class="menu-title">Les Tranches</span>
             </a>
         </div>
+         <div class="menu-item">
+            <a class="menu-link @if(Route::is('admin.categories.*'))  active @endif" href="{{route('admin.categories.index')}}">
+                <span class="menu-icon">
+                    <i class="fas fa-passport"></i>
+                </span>
+                <span class="menu-title">Les Categories</span>
+            </a>
+        </div>
         <div class="menu-item">
             <a class="menu-link @if(Route::is('admin.projects.*'))  active @endif" href="{{route('admin.projects.index')}}">
                 <span class="menu-icon">

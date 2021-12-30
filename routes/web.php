@@ -7,6 +7,7 @@ use App\Http\Controllers\v1\dashboard\PhotosController;
 use App\Http\Controllers\v1\dashboard\ProjectsController;
 use App\Http\Controllers\v1\dashboard\TranchesController;
 use App\Http\Controllers\v1\dashboard\VideosController;
+use App\Http\Controllers\v1\dashboard\CategoriesController;
 use App\Http\Controllers\v1\web\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -44,6 +45,7 @@ Route::middleware(['auth'])->group(function(){
         Route::resource('albums',AlbumsController::class);
         Route::resource('photos',PhotosController::class);
         Route::resource('videos',VideosController::class);
+        Route::resource('categories',CategoriesController::class);
     });
 
 
