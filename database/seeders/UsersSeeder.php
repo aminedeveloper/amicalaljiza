@@ -21,8 +21,8 @@ class UsersSeeder extends Seeder
        $user->app_level_id = $appLevel->id;
        $user->first_name = 'mohammed amine';
        $user->last_name = 'yassine';
-       $user->email = 'aminemohammed.yassine@gmail.com';
-       $user->password = Hash::make('123456789');
+       $user->email = 'issamatouf@gmail.com';
+       $user->password = Hash::make('issamatouf2021');
        $user->save();
         
     }
