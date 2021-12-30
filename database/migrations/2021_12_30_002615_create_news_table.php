@@ -21,6 +21,7 @@ class CreateNewsTable extends Migration
             $table->string('description')->nullable();
             $table->string('category')->nullable();
             $table->string('path');
+            $table->string('extension');
             $table->integer('step');
 
             $table->softDeletes();

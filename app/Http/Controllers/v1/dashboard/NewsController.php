@@ -5,6 +5,8 @@ namespace App\Http\Controllers\v1\dashboard;
 use App\Http\Controllers\Controller;
 use App\Models\News;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class NewsController extends Controller
 {
@@ -38,7 +40,43 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+     
+        $news = new News();
+        if(count($request->type) == 2)
+        {
+           foreach ($request->type as $key => $value) {
+               $news->type .= $value .',';
+           }
+        }
+       if(count($request->type) == 1)
+       {
+            foreach ($request->type as $key => $value) {
+                $news->type = $value ;
+            }
+       }
+
+       $news->status = $request->status;
+       $news->name = $request->name;
+       $news->description = $request->description;
+       $news->category = $request->category;
+       $news->step = $request->step;
+
+        $filename = date('d-m-Y');
+        $filename .= pathinfo($request->attachement->getClientOriginalName(), PATHINFO_FILENAME);
+        $filename .= '-' . time() . '-' . Str::random(4);
+        $filename .= '.' . $request->attachement->getClientOriginalExtension();
+        $filename = strtolower($filename);
+        Storage::disk('public')->putFileAs('news' , $request->attachement, $filename);
+
+       $news->extension = $request->attachement->getClientOriginalExtension();
+       $path = 'news/' . $filename;
+       $news->path = $path;
+
+
+       $news->save();
+
+       return redirect(route('admin.nouveautes.index'));
+
     }
 
     /**

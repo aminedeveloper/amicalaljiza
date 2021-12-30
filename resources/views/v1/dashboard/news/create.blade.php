@@ -2,19 +2,19 @@
 @section('title', 'Ajouter une nouvelle')
 @section('content')
     <div class="card">
-        <form class="form" method="POST" action="{{route('admin.nouveautes.store')}}">
+        <form class="form" method="POST" action="{{ route('admin.nouveautes.store') }}" enctype="multipart/form-data">
             @csrf
             <div class="row mb-7">
                 <div class="col-md-6">
                     <div class="form-check form-check-custom form-check-solid">
-                        <input class="form-check-input" type="checkbox" value="acceuil" id="acceuil" name="type" />
+                        <input class="form-check-input" type="checkbox" value="acceuil" id="acceuil" name="type[]" />
                         <label class="form-check-label" for="acceuil">
                             Page d'accueil
                         </label>
                     </div>
 
                     <label class="form-check form-check-custom form-check-solid mt-5">
-                        <input class="form-check-input" type="checkbox" value="news" id="news" name="type" />
+                        <input class="form-check-input" type="checkbox" value="news" id="news" name="type[]" />
                         <span class="form-check-label" for="news">
                             Page d'actualités
                         </span>
@@ -60,29 +60,12 @@
             </div>
             <div class="row mb-7">
                 <div class="col-md-6">
-                    <!--begin::Image input-->
-                    <div class="image-input image-input-outline" data-kt-image-input="true"
-                        style="background-image: url(/assets/dashboard/media/avatars/vd2.jpg)">
-                        <div class="image-input-wrapper w-450px h-325px"
-                            style="background-image: url(/assets/dashboard/media/avatars/vd2.jpg)">
+                    <div class="form-group">
+                        <label>File Browser</label>
+                        <div class="custom-file">
+                            <input type="file" class="form-control" id="customFile" name="attachement" />
                         </div>
-                        <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
-                            data-kt-image-input-action="change" data-bs-toggle="tooltip" data-bs-dismiss="click"
-                            title="Change avatar">
-                            <i class="bi bi-pencil-fill fs-7"></i>
-                            <input type="file" name="avatar" accept=".png, .jpg, .jpeg" />
-                            <input type="hidden" name="avatar_remove" />
-                        </label>
-                        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
-                            data-kt-image-input-action="cancel" data-bs-toggle="tooltip" data-bs-dismiss="click"
-                            title="Cancel avatar">
-                            <i class="bi bi-x fs-2"></i>
-                        </span>
-                        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
-                            data-kt-image-input-action="remove" data-bs-toggle="tooltip" data-bs-dismiss="click"
-                            title="Remove avatar">
-                            <i class="bi bi-x fs-2"></i>
-                        </span>
+
                     </div>
                 </div>
                 <div class="col-md-6">
