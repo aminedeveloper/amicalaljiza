@@ -35,10 +35,10 @@
                         <tbody class="text-gray-600 fw-bold">
                             @foreach ($news as $new)
                                 <tr>
-                                    <td>{{{$new->name}}}</td>
-                                    <td>{{{$new->category}}}</td>
-                                    <td>{{{Storage::url($new->path)}}}</td>
-                                    <td>{{{$new->created_at}}}</td>
+                                    <td>{{$new->name}}</td>
+                                    <td>{{$new->category}}</td>
+                                    <td>{{Storage::url($new->path)}}</td>
+                                    <td>{{{$new->created_at}}</td>
                                     <td>
                                         <a href="" class=" btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                             <span class="svg-icon svg-icon-3">

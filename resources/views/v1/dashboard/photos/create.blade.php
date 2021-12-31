@@ -1,41 +1,27 @@
 @extends('v1.dashboard.layouts.default')
 @section('content')
-<form method="POST" action="{{ route('admin.projects.update',$project->id) }}" enctype="multipart/form-data">
+<form method="POST" action="{{ route('admin.photos.store') }}" enctype="multipart/form-data">
 @csrf
-@method('PUT')
  <div class="row">
-    <div class="col-6">
-        <label class="required fs-5 fw-bold mb-2">Projet</label>
-        <input type="text" class="form-control " placeholder="Nom du projet" required  name="name"  value="{{ old('name',$project->name) }}">
-    </div>
-      <div class="col-6">
-        <label class="required fs-5 fw-bold mb-2">Catégorie</label>
-        <select class="form-select" name="category" data-control="select2" required data-placeholder="Selecter une category">
-            <option></option>
-            @foreach ($categories as $category)
-                <option value="{{ $category->id }}" {{ ($category->id == $project->category_id)?'selected':'' }}>{{ $category->name }}</option>
-            @endforeach
-        </select>
-    </div>
      <div class="col-12 mt-3">
-        <label class="required fs-5 fw-bold mb-2">Tranche</label>
-        <select class="form-select" name="tranche" data-control="select2" required data-placeholder="Selecter une tranche">
+        <label class="required fs-5 fw-bold mb-2">Album</label>
+        <select class="form-select" name="album" data-control="select2" required data-placeholder="Selecter un album">
             <option></option>
-            @foreach ($tranches as $tranche)
-                <option value="{{ $tranche->id }}" {{ ($tranche->id == $project->tranche_id)?'selected':'' }}>{{ $tranche->name }}</option>
+            @foreach ($albums as $album)
+                <option value="{{ $album->id }}">{{ $album->name }}</option>
             @endforeach
         </select>
     </div>
     <div class="col-12 mt-3">
       <label class="required fs-5 fw-bold mb-2">Description</label>
-      <textarea  class="form-control " placeholder="Description du projet" required  name="description">{{ old('description',$project->description) }}</textarea>
+      <textarea  class="form-control " placeholder="Description du photo" required  name="description"></textarea>
     </div>
     <div class="col-12 mt-3">
                     <!--begin::Image input-->
                     <div class="image-input image-input-outline" data-kt-image-input="true"
                         style="background-image: url(/assets/dashboard/media/avatars/vd2.jpg)">
                         <div class="image-input-wrapper w-450px h-325px"
-                            style="background-image: url({{Storage::url($project->path)}})">
+                            style="background-image: url(/assets/dashboard/media/avatars/vd2.jpg)">
                         </div>
                         <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
                             data-kt-image-input-action="change" data-bs-toggle="tooltip" data-bs-dismiss="click"

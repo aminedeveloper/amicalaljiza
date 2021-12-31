@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
     use HasFactory;
+    public function tranche()
+    {
+        return $this->belongsTo(Tranche::class);
+    }
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

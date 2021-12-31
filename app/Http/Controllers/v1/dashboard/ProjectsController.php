@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Project;
 use App\Models\Tranche;
 use App\Models\Category;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 class ProjectsController extends Controller
 {
     /**
@@ -41,7 +43,26 @@ class ProjectsController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->)
+       $project = new Project();
+       $project->name = $request->name;
+       $project->description = $request->description;
+       $project->category_id = $request->category;
+       $project->tranche_id = $request->tranche;
+        if($request->avatar){
+            $filename = date('d-m-Y');
+            $filename .= pathinfo($request->avatar->getClientOriginalName(), PATHINFO_FILENAME);
+            $filename .= '-' . time() . '-' . Str::random(4);
+            $filename .= '.' . $request->avatar->getClientOriginalExtension();
+            $filename = strtolower($filename);
+            Storage::disk('public')->putFileAs('projects' , $request->avatar, $filename);
+            //    $news->extension = $request->attachement->getClientOriginalExtension();
+            $path = 'projects/' . $filename;
+            $project->path = $path;
+            }
+        $project->save();
+        alert()->success('Félicitation','Project a été bien ajouter');
+        return redirect(route('admin.projects.index'));
+
     }
 
     /**
@@ -63,7 +84,10 @@ class ProjectsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $project = Project::where('id',$id)->first() ?? abort(404);
+        $categories = Category::get();
+        $tranches = Tranche::get();
+        return view('v1.dashboard.projects.edit',compact('categories','tranches','project'));
     }
 
     /**
@@ -75,7 +99,25 @@ class ProjectsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $project = Project::where('id',$id)->first() ?? abort(404);
+        $project->name = $request->name;
+        $project->description = $request->description;
+        $project->category_id = $request->category;
+        $project->tranche_id = $request->tranche;
+         if($request->avatar){
+             $filename = date('d-m-Y');
+             $filename .= pathinfo($request->avatar->getClientOriginalName(), PATHINFO_FILENAME);
+             $filename .= '-' . time() . '-' . Str::random(4);
+             $filename .= '.' . $request->avatar->getClientOriginalExtension();
+             $filename = strtolower($filename);
+             Storage::disk('public')->putFileAs('projects' , $request->avatar, $filename);
+             //    $news->extension = $request->attachement->getClientOriginalExtension();
+             $path = 'projects/' . $filename;
+             $project->path = $path;
+        }
+         $project->save();
+         alert()->success('Félicitation','Project a été bien modifié');
+         return redirect(route('admin.projects.index'));
     }
 
     /**
@@ -86,6 +128,9 @@ class ProjectsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $project = Project::where('id',$id)->first() ?? abort(404);
+        $project->delete();
+        alert()->success('Félicitation','Projet a été bien supprimé');
+        return redirect(route('admin.projects.index'));
     }
 }

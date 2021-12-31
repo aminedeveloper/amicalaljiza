@@ -1,6 +1,6 @@
 @extends('v1.dashboard.layouts.default')
 @section('content')
-<form method="POST" action="{{ route('admin.tranches.store') }}">
+<form method="POST" action="{{ route('admin.projects.store') }}" enctype="multipart/form-data">
 @csrf
  <div class="row">
     <div class="col-6">
@@ -27,7 +27,7 @@
     </div>
     <div class="col-12 mt-3">
       <label class="required fs-5 fw-bold mb-2">Description</label>
-      <textarea  class="form-control " placeholder="Description du projet" required  name="name"></textarea>
+      <textarea  class="form-control " placeholder="Description du projet" required  name="description"></textarea>
     </div>
     <div class="col-12 mt-3">
                     <!--begin::Image input-->
@@ -40,7 +40,7 @@
                             data-kt-image-input-action="change" data-bs-toggle="tooltip" data-bs-dismiss="click"
                             title="Change avatar">
                             <i class="bi bi-pencil-fill fs-7"></i>
-                            <input type="file" name="avatar" accept=".png, .jpg, .jpeg" />
+                            <input type="file" name="avatar" required accept=".png, .jpg, .jpeg" />
                             <input type="hidden" name="avatar_remove" />
                         </label>
                         <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
