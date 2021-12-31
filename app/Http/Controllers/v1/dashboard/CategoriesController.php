@@ -4,9 +4,8 @@ namespace App\Http\Controllers\v1\dashboard;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Album;
-
-class AlbumsController extends Controller
+use App\Models\Category;
+class CategoriesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,8 @@ class AlbumsController extends Controller
      */
     public function index()
     {
-        $albums = Album::get();
-        return view('v1.dashboard.albums.index',compact('albums'));
+        $categories = Category::get();
+        return view('v1.dashboard.categories.index',compact('categories'));
     }
 
     /**
@@ -26,7 +25,7 @@ class AlbumsController extends Controller
      */
     public function create()
     {
-        return view('v1.dashboard.albums.create');
+        return view('v1.dashboard.categories.create');
     }
 
     /**
@@ -37,12 +36,11 @@ class AlbumsController extends Controller
      */
     public function store(Request $request)
     {
-       $album = new Album();
-       $album->name = $request->name;
-       $album->save();
-       alert()->success('Félicitation','Album a été bien ajouté');
-       return redirect(route('admin.albums.index'));
-
+       $category = new Category();
+       $category->name = $request->name;
+       $category->save();
+       alert()->success('Félicitation','Categorie a été bien ajouté');
+       return redirect(route('admin.categories.index'));
     }
 
     /**
@@ -64,9 +62,8 @@ class AlbumsController extends Controller
      */
     public function edit($id)
     {
-        $album = Album::where('id',$id)->first() ?? abort(404);
-        return view('v1.dashboard.albums.edit',compact('album'));
-
+        $category = Category::where('id',$id)->first() ?? abort(404);
+        return view('v1.dashboard.categories.edit',compact('category'));
     }
 
     /**
@@ -78,11 +75,11 @@ class AlbumsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $album = Album::where('id',$id)->first() ?? abort(404); 
-        $album->name = $request->name;
-        $album->save();
-        alert()->success('Félicitation','Album a été bien modifié');
-        return redirect(route('admin.albums.index'));
+        $category = Category::where('id',$id)->first() ?? abort(404);
+        $category->name = $request->name;
+        $category->save();
+        alert()->success('Félicitation','Categorie a été bien modifié');
+        return redirect(route('admin.categories.index'));
     }
 
     /**
@@ -93,9 +90,9 @@ class AlbumsController extends Controller
      */
     public function destroy($id)
     {
-     $album = Album::where('id',$id)->first() ?? abort(404);
-     $album->delete();
-     alert()->success('Félicitation','Album a été bien supprimé');
-     return redirect(route('admin.albums.index'));
-    } 
+        $category = Category::where('id',$id)->first() ?? abort(404);
+        $category->delete();
+        alert()->success('Félicitation','Categorie a été bien supprimé');
+        return redirect(route('admin.categories.index'));
+    }
 }

@@ -1,11 +1,10 @@
 @extends('v1.dashboard.layouts.default')
-@section('title', 'Listes des nouvelles')
 @section('content')
     <div class="card">
         <div class="card-header border-0 pt-6">
             <div class="card-toolbar">
                 <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
-                    <a href="{{route('admin.nouveautes.create')}}" type="button" class="btn btn-primary">
+                    <a href="{{route('admin.photos.create')}}" type="button" class="btn btn-primary">
                         <span class="svg-icon svg-icon-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1"
@@ -13,7 +12,7 @@
                                 <rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="black"></rect>
                             </svg>
                         </span>
-                        Ajouter des nouvelles
+                        Ajouter une photo
                     </a>
                 </div>
             </div>
@@ -25,22 +24,22 @@
                         role="grid">
                         <thead>
                             <tr>
-                                <th>Titre De la Nouvelle</th>
-                                <th>Categorie de la nouvelle</th>
+                                <th>Description</th>
+                                <th>Album</th>
                                 <th>Image</th>
-                                <th>Date de nouvelle</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody class="text-gray-600 fw-bold">
-                            @foreach ($news as $new)
-                                <tr>
-                                    <td>{{$new->name}}</td>
-                                    <td>{{$new->category}}</td>
-                                    <td>{{Storage::url($new->path)}}</td>
-                                    <td>{{{$new->created_at}}</td>
-                                    <td>
-                                        <a href="" class=" btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                            @foreach ($photos as $photo )
+                                 <tr>
+                                  <td>{{ $photo->description }}</td>
+                                  <td>{{ $photo->album->name }}</td>
+                                   <td>
+                                      <img  width="90px" height="90px" src="{{Storage::url($photo->path)}}">
+                                   </td>
+                                   <td>
+                                        <a href="{{ route('admin.photos.edit',$photo->id) }}" class=" btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                             <span class="svg-icon svg-icon-3">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                     viewBox="0 0 24 24" fill="none">
@@ -53,8 +52,12 @@
                                                 </svg>
                                             </span>
                                         </a>
-                                        <a href="" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                            <span class="svg-icon svg-icon-3">
+                                        <form style="display:inline-block" method="POST" action="{{ route('admin.photos.destroy',$photo->id) }}">
+                                           @csrf
+                                           @method('DELETE')
+
+                                            <button type="submit"   class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                           <span class="svg-icon svg-icon-3">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                                     <path
                                                         d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z"
@@ -66,9 +69,10 @@
                                                         fill="black"></path>
                                                 </svg>
                                             </span>
-                                        </a>
-                                    </td>
-                                </tr>
+                                            </button>
+                                        </form>
+                                 </td>
+                               </tr>
                             @endforeach
                         </tbody>
                     </table>

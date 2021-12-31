@@ -4,7 +4,10 @@ namespace App\Http\Controllers\v1\dashboard;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Models\Photo;
+use App\Models\Album;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 class PhotosController extends Controller
 {
     /**
@@ -14,7 +17,8 @@ class PhotosController extends Controller
      */
     public function index()
     {
-        //
+        $photos = Photo::get();
+       return view('v1.dashboard.photos.index',compact('photos'));
     }
 
     /**
@@ -24,7 +28,9 @@ class PhotosController extends Controller
      */
     public function create()
     {
-        //
+        $albums = Album::get();
+        return view('v1.dashboard.photos.create',compact('albums'));
+
     }
 
     /**
@@ -35,7 +41,23 @@ class PhotosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $photo = new Photo();
+        $photo->description = $request->description;
+        $photo->album_id = $request->album;
+        if($request->avatar){
+            $filename = date('d-m-Y');
+            $filename .= pathinfo($request->avatar->getClientOriginalName(), PATHINFO_FILENAME);
+            $filename .= '-' . time() . '-' . Str::random(4);
+            $filename .= '.' . $request->avatar->getClientOriginalExtension();
+            $filename = strtolower($filename);
+            Storage::disk('public')->putFileAs('photos' , $request->avatar, $filename);
+            //    $news->extension = $request->attachement->getClientOriginalExtension();
+            $path = 'photos/' . $filename;
+            $photo->path = $path;
+       }
+       $photo->save();
+       alert()->success('Félicitation','Photo a été bien ajouté');
+       return redirect(route('admin.photos.index'));
     }
 
     /**
@@ -57,7 +79,9 @@ class PhotosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $photo = Photo::where('id',$id)->first() ?? abort(404);
+        $albums = Album::get();
+        return view('v1.dashboard.photos.edit',compact('albums','photo'));
     }
 
     /**
@@ -69,7 +93,23 @@ class PhotosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $photo = Photo::where('id',$id)->first() ?? abort(404);
+        $photo->description = $request->description;
+        $photo->album_id = $request->album;
+        if($request->avatar){
+            $filename = date('d-m-Y');
+            $filename .= pathinfo($request->avatar->getClientOriginalName(), PATHINFO_FILENAME);
+            $filename .= '-' . time() . '-' . Str::random(4);
+            $filename .= '.' . $request->avatar->getClientOriginalExtension();
+            $filename = strtolower($filename);
+            Storage::disk('public')->putFileAs('photos' , $request->avatar, $filename);
+            //    $news->extension = $request->attachement->getClientOriginalExtension();
+            $path = 'photos/' . $filename;
+            $photo->path = $path;
+       }
+       $photo->save();
+       alert()->success('Félicitation','Photo a été bien modifié');
+       return redirect(route('admin.photos.index'));
     }
 
     /**
@@ -80,6 +120,9 @@ class PhotosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $photo = Photo::where('id',$id)->first() ?? abort(404);
+        $photo->delete();
+        alert()->success('Félicitation','Photo a été bien supprimé');
+        return redirect(route('admin.photos.index'));
     }
 }
