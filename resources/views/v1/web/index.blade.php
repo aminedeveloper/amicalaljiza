@@ -5,6 +5,7 @@
 <div class="banner-goal news-articles">
     <div class="container">
         <div class="banner-goal-wrap grid grid-cols-12 gap-20">
+            @if($topnews)
             <div class="col-span-8 sm:col-span-12 res:col-span-12">
                 <div class="col-span-8 sm:col-span-12 res:col-span-6" data-aos="fade-right">
                     <img src="{{Storage::url($topnews->path)}}" alt="{{$topnews->name}}">
@@ -17,6 +18,7 @@
                     </p>
                 </div>
             </div>
+            @endif
             <div class="col-span-3 sm:col-span-12 res:col-span-12">
                 <div class="col-span-3 sm:col-span-12 res:col-span-12 grid grid-cols-12 gap-12">
                     @foreach ($news as $new)
