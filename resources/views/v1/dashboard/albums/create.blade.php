@@ -1,4 +1,6 @@
 @extends('v1.dashboard.layouts.default')
+@section('title', 'Creer un album')
+
 @section('content')
 <form method="POST" action="{{ route('admin.albums.store') }}">
 @csrf

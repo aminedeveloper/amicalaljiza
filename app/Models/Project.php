@@ -10,7 +10,7 @@ class Project extends Model
     use HasFactory;
     public function tranche()
     {
-        return $this->belongsTo(Tranche::class);
+        return $this->belongsTo(Tranche::class,'tranche_id');
     }
     public function category()
     {

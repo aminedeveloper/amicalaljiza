@@ -25,9 +25,9 @@
                         role="grid">
                         <thead>
                             <tr>
+                                <th>Image</th>
                                 <th>Titre De la Nouvelle</th>
                                 <th>Categorie de la nouvelle</th>
-                                <th>Image</th>
                                 <th>Date de nouvelle</th>
                                 <th>Actions</th>
                             </tr>
@@ -35,10 +35,16 @@
                         <tbody class="text-gray-600 fw-bold">
                             @foreach ($news as $new)
                                 <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="symbol symbol-50px me-5">
+                                                <img src="{{Storage::url($new->path)}}" class="" alt="">
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td>{{$new->name}}</td>
                                     <td>{{$new->category}}</td>
-                                    <td>{{Storage::url($new->path)}}</td>
-                                    <td>{{{$new->created_at}}</td>
+                                    <td>{{$new->created_at}}</td>
                                     <td>
                                         <a href="" class=" btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                             <span class="svg-icon svg-icon-3">

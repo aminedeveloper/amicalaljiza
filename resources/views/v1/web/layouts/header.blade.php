@@ -1,6 +1,10 @@
+@php
+    $tranches = App\Models\Tranche::get();
+    $albums = App\Models\Album::get();
+@endphp
 <div class="header-clear clearfix">
     <div class="header-content-left clearfix">
-        <!-- LOGO START 
+        <!-- LOGO START  
             ============================================= -->
         <div class="logo">
             <a href="{{route('home')}}"><img src="/assets/web/img/logo.png" alt="Gedung Logo" /></a>
@@ -28,25 +32,16 @@
                 <li class="menu-item"><a href="{{route('nouveautes')}}" class="menu-link">Nouveautés</a></li>
                 <li class="menu-item"><a href="{{route('projects')}}" class="menu-link">Projets</a>
                     <ul class="dropdown">
-                        <li class="menu-item"><a href="{{route('tranches',1)}}">Tranche 1</a></li>
-                        <li class="menu-item"><a href="{{route('tranches',2)}}">Tranche 2</a></li>
-                        <li class="menu-item"><a href="{{route('tranches',3)}}">Tranche 3</a></li>
-                        <li class="menu-item"><a href="{{route('tranches',4)}}">Tranche 4</a></li>
-                        <li class="menu-item"><a href="{{route('tranches',5)}}">Tranche 5</a></li>
-                        <li class="menu-item"><a href="{{route('tranches',6)}}">Tranche 6</a></li>
-                        <li class="menu-item"><a href="{{route('tranches',7)}}">Tranche 7</a></li>
-                        <li class="menu-item"><a href="{{route('tranches',8)}}">Tranche 8</a></li>
-                        <li class="menu-item"><a href="{{route('tranches',9)}}">Tranche 9</a></li>
-                        <li class="menu-item"><a href="{{route('tranches',10)}}">Tranche 10</a></li>
-                        <li class="menu-item"><a href="{{route('tranches',11)}}">Tranche 11</a></li>
-                        <li class="menu-item"><a href="{{route('tranches',12)}}">Tranche 12</a></li>
+                        @foreach ($tranches as $tranche)
+                            <li class="menu-item"><a href="{{route('tranches',$tranche->id)}}">{{$tranche->name}}</a></li>
+                        @endforeach
                     </ul>
                 </li>
                 <li class="menu-item"><a href="#" class="menu-link">Galeries</a>
                     <ul class="dropdown">
-                        <li class="menu-item"><a href="{{route('galleries',1)}}">AG 1</a></li>
-                        <li class="menu-item"><a href="{{route('galleries',2)}}">AG 2</a></li>
-                        <li class="menu-item"><a href="{{route('galleries',3)}}">AG 3</a></li>
+                        @foreach ($albums as $album)
+                            <li class="menu-item"><a href="{{route('galleries',$album->id)}}">{{$album->name}}</a></li>
+                        @endforeach
                     </ul>
                 </li>
                 <li class="menu-item"><a href="{{route('contact')}}" class="menu-link">Contact</a></li>

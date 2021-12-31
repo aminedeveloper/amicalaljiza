@@ -1,4 +1,6 @@
 @extends('v1.dashboard.layouts.default')
+@section('title', 'Listes des albums')
+
 @section('content')
     <div class="card">
         <div class="card-header border-0 pt-6">

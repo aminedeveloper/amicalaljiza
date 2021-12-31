@@ -1,4 +1,6 @@
 @extends('v1.dashboard.layouts.default')
+@section('title', 'Creer des Projects')
+
 @section('content')
 <form method="POST" action="{{ route('admin.projects.store') }}" enctype="multipart/form-data">
 @csrf

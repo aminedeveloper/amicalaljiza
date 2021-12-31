@@ -5,68 +5,42 @@
         <div class="container">
             <div class="blog-section-wrap grid grid-cols-12 gap-20">
                 <div class="main-blog col-span-8 sm:col-span-12 res:col-span-12">
-                    <div class="blog-item">
-                        <div class="post-head clearfix">
-                            <div class="date">
-                                <a href="#">
-                                    <span class="thedate">23</span>
-                                    <span class="month">August</span><span class="year">2021</span>
-                                </a>
-                            </div>
-                            <div class="block-title clearfix">
-                                <h3>
-                                    <a href="singlepost.html">Phasellus molestie feugiat hendrerit Interdum</a>
-                                </h3>
-                            </div>
-                        </div>
-                        <div class="post-thumb">
-                            <a href="singlepost.html">
-                                <img src="/assets/web/img/1.jpg" alt="Phasellus molestie feugiat hendrerit Interdum">
-                                <div class="gedung-overlay"></div>
-                            </a>
-                        </div>
-                        <div class="post-content-wrap">
-                            <div class="post-content">
-                                <div class="post-text">
-                                    <p>Eget ullamcorper turpis. Donec condimentum pulvinar lorem, sit amet ultrices diam bibendum non. Suspendisse potenti. Integer dapibus ligula tortor. Nam metus diam, tempus non...</p>
+                    @foreach ($news as $new)
+                        @if (in_array("news", explode(',',$new->type)))
+                            <div class="blog-item">
+                                <div class="post-head clearfix">
+                                    <div class="date">
+                                        <a href="#">
+                                            <span class="thedate">{{$new->created_at->format('d')}}</span>
+                                            <span class="month">{{$new->created_at->format('F')}}</span><span class="year">{{$new->created_at->format('Y')}}</span>
+                                        </a>
+                                    </div>
+                                    <div class="block-title clearfix">
+                                        <h3>
+                                            <a href="singlepost.html">{{$new->name}}</a>
+                                        </h3>
+                                    </div>
                                 </div>
-                                <span class="btn-more">
-                                    <a href="#" class="read-more">Read More</a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="blog-item">
-                        <div class="post-head clearfix">
-                            <div class="date">
-                                <a href="#">
-                                    <span class="thedate">23</span>
-                                    <span class="month">August</span><span class="year">2021</span>
-                                </a>
-                            </div>
-                            <div class="block-title clearfix">
-                                <h3>
-                                    <a href="singlepost.html">Phasellus molestie feugiat hendrerit Interdum</a>
-                                </h3>
-                            </div>
-                        </div>
-                        <div class="post-thumb">
-                            <a href="singlepost.html">
-                                <img src="/assets/web/img/1.jpg" alt="Phasellus molestie feugiat hendrerit Interdum">
-                                <div class="gedung-overlay"></div>
-                            </a>
-                        </div>
-                        <div class="post-content-wrap">
-                            <div class="post-content">
-                                <div class="post-text">
-                                    <p>Eget ullamcorper turpis. Donec condimentum pulvinar lorem, sit amet ultrices diam bibendum non. Suspendisse potenti. Integer dapibus ligula tortor. Nam metus diam, tempus non...</p>
+                                <div class="post-thumb">
+                                    <a href="singlepost.html">
+                                        <img src="{{Storage::url($new->path)}}" alt="Phasellus molestie feugiat hendrerit Interdum">
+                                        <div class="gedung-overlay"></div>
+                                    </a>
                                 </div>
-                                <span class="btn-more">
-                                    <a href="#" class="read-more">Read More</a>
-                                </span>
+                                <div class="post-content-wrap">
+                                    <div class="post-content">
+                                        <div class="post-text">
+                                            <p>{{$new->description}}</p>
+                                        </div>
+                                        <span class="btn-more">
+                                            <a href="#" class="read-more">Avoir plus</a>
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
+                        @endif
+                    @endforeach
+                   
                 </div>
                 <!-- SIDEBAR -->
                 <div class="sidebar-blog col-span-4 sm:col-span-12 res:col-span-12">
@@ -85,48 +59,22 @@
                         </ul>
                         <div class="tab-content clearfix">
                             <div role="tabpanel" class="recent-news tab-pane active" id="default">
-                                <div class="post-item blog-item clearfix">
-                                    <a href="singlepost.html">
-                                        <div class="post-thumb">
-                                            <img src="/assets/web/img/1.jpg" alt="tab-img-1">
-                                            <div class="gedung-overlay"></div>
-                                            <div class="index-bg">
-                                                <span>1</span>
+                                @foreach ($news as $new)
+                                    <div class="post-item blog-item clearfix">
+                                        <a href="singlepost.html">
+                                            <div class="post-thumb">
+                                                <img src="{{Storage::url($new->path)}}" alt="tab-img-1">
+                                                <div class="gedung-overlay"></div>
+                                                <div class="index-bg">
+                                                    <span>1</span>
+                                                </div>
+                                                <div class="post-content">
+                                                    <h5>{{$new->name}}</h5>
+                                                </div>
                                             </div>
-                                            <div class="post-content">
-                                                <h5>Phasellus molestie feugiat hendrerit Interdum</h5>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="post-item blog-item clearfix">
-                                    <a href="singlepost.html">
-                                        <div class="post-thumb">
-                                            <img src="/assets/web/img/1.jpg" alt="tab-img-2">
-                                            <div class="gedung-overlay"></div>
-                                            <div class="index-bg">
-                                                <span>2</span>
-                                            </div>
-                                            <div class="post-content">
-                                                <h5>Lobortis id bibendum et rhoncus porttitor tortor</h5>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="post-item blog-item clearfix">
-                                    <a href="singlepost.html">
-                                        <div class="post-thumb">
-                                            <img src="/assets/web/img/1.jpg" alt="tab-img-3">
-                                            <div class="gedung-overlay"></div>
-                                            <div class="index-bg">
-                                                <span>3</span>
-                                            </div>
-                                            <div class="post-content">
-                                                <h5>Maecenas Ultrices Justo Metus Quis Facilisis</h5>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
+                                        </a>
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>

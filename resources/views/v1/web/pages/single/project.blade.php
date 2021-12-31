@@ -1,5 +1,5 @@
 @extends('v1.web.layouts.default')
-@section('content')
+@section('content') 
        <!-- PORTFOLIO BLOCK -->
        <div class="portfolio-block page-porto">
         <div class="container">
@@ -19,53 +19,35 @@
                         <span class="bar bar-4"></span>
                     </button>
                 </div>
-                <div id="filters" class="button-group">
-                    <button class="button is-checked" data-filter="*">All</button>
-                    <button class="button" data-filter=".plans">Plans</button>
-                    <button class="button" data-filter=".photos">Photos</button>
-                </div>
 
                 <div class="grid portfolio-block-grid">
-                    <div class="element-item transition plans column-3" data-category="transition">
-                        <div class="item-wrap">
-                            <a href="single-porto.html">
-                                <figure class="portfolio-image">
-                                    <img src="/assets/web/img/1.jpg" alt="Porto Image 1">
-                                    <figcaption>
-                                        <div class="caption-inside">
-                                            <h3 class="portfolio-loop-title ih-fade-down ih-delay-sm">
-                                                Jacob Villa </h3>
-                                            <h5 class="portfolio-category ih-fade-up ih-delay-sm">Commercial</h5>
-                                        </div>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="element-item transition photos column-3" data-category="transition">
-                        <div class="item-wrap">
-                            <a href="single-porto.html">
-                                <figure class="portfolio-image">
-                                    <img src="/assets/web/img/1.jpg" alt="Porto Image 2">
-                                    <figcaption>
-                                        <div class="caption-inside">
-                                            <h3 class="portfolio-loop-title ih-fade-down ih-delay-sm">
-                                                Katora Villa </h3>
-                                            <h5 class="portfolio-category ih-fade-up ih-delay-sm">Building</h5>
-                                        </div>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
+                    <div class="element-item transition column-3" data-category="transition">
+                        @foreach ($tranche->projects as $project)
+                                <div class="item-wrap">
+                                    <a href="#">
+                                        <figure class="portfolio-image">
+                                            <img src="{{ Storage::url($project->path) }}" alt="Porto Image 1">
+                                            <figcaption>
+                                                <div class="caption-inside">
+                                                    <h3 class="portfolio-loop-title ih-fade-down ih-delay-sm">
+                                                        {{ $project->name }} </h3>
+                                                    <h5 class="portfolio-category ih-fade-up ih-delay-sm">
+                                                        {{ $project->category->name }}</h5>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
         <!-- pagination has path -->
-        <div id="load-more-causes"><a href="page2.html"></a></div>
-        <p class="text-center">
-            <button class="view-more-button button-basic-1">Load more</button>
-        </p>
+            {{-- <div id="load-more-causes"><a href="page2.html"></a></div>
+            <p class="text-center">
+                <button class="view-more-button button-basic-1">Load more</button>
+            </p> --}}
     </div>
     <!-- PORTFOLIO BLOCK END -->
     <div class="banner-block">

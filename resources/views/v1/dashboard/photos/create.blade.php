@@ -1,4 +1,6 @@
 @extends('v1.dashboard.layouts.default')
+@section('title', 'Creer des Photos')
+
 @section('content')
 <form method="POST" action="{{ route('admin.photos.store') }}" enctype="multipart/form-data">
 @csrf

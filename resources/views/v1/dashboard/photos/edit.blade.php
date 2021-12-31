@@ -1,4 +1,6 @@
 @extends('v1.dashboard.layouts.default')
+@section('title', 'Modifier des Photos')
+
 @section('content')
 <form method="POST" action="{{ route('admin.photos.update',$photo->id) }}" enctype="multipart/form-data">
 @csrf

@@ -1,4 +1,6 @@
 @extends('v1.dashboard.layouts.default')
+@section('title', 'Modifier un album')
+
 @section('content')
 <form method="POST" action="{{ route('admin.albums.update',$album->id) }}">
 @csrf

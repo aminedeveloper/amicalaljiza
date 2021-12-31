@@ -1,4 +1,6 @@
 @extends('v1.dashboard.layouts.default')
+@section('title', 'Modifier Des categories')
+
 @section('content')
 <form method="POST" action="{{ route('admin.categories.update',$category->id) }}">
 @csrf

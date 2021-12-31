@@ -1,7 +1,9 @@
 @extends('v1.dashboard.layouts.default')
+@section('title', 'Listes des Projects')
+
 @section('content')
     <div class="card">
-        <div class="card-header border-0 pt-6">
+        <div class="card-header border-0 pt-6"> 
             <div class="card-toolbar">
                 <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
                     <a href="{{route('admin.projects.create')}}" type="button" class="btn btn-primary">

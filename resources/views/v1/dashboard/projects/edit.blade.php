@@ -1,4 +1,6 @@
 @extends('v1.dashboard.layouts.default')
+@section('title', 'Modifier un Projects')
+
 @section('content')
 <form method="POST" action="{{ route('admin.projects.update',$project->id) }}" enctype="multipart/form-data">
 @csrf

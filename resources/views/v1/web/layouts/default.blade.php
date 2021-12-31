@@ -74,6 +74,7 @@
             background-color: rgba(255, 255, 255, 0.568);
         }
     </style>
+    @yield('styles')
 </head>
 
 <body class="demo-1">
@@ -127,6 +128,7 @@
     <script src="/assets/web/js/isotope.pkgd.js"></script>
     <script src="/assets/web/js/aos.js"></script>
 
+    @yield('scripts')
   
 </body>
 

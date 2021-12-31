@@ -1,4 +1,6 @@
 @extends('v1.dashboard.layouts.default')
+@section('title', 'Creer Des categories')
+
 @section('content')
 <form method="POST" action="{{ route('admin.categories.store') }}">
 @csrf
