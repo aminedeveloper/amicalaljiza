@@ -59,13 +59,24 @@ class NewsController extends Controller
         $news->description = $request->description;
         $news->category = $request->category;
         $news->step = $request->step;
+ 
 
-        $filename = date('d-m-Y');
-        $filename .= pathinfo($request->attachement->getClientOriginalName(), PATHINFO_FILENAME);
-        $filename .= '-' . time() . '-' . Str::random(4);
-        $filename .= '.' . $request->attachement->getClientOriginalExtension();
-        $filename = strtolower($filename);
-        Storage::disk('public')->putFileAs('news' , $request->attachement, $filename);
+        if($request->attachement->getClientOriginalExtension() == 'mp4')
+        {
+            $file = $request->attachement;
+            $filename = $file->getClientOriginalName();
+            $path = public_path().'/news/';
+            $file->move($path, $filename);
+
+        }else{
+            $filename = date('d-m-Y');
+            $filename .= pathinfo($request->attachement->getClientOriginalName(), PATHINFO_FILENAME);
+            $filename .= '-' . time() . '-' . Str::random(4);
+            $filename .= '.' . $request->attachement->getClientOriginalExtension();
+            $filename = strtolower($filename);
+            Storage::disk('public')->putFileAs('news' , $request->attachement, $filename);
+        }
+        
 
         $news->extension = $request->attachement->getClientOriginalExtension();
         $path = 'news/' . $filename;

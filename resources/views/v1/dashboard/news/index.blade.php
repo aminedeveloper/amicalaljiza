@@ -25,7 +25,7 @@
                         role="grid">
                         <thead>
                             <tr>
-                                <th>Image</th>
+                                <th width="30% ">Image</th>
                                 <th>Titre De la Nouvelle</th>
                                 <th>Categorie de la nouvelle</th>
                                 <th>Date de nouvelle</th>
@@ -35,13 +35,29 @@
                         <tbody class="text-gray-600 fw-bold">
                             @foreach ($news as $new)
                                 <tr>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="symbol symbol-50px me-5">
-                                                <img src="{{Storage::url($new->path)}}" class="" alt="">
+                                    @if($new->extension == 'mp4')
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="symbol symbol-50px me-5">
+                                       
+                                                    <video width="200" height="100" controls>
+                                                        <source src="/{{$new->path}}" type="video/mp4">
+                                                        <source src="/{{$new->path}}" type="video/ogg">
+                                                        Your browser does not support the video tag.
+                                                      </video>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
+                                        </td>
+                                    @else
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="symbol symbol-50px me-5">
+                                                    <img style="width: 200px;height: 100px;" src="{{Storage::url($new->path)}}" class="" alt="">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    @endif
+                                    
                                     <td>{{$new->name}}</td>
                                     <td>{{$new->category}}</td>
                                     <td>{{$new->created_at}}</td>
