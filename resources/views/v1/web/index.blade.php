@@ -16,7 +16,7 @@
                     <p>
                         {{$topnews->description}}
                     </p>
-                </div>
+                </div> 
             </div>
             @endif
             <div class="col-span-3 sm:col-span-12 res:col-span-12">
@@ -175,9 +175,11 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="carousel-slide testimonial-content">
-                                    <p>"Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium
+                                    <p>
+                                        "Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium
                                         lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram,
-                                        anteposuerit litterarum formas."</p>
+                                        anteposuerit litterarum formas."
+                                    </p>
                                     <div class="testimonial-details clearfix">
                                         <div class="testimonial-image">
                                             <img src="/assets/web/img/image008.jpg" alt="Mohammed En-nejjar">
@@ -197,12 +199,136 @@
                                         anteposuerit litterarum formas."</p>
                                     <div class="testimonial-details clearfix">
                                         <div class="testimonial-image">
-                                            <img src="/assets/web/img/testi-image-2.jpg" alt="Patrick Johanson">
+                                            <img src="/assets/web/img/image003.jpg" alt="Patrick Johanson">
                                         </div>
                                         <div class="testimonial-detail-inner">
-                                            <h5 class="testi-author">Richard Grant</h5>
+                                            <h5 class="testi-author">Abdelilah FAHMI</h5>
                                             <cite class="testi-job">
-                                                Architects </cite>
+                                                1er VICE PRESIDENT </cite>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="carousel-slide testimonial-content">
+                                    <p>"Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium
+                                        lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram,
+                                        anteposuerit litterarum formas."</p>
+                                    <div class="testimonial-details clearfix">
+                                        <div class="testimonial-image">
+                                            <img src="/assets/web/img/image002.jpg" alt="Patrick Johanson">
+                                        </div>
+                                        <div class="testimonial-detail-inner">
+                                            <h5 class="testi-author">  ABDELLATIF EL ALAMI</h5>
+                                            <cite class="testi-job">
+                                                2ème VICE PRESIDENT </cite>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="carousel-slide testimonial-content">
+                                    <p>"Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium
+                                        lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram,
+                                        anteposuerit litterarum formas."</p>
+                                    <div class="testimonial-details clearfix">
+                                        <div class="testimonial-image">
+                                            <img src="/assets/web/img/image010.jpg" alt="Patrick Johanson">
+                                        </div>
+                                        <div class="testimonial-detail-inner">
+                                            <h5 class="testi-author">  Taoufik EL OUDNI</h5>
+                                            <cite class="testi-job">
+                                                TRESORIER </cite>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="carousel-slide testimonial-content">
+                                    <p>"Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium
+                                        lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram,
+                                        anteposuerit litterarum formas."</p>
+                                    <div class="testimonial-details clearfix">
+                                        <div class="testimonial-image">
+                                            <img src="/assets/web/img/image008 (1).jpg" alt="Patrick Johanson">
+                                        </div>
+                                        <div class="testimonial-detail-inner">
+                                            <h5 class="testi-author">  Mohamed EN NAJJAR</h5>
+                                            <cite class="testi-job">
+                                                VICE SECRETAIRE GENERAL </cite>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="carousel-slide testimonial-content">
+                                    <p>"Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium
+                                        lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram,
+                                        anteposuerit litterarum formas."</p>
+                                    <div class="testimonial-details clearfix">
+                                        <div class="testimonial-image">
+                                            <img src="/assets/web/img/image006.jpg" alt="Patrick Johanson">
+                                        </div>
+                                        <div class="testimonial-detail-inner">
+                                            <h5 class="testi-author">         Marouan HAMDOUNI</h5>
+                                            <cite class="testi-job">
+                                                VICE TRESORIER </cite>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="carousel-slide testimonial-content">
+                                    <p>"Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium
+                                        lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram,
+                                        anteposuerit litterarum formas."</p>
+                                    <div class="testimonial-details clearfix">
+                                        <div class="testimonial-image">
+                                            <img src="/assets/web/img/image007.jpg" alt="Patrick Johanson">
+                                        </div>
+                                        <div class="testimonial-detail-inner">
+                                            <h5 class="testi-author">   Mohamed EL BOUANANI
+
+                                            </h5>
+                                            <cite class="testi-job">
+                                                CONSEILLER </cite>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="carousel-slide testimonial-content">
+                                    <p>"Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium
+                                        lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram,
+                                        anteposuerit litterarum formas."</p>
+                                    <div class="testimonial-details clearfix">
+                                        <div class="testimonial-image">
+                                            <img src="/assets/web/img/image005.jpg" alt="Patrick Johanson">
+                                        </div>
+                                        <div class="testimonial-detail-inner">
+                                            <h5 class="testi-author">                             Larbi NOURI
+
+                                            </h5>
+                                            <cite class="testi-job">
+                                                CONSEILLER </cite>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="carousel-slide testimonial-content">
+                                    <p>"Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium
+                                        lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram,
+                                        anteposuerit litterarum formas."</p>
+                                    <div class="testimonial-details clearfix">
+                                        <div class="testimonial-image">
+                                            <img src="/assets/web/img/image009.jpg" alt="Patrick Johanson">
+                                        </div>
+                                        <div class="testimonial-detail-inner">
+                                            <h5 class="testi-author">  Mustapha OUDRHIRI
+                                            </h5>
+                                            <cite class="testi-job">
+                                                CONSEILLER </cite>
                                         </div>
                                     </div>
                                 </div>
@@ -213,32 +339,32 @@
                 <div class="client-block col-span-6 sm:col-span-12 res:col-span-12 grid grid-cols-12 gap-12">
                     <div class="client-content col-span-4 sm:col-span-4 res:col-span-4">
                         <a href="">
-                            <img src="/assets/web/img/logo.png" alt="client-1">
+                            <img src="/assets/web/img/news1.jpg" alt="client-1">
                         </a>
                     </div>
                     <div class="client-content col-span-4 sm:col-span-4 res:col-span-4">
                         <a href="">
-                            <img src="/assets/web/img/logo.png" alt="client-2">
+                            <img src="/assets/web/img/blog-1.png" alt="client-2">
                         </a>
                     </div>
                     <div class="client-content col-span-4 sm:col-span-4 res:col-span-4">
                         <a href="">
-                            <img src="/assets/web/img/logo.png" alt="client-3">
+                            <img src="/assets/web/img/blog-1.png" alt="client-3">
                         </a>
                     </div>
                     <div class="client-content col-span-4 sm:col-span-4 res:col-span-4">
                         <a href="">
-                            <img src="/assets/web/img/logo.png" alt="client-4">
+                            <img src="/assets/web/img/luxury_taddart.jpg" alt="client-4">
                         </a>
                     </div>
                     <div class="client-content col-span-4 sm:col-span-4 res:col-span-4">
                         <a href="">
-                            <img src="/assets/web/img/logo.png" alt="client-5">
+                            <img src="/assets/web/img/1.jpg" alt="client-5">
                         </a>
                     </div>
                     <div class="client-content col-span-4 sm:col-span-4 res:col-span-4">
                         <a href="">
-                            <img src="/assets/web/img/logo.png" alt="client-6">
+                            <img src="/assets/web/img/bg-hero-image.png" alt="client-6">
                         </a>
                     </div>
                 </div>
@@ -264,32 +390,27 @@
                         <div class="date">
                             <a href="singlepost.html">
                                 <span class="thedate">23</span>
-                                <span class="month">August</span><span class="year">2021</span>
+                                <span class="month">Aout</span><span class="year">2021</span>
                             </a>
                         </div>
                         <div class="block-title clearfix">
                             <h3>
-                                <a href="singlepost.html">Phasellus molestie feugiat hendrerit Interdum</a>
+                                <a href="singlepost.html">Le Projet TADDART LUXURY HOMES</a>
                             </h3>
                             <div class="meta-wrapper clearfix">
                                 <span class="author">
                                     <a href="singlepost.html">
                                         <span class="author-name">
-                                            <span class="author-separator">by</span><span class="vcard"> Daniel
-                                                Zedda</span>
+                                            <span class="author-separator">by</span><span class="vcard"> amicale-aljiza</span>
                                         </span>
                                     </a>
-                                </span>
-                                <span class="standard-post-categories">
-                                    <span><i class="icon-simple-line-icons-136"></i></span>
-                                    <span><a href="#">Tips</a></span>
                                 </span>
                             </div>
                         </div>
                     </div>
                     <div class="post-thumb">
                         <a href="singlepost.html">
-                            <img src="/assets/web/img/vue1.jpg" alt="Phasellus molestie feugiat hendrerit Interdum">
+                            <img src="/assets/web/img/luxury_taddart (1).jpg" alt="Phasellus molestie feugiat hendrerit Interdum">
                             <div class="gedung-overlay"></div>
                         </a>
                     </div>
@@ -297,11 +418,54 @@
                         <div class="post-content">
                             <div class="post-text">
                                 <p>
-                                    Amicale AL JIZA s’est fixée comme objectif des développer des projets immobiliers novateurs ayant
-                                    deux dénominateurs communs : Un emplacement stratégique et un rapport qualité prix excellent.
-            
-                                    L’AMICALE AL JIZA est une association qui a été créée en 2014 par des enseignants des médecins et
-                                    des professionnels libérales, dans un but de promouvoir l’habitat à caractère associatif.
+                                    Nichée sur une colline en plein cœur de Californie, le projet Taddart Luxury Home est une résidence fermée et sécurisée qui s’étend sur plus de 14 hectares. Résolument raffiné et moderne, le projet Taddart Luxury Home offre à nos adhérents des appartements de très haut standing avec un large choix de superficies (80m2 au 300m2) et de commodités : mosquée et locaux commerciaux.
+                                </p>
+                            </div>
+                            <span class="btn-more">
+                                <a href="singlepost.html" class="read-more">Lire la suite</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-item col-span-6 sm:col-span-12 res:col-span-12">
+                    <div class="post-head clearfix">
+                        <div class="date">
+                            <a href="singlepost.html">
+                                <span class="thedate">23</span>
+                                <span class="month">Aout</span><span class="year">2021</span>
+                            </a>
+                        </div>
+                        <div class="block-title clearfix">
+                            <h3>
+                                <a href="singlepost.html">Nous sommes Amicale Al Jiza</a>
+                            </h3>
+                            <div class="meta-wrapper clearfix">
+                                <span class="author">
+                                    <a href="singlepost.html">
+                                        <span class="author-name">
+                                            <span class="author-separator">by</span><span class="vcard"> amicale-aljiza</span>
+                                        </span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-thumb">
+                        <a href="singlepost.html">
+                            <img src="/assets/web/img/1.jpg" alt="Phasellus molestie feugiat hendrerit Interdum">
+                            <div class="gedung-overlay"></div>
+                        </a>
+                    </div>
+                    <div class="post-content-wrap">
+                        <div class="post-content">
+                            <div class="post-text">
+                                <p>
+                                    Promouvoir l’habitat à caractère associatif, telle est la vocation de l’Amicale AL JIZA, association créée en 2013 et animée par de grandes missions :
+                                    Développer des projets immobiliers novateurs;
+Créer un espace de vie agréable et sécurisé offrant luxe et bien-être aux adhérents;
+Répondre aux besoins & attentes en matière de logement haut standing;
+Permettre aux adhérents d’acquérir un bien immobilier en toute sérénité;
+Offrir un large choix de superficies et de types de logements (linéaire, duplex).
                                 </p>
                             </div>
                             <span class="btn-more">

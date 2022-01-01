@@ -102,6 +102,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
                         <div class="team-inner-block clearfix">
                             <img src="/assets/web/img/image002.jpg" alt="team-1">
@@ -133,6 +134,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
                         <div class="team-inner-block clearfix">
                             <img src="/assets/web/img/image004.jpg" alt="team-1">
@@ -164,6 +166,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
                         <div class="team-inner-block clearfix">
                             <img src="/assets/web/img/image010.jpg" alt="team-1">
@@ -195,6 +198,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
                         <div class="team-inner-block clearfix">
                             <img src="/assets/web/img/image008 (1).jpg" alt="team-1">
@@ -225,6 +229,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
                         <div class="team-inner-block clearfix">
                             <img src="/assets/web/img/image006.jpg" alt="team-1">
@@ -257,6 +262,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
                         <div class="team-inner-block clearfix">
                             <img src="/assets/web/img/image007.jpg" alt="team-1">
@@ -291,6 +297,7 @@
                             </div>
                         </div>
                     </div>
+                    
                     <div class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
                         <div class="team-inner-block clearfix">
                             <img src="/assets/web/img/image005.jpg" alt="team-1">
