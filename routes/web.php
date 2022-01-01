@@ -32,7 +32,8 @@ Route::get('/nouveautes', [HomeController::class,'nouveautes'])->name('nouveaute
 Route::get('/projects', [HomeController::class,'projects'])->name('projects');
 Route::get('/tranches/{id}', [HomeController::class,'tranches'])->name('tranches');
 Route::get('/galleries/{id}', [HomeController::class,'galleries'])->name('galleries');
-Route::get('/photos',[HomeController::class,'lastPhotos'])->name('photos');
+Route::get('/photosrecenets',[HomeController::class,'lastPhotos'])->name('photos');
+Route::get('/videosrecenets',[HomeController::class,'lastVideos'])->name('videos');
 
 Route::middleware(['auth'])->group(function(){
 

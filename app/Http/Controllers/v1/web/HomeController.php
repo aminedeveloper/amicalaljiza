@@ -8,6 +8,7 @@ use App\Models\News;
 use App\Models\Photo;
 use App\Models\Project;
 use App\Models\Tranche;
+use App\Models\Video;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -66,7 +67,7 @@ class HomeController extends Controller
       return view('v1.web.pages.single.project',compact('tranche'));
    }
 
-   public function galleries($id)
+   public function galleries($id) 
    {
       $album = Album::where('id',$id)->first();
       return view('v1.web.pages.single.gallery',compact('album'));
@@ -76,5 +77,11 @@ class HomeController extends Controller
    {
       $photos = Photo::get();
       return view('v1.web.pages.last_photos',compact('photos'));
+   }
+
+   public function lastVideos()
+   {
+      $videos = Video::get();
+      return view('v1.web.pages.last_videos',compact('videos'));
    }
 }

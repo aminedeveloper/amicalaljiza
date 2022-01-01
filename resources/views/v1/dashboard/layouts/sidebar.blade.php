@@ -63,7 +63,7 @@
             </a>
         </div>
         <div class="menu-item">
-            <a class="menu-link" href="{{route('admin.videos.index')}}">
+            <a class="menu-link @if(Route::is('admin.videos.*'))  active @endif" href="{{route('admin.videos.index')}}">
                 <span class="menu-icon">
                     <i class="fas fa-film"></i>
                 </span>

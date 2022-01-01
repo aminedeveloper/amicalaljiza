@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Photo;
 use App\Models\Album;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
+use Illuminate\Support\Str; 
 class PhotosController extends Controller
 {
     /**

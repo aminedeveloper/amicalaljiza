@@ -121,7 +121,7 @@
                             <a style="background-color: #FFC31D" href="{{ route('photos') }}"
                                 class="button-basic-1">Photos
                                 Recentes</a>
-                            <a style="background-color: #0c1f38" href="projects.html" class="button-basic-1">Videos
+                            <a style="background-color: #0c1f38" href="{{ route('videos') }}" class="button-basic-1">Videos
                                 Recentes</a>
 
                         </div>
@@ -161,7 +161,7 @@
             var counters = $(".count");
             var countersQuantity = counters.length;
             var counter = [];
-
+ 
             for (i = 0; i < countersQuantity; i++) {
                 counter[i] = parseInt(counters[i].innerHTML);
             }

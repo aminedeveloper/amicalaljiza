@@ -10,7 +10,12 @@ class Album extends Model
     use HasFactory;
 
     public function photos()
-    {
+    { 
         return $this->hasMany(Photo::class);
+    }
+
+    public function videos()
+    { 
+        return $this->hasMany(Video::class);
     }
 }
