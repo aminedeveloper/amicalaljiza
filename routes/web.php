@@ -32,7 +32,7 @@ Route::get('/nouveautes', [HomeController::class,'nouveautes'])->name('nouveaute
 Route::get('/projects', [HomeController::class,'projects'])->name('projects');
 Route::get('/tranches/{id}', [HomeController::class,'tranches'])->name('tranches');
 Route::get('/galleries/{id}', [HomeController::class,'galleries'])->name('galleries');
-
+Route::get('/photos',[HomeController::class,'lastPhotos'])->name('photos');
 
 Route::middleware(['auth'])->group(function(){
 
@@ -46,6 +46,7 @@ Route::middleware(['auth'])->group(function(){
         Route::resource('photos',PhotosController::class);
         Route::resource('videos',VideosController::class);
         Route::resource('categories',CategoriesController::class);
+        
     });
 
 

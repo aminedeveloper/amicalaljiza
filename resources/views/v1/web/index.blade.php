@@ -26,7 +26,7 @@
                             @if($new->extension == 'mp4')
                             @if (in_array("acceuil", explode(',',$new->type)))
                                 <div class="client-content col-span-12 sm:col-span-4 res:col-span-4">
-                                    <video width="200" height="100" controls>
+                                    <video width="200" height="100" controls loop="true" autoplay="autoplay">
                                         <source src="/{{$new->path}}" type="video/mp4">
                                         <source src="/{{$new->path}}" type="video/ogg">
                                         Your browser does not support the video tag.
@@ -184,7 +184,7 @@
         <div class="testi-overlay"></div>
         <div class="container">
             <div class="test-client-wrap grid grid-cols-12 gap-20">
-                <div class="testi-block col-span-6 sm:col-span-12 res:col-span-12">
+                <div class="testi-block col-span-12 sm:col-span-12 res:col-span-12">
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
@@ -348,38 +348,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="client-block col-span-6 sm:col-span-12 res:col-span-12 grid grid-cols-12 gap-12">
-                    <div class="client-content col-span-4 sm:col-span-4 res:col-span-4">
-                        <a href="">
-                            <img src="/assets/web/img/news1.jpg" alt="client-1">
-                        </a>
-                    </div>
-                    <div class="client-content col-span-4 sm:col-span-4 res:col-span-4">
-                        <a href="">
-                            <img src="/assets/web/img/blog-1.png" alt="client-2">
-                        </a>
-                    </div>
-                    <div class="client-content col-span-4 sm:col-span-4 res:col-span-4">
-                        <a href="">
-                            <img src="/assets/web/img/blog-1.png" alt="client-3">
-                        </a>
-                    </div>
-                    <div class="client-content col-span-4 sm:col-span-4 res:col-span-4">
-                        <a href="">
-                            <img src="/assets/web/img/luxury_taddart.jpg" alt="client-4">
-                        </a>
-                    </div>
-                    <div class="client-content col-span-4 sm:col-span-4 res:col-span-4">
-                        <a href="">
-                            <img src="/assets/web/img/1.jpg" alt="client-5">
-                        </a>
-                    </div>
-                    <div class="client-content col-span-4 sm:col-span-4 res:col-span-4">
-                        <a href="">
-                            <img src="/assets/web/img/bg-hero-image.png" alt="client-6">
-                        </a>
                     </div>
                 </div>
             </div>

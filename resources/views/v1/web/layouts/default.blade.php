@@ -73,6 +73,28 @@
             margin-right: auto;
             background-color: rgba(255, 255, 255, 0.568);
         }
+
+        .count {
+            width: 60px;
+            height: 60px;
+            background: lightgray;
+            border-radius: 50%;
+            border: 1px solid gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            font-family: verdana;
+            float: left;
+            margin: 30px;
+            text-shadow: 1px 1px black;
+            -webkit-box-shadow: 0px 0px 72px -9px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 0px 0px 72px -9px rgba(0, 0, 0, 0.75);
+            box-shadow: 0px 0px 72px -9px rgba(0, 0, 0, 0.75);
+        }
+
     </style>
     @yield('styles')
 </head>
@@ -96,7 +118,8 @@
                         <h2>
                             Fournir Une solution Innovante </h2>
                         <div class="button-view" data-aos="fade-up">
-                            <a style="background-color: #FFC31D" href="projects.html" class="button-basic-1">Photos
+                            <a style="background-color: #FFC31D" href="{{ route('photos') }}"
+                                class="button-basic-1">Photos
                                 Recentes</a>
                             <a style="background-color: #0c1f38" href="projects.html" class="button-basic-1">Videos
                                 Recentes</a>
@@ -128,8 +151,38 @@
     <script src="/assets/web/js/isotope.pkgd.js"></script>
     <script src="/assets/web/js/aos.js"></script>
 
+    <script>
+        setTimeout(function() {
+            $('.image-title').css('background-image', 'url("/assets/web/img/about-image-1.png")').fadeIn(4000);
+        }, 5000);
+
+        $(window).on("load resize", function() {
+
+            var counters = $(".count");
+            var countersQuantity = counters.length;
+            var counter = [];
+
+            for (i = 0; i < countersQuantity; i++) {
+                counter[i] = parseInt(counters[i].innerHTML);
+            }
+
+            var count = function(start, value, id) {
+                var localStart = start;
+                setInterval(function() {
+                    if (localStart < value) {
+                        localStart++;
+                        counters[id].innerHTML = localStart;
+                    }
+                }, 4);
+            }
+
+            for (j = 0; j < countersQuantity; j++) {
+                count(0, counter[j], j);
+            }
+        });
+    </script>
     @yield('scripts')
-  
+
 </body>
 
 </html>

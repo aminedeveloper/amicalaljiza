@@ -53,7 +53,7 @@
     <div class="portfolio-block page-porto">
         <div class="container">
             <div id="gallery">
-                @foreach ($album->photos as $photo)
+                @foreach ($photos as $photo)
                     <a class="test-popup-link" href="{{ Storage::url($photo->path) }}">
                         <img src="{{ Storage::url($photo->path) }}">
                     </a>

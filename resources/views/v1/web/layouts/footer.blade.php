@@ -59,82 +59,13 @@
                     </div>
                     <div class="banner-text col-span-3 sm:col-span-12 res:col-span-12">
                         <div class="title">
-                            <h4 class="widget-title"><span class="wrap-1">Derniers  </span><span class="wrap-2">Travaux </span></h4>
+                            <h4 class="widget-title"><span class="wrap-1">Visiteurs  </span><span class="wrap-2"> </span></h4>
                         </div>
                         <div class="portfolio-thumb-widget">
                             <div class="portfolio-thumb-wrap grid grid-cols-12 gap-6">
-                                <div class="post-item col-span-4 sm:col-span-4 res:col-span-4">
-                                    <div class="inner-portfolio-widget">
-                                        <a href="single-porto.html">
-                                            <img src="/assets/web/img/logo.png" alt="latestwid-img">
-                                            <div class="overlay">
-                                                <div class="icon-wrap">
-                                                    <i class="icon-significon-link"></i>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="post-item col-span-4 sm:col-span-4 res:col-span-4">
-                                    <div class="inner-portfolio-widget">
-                                        <a href="single-porto.html">
-                                            <img src="/assets/web/img/logo.png" alt="latestwid-img">
-                                            <div class="overlay">
-                                                <div class="icon-wrap">
-                                                    <i class="icon-significon-link"></i>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="post-item col-span-4 sm:col-span-4 res:col-span-4">
-                                    <div class="inner-portfolio-widget">
-                                        <a href="single-porto.html">
-                                            <img src="/assets/web/img/logo.png" alt="latestwid-img">
-                                            <div class="overlay">
-                                                <div class="icon-wrap">
-                                                    <i class="icon-significon-link"></i>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="post-item col-span-4 sm:col-span-4 res:col-span-4">
-                                    <div class="inner-portfolio-widget">
-                                        <a href="single-porto.html">
-                                            <img src="/assets/web/img/logo.png" alt="latestwid-img">
-                                            <div class="overlay">
-                                                <div class="icon-wrap">
-                                                    <i class="icon-significon-link"></i>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="post-item col-span-4 sm:col-span-4 res:col-span-4">
-                                    <div class="inner-portfolio-widget">
-                                        <a href="single-porto.html">
-                                            <img src="/assets/web/img/logo.png" alt="latestwid-img">
-                                            <div class="overlay">
-                                                <div class="icon-wrap">
-                                                    <i class="icon-significon-link"></i>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="post-item col-span-4 sm:col-span-4 res:col-span-4">
-                                    <div class="inner-portfolio-widget">
-                                        <a href="single-porto.html">
-                                            <img src="/assets/web/img/logo.png" alt="latestwid-img">
-                                            <div class="overlay">
-                                                <div class="icon-wrap">
-                                                    <i class="icon-significon-link"></i>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
+                                <center>
+                                    <div class="count">100</div> 
+                                </center>
                             </div>
                         </div>
                     </div>
