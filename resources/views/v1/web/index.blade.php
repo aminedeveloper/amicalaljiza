@@ -22,7 +22,7 @@
             <div class="col-span-3 sm:col-span-12 res:col-span-12">
                 <div class="col-span-3 sm:col-span-12 res:col-span-12 grid grid-cols-12 gap-12">
                     @foreach ($news as $new)
-                        @if($new->id != $topnews->id)
+                       
                             @if (in_array("acceuil", explode(',',$new->type)))
                                 <div class="client-content col-span-12 sm:col-span-4 res:col-span-4">
                                     <a href="">
@@ -32,7 +32,7 @@
                                     <span class="line"></span>
                                 </div>
                             @endif
-                        @endif
+                        
                     @endforeach
                 </div>
             </div>
