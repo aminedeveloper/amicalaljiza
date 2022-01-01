@@ -3,7 +3,7 @@
 @section('content')
 <!-- BANNER GOAL -->
 <div class="banner-goal news-articles">
-    <div class="container">
+    <div class="container"> 
         <div class="banner-goal-wrap grid grid-cols-12 gap-20">
             @if($topnews)
             <div class="col-span-8 sm:col-span-12 res:col-span-12">
@@ -25,7 +25,7 @@
                         @if (in_array("acceuil", explode(',',$new->type)))
                             <div class="client-content col-span-12 sm:col-span-4 res:col-span-4">
                                 <a href="">
-                                    <img src="{{Storage::url($new->path)}}" alt="client-1">
+                                    <img style="width: 128px;" src="{{Storage::url($new->path)}}" alt="client-1">
                                 </a>
                                 <p>{{$new->name}}</p>
                                 <span class="line"></span>
