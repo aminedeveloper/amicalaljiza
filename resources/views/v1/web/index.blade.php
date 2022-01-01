@@ -1,7 +1,7 @@
 @extends('v1.web.layouts.default')
 
 @section('content')
-<!-- BANNER GOAL -->
+<!-- BANNER GOAL --> 
 <div class="banner-goal news-articles">
     <div class="container"> 
         <div class="banner-goal-wrap grid grid-cols-12 gap-20">
@@ -11,7 +11,10 @@
                     <img src="{{Storage::url($topnews->path)}}" alt="{{$topnews->name}}">
                 </div>
                 <div class="head-title col-span-8 sm:col-span-12 res:col-span-6">
-                    <h2> {{$topnews->name}} </h2>
+                    <a href="{{route('nouveautes.show',$topnews->id)}}">
+                        <h2> {{$topnews->name}} </h2>
+                        
+                    </a>
                     <span class="line"></span>
                     <p>
                         {{$topnews->description}}
@@ -26,22 +29,22 @@
                             @if($new->extension == 'mp4')
                             @if (in_array("acceuil", explode(',',$new->type)))
                                 <div class="client-content col-span-12 sm:col-span-4 res:col-span-4">
-                                    <video width="200" height="100" controls loop="true" autoplay="autoplay">
+                                    <video width="200" height="100" controls loop="true">
                                         <source src="/{{$new->path}}" type="video/mp4">
                                         <source src="/{{$new->path}}" type="video/ogg">
                                         Your browser does not support the video tag.
-                                      </video>
-                                    <p>{{$new->name}}</p>
+                                    </video>
+                                      <a href="{{route('nouveautes.show',$new->id)}}"><p>{{$new->name}}</p></a>
                                     <span class="line"></span>
                                 </div>
                             @endif
                             @else
                                 @if (in_array("acceuil", explode(',',$new->type)))
                                     <div class="client-content col-span-12 sm:col-span-4 res:col-span-4">
-                                        <a href="">
+                                        <a href="{{route('nouveautes.show',$new->id)}}">
                                             <img style="width: 128px;" src="{{Storage::url($new->path)}}" alt="client-1">
                                         </a>
-                                        <p>{{$new->name}}</p>
+                                        <a href="{{route('nouveautes.show',$new->id)}}"><p>{{$new->name}}</p></a>
                                         <span class="line"></span>
                                     </div>
                                 @endif

@@ -34,6 +34,7 @@ Route::get('/tranches/{id}', [HomeController::class,'tranches'])->name('tranches
 Route::get('/galleries/{id}', [HomeController::class,'galleries'])->name('galleries');
 Route::get('/photosrecenets',[HomeController::class,'lastPhotos'])->name('photos');
 Route::get('/videosrecenets',[HomeController::class,'lastVideos'])->name('videos');
+Route::get('/nouveautes/{id}',[HomeController::class,'newsShow'])->name('nouveautes.show');
 
 Route::middleware(['auth'])->group(function(){
 

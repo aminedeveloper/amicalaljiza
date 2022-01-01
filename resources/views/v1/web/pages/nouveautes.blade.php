@@ -17,13 +17,13 @@
                                     </div>
                                     <div class="block-title clearfix">
                                         <h3>
-                                            <a href="singlepost.html">{{$new->name}}</a>
+                                            <a href="{{route('nouveautes.show',$new->id)}}">{{$new->name}}</a>
                                         </h3>
                                     </div>
                                 </div>
                                 <div class="post-thumb">
-                                    <a href="singlepost.html">
-                                        <img src="{{Storage::url($new->path)}}" alt="Phasellus molestie feugiat hendrerit Interdum">
+                                    <a href="{{route('nouveautes.show',$new->id)}}">
+                                        <img src="{{Storage::url($new->path)}}" alt="{{$new->name}}">
                                         <div class="gedung-overlay"></div>
                                     </a>
                                 </div>
@@ -33,7 +33,7 @@
                                             <p>{{$new->description}}</p>
                                         </div>
                                         <span class="btn-more">
-                                            <a href="#" class="read-more">Avoir plus</a>
+                                            <a href="{{route('nouveautes.show',$new->id)}}" class="read-more">Avoir plus</a>
                                         </span>
                                     </div>
                                 </div>
@@ -75,7 +75,7 @@
                                         </a>
                                     </div>
                                 @endforeach
-                            </div>
+                            </div> 
                         </div>
                     </div>
                 </div>

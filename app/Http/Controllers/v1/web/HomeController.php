@@ -15,7 +15,7 @@ class HomeController extends Controller
 {
    public function index()
    {
-   $news = News::where('status',1)->orderBy('step', 'ASC')->get();
+   $news = News::where('status',1)->orderBy('step', 'ASC')->take(4)->get();
    $topnews = News::orderBy('step', 'ASC')->first();
 
    return view('v1.web.index',compact('news','topnews'));
@@ -48,8 +48,15 @@ class HomeController extends Controller
 
    public function nouveautes()
    {
-   $news = News::where('status',1)->orderBy('step', 'ASC')->get();
+      $news = News::where('status',1)->orderBy('step', 'ASC')->get();
       return view('v1.web.pages.nouveautes',compact('news'));
+   }
+
+   public function newsShow($id)
+   {
+      $new = News::where('id',$id)->first();
+      $news = News::where('status',1)->orderBy('step', 'ASC')->get();
+      return view('v1.web.pages.single.news',compact('new','news'));
    }
    
    public function projects()
