@@ -20,9 +20,9 @@ class CreateNewsTable extends Migration
             $table->string('name')->nullable();
             $table->string('description')->nullable();
             $table->string('category')->nullable();
-            $table->string('path');
-            $table->string('extension');
-            $table->integer('step');
+            $table->string('path')->nullable();
+            $table->string('extension')->nullable();
+            $table->integer('step')->nullable();
 
             $table->softDeletes();
             $table->timestamps();

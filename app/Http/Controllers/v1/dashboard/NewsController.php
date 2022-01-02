@@ -77,13 +77,14 @@ class NewsController extends Controller
                 $filename = strtolower($filename);
                 Storage::disk('public')->putFileAs('news' , $request->attachement, $filename);
             }
+            $news->extension = $request->attachement->getClientOriginalExtension();
+            $path = 'news/' . $filename;
+            $news->path = $path;
         }
         
         
 
-        $news->extension = $request->attachement->getClientOriginalExtension();
-        $path = 'news/' . $filename;
-        $news->path = $path;
+   
         $news->save();
 
         alert()->success('Félicitation','Nouvelle a été bien ajouté');
@@ -148,27 +149,28 @@ class NewsController extends Controller
         if($request->attachement)
         {
             if($request->attachement->getClientOriginalExtension() == 'mp4')
-                {
-                    $file = $request->attachement;
-                    $filename = $file->getClientOriginalName();
-                    $path = public_path().'/news/';
-                    $file->move($path, $filename);
+            {
+                $file = $request->attachement;
+                $filename = $file->getClientOriginalName();
+                $path = public_path().'/news/';
+                $file->move($path, $filename);
 
-                }else{
-                    $filename = date('d-m-Y');
-                    $filename .= pathinfo($request->attachement->getClientOriginalName(), PATHINFO_FILENAME);
-                    $filename .= '-' . time() . '-' . Str::random(4);
-                    $filename .= '.' . $request->attachement->getClientOriginalExtension();
-                    $filename = strtolower($filename);
-                    Storage::disk('public')->putFileAs('news' , $request->attachement, $filename);
-                }
+            }else{
+                $filename = date('d-m-Y');
+                $filename .= pathinfo($request->attachement->getClientOriginalName(), PATHINFO_FILENAME);
+                $filename .= '-' . time() . '-' . Str::random(4);
+                $filename .= '.' . $request->attachement->getClientOriginalExtension();
+                $filename = strtolower($filename);
+                Storage::disk('public')->putFileAs('news' , $request->attachement, $filename);
+            }
+            $news->extension = $request->attachement->getClientOriginalExtension();
+            
+            $path = 'news/' . $filename;
+            $news->path = $path;
         }
                 
                 
 
-        $news->extension = $request->attachement->getClientOriginalExtension();
-        $path = 'news/' . $filename;
-        $news->path = $path;
         $news->save();
 
         alert()->success('Félicitation','Nouvelle a été bien Editer');
