@@ -71,7 +71,7 @@
             width: 69%;
             margin-left: auto;
             margin-right: auto;
-            background-color: rgba(255, 255, 255, 0.568);
+            background-color: rgba(88, 88, 88, 0.568);
         }
 
         .count {
@@ -155,6 +155,14 @@
         setTimeout(function() {
             $('.image-title').css('background-image', 'url("/assets/web/img/about-image-1.png")').fadeIn(4000);
         }, 5000);
+        
+        setTimeout(function() {
+            $('.image-title').css('background-image', 'url("/assets/web/img/slider3.jpg")').fadeIn(4000);
+        }, 10000);
+
+        setTimeout(function() {
+            $('.image-title').css('background-image', 'url("/assets/web/img/slider2.jpg")').fadeIn(4000);
+        }, 17000);
 
         $(window).on("load resize", function() {
 

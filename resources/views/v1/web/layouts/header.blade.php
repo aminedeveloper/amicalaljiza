@@ -49,13 +49,13 @@
             </ul>
         </nav>
         <!-- NAVIGATION END -->
-        <div class="header-info head-item clearfix">
+        {{-- <div class="header-info head-item clearfix">
             <div class="info-wrap">
                 <div class="search-wrap">
                     <button id="btn-search" class="btn btn--search"><i class="icon-simple-line-icons-143"></i></button>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
     <!-- search -->
     <div class="search">

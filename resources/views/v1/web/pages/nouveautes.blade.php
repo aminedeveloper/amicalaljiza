@@ -49,7 +49,7 @@
                             <input type="search" class="field search__input" name="search" id="search" placeholder="Type and hit enter ...">
                             <button type="submit" class="submit search-button" value=""><i class="icon-simple-line-icons-143"></i></button>
                         </form>
-                    </div>
+                    </div> 
                     <div class="gedung-widget widget-sidebar">
                         <div class="title">
                             <h4 class="widget-title"><span class="wrap-1">Dernier </span><span class="wrap-2">Nouvelles </span></h4>
