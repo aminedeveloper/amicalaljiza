@@ -1,5 +1,5 @@
 @extends('v1.dashboard.layouts.default')
-@section('title', 'Ajouter une nouvelle')
+@section('title', 'Editer une nouvelle')
 @section('content')
     <div class="card">
         <form class="form" method="POST" action="{{ route('admin.nouveautes.update',$news->id) }}" enctype="multipart/form-data">
