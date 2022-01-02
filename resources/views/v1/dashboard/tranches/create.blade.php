@@ -8,9 +8,9 @@
         <div class="col-12 mt-3">
             <!--begin::Image input-->
             <div class="image-input image-input-outline" data-kt-image-input="true"
-                style="background-image: url(/assets/dashboard/media/avatars/vd2.jpg)">
+                style="background-image: url()">
                 <div class="image-input-wrapper w-450px h-325px"
-                    style="background-image: url(/assets/dashboard/media/avatars/vd2.jpg)">
+                    style="background-image: url()">
                 </div>
                 <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
                     data-kt-image-input-action="change" data-bs-toggle="tooltip" data-bs-dismiss="click"
@@ -34,3 +34,4 @@
         <input type="submit" class="btn btn-primary mt-2" value="Ajouter">
     </form>
 @endsection
+ 

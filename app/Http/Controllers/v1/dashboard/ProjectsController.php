@@ -41,7 +41,7 @@ class ProjectsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request) 
     {
        $project = new Project();
        $project->name = $request->name;
