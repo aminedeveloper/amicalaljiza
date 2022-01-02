@@ -18,10 +18,10 @@
                                         </video>
                                     </div>
                                     <div class="head-title col-span-8 sm:col-span-12 res:col-span-6">
-                                        <a href="{{ route('nouveautes.show', $new->id) }}">
+                                      
                                             <h2> {{ $new->name }} </h2>
                 
-                                        </a>
+                                     
                                         <span class="line"></span>
                                         <p>
                                             {{ $new->description }}
@@ -36,10 +36,10 @@
                                         <img src="{{ Storage::url($new->path) }}" alt="{{ $new->name }}">
                                     </div>
                                     <div class="head-title col-span-8 sm:col-span-12 res:col-span-6">
-                                        <a href="{{ route('nouveautes.show', $new->id) }}">
+                               
                                             <h2> {{ $new->name }} </h2>
                 
-                                        </a>
+                                      
                                         <span class="line"></span>
                                         <p>
                                             {{ $new->description }}
@@ -95,7 +95,7 @@
     <!-- BANNER GOAL END -->
 
     <!-- BANNER GOAL -->
-    <div class="banner-goal">
+    <div style="background-color: #f2b100" class="banner-goal ">
         <div class="container">
             <div class="banner-goal-wrap grid grid-cols-12 gap-20">
                 <div class="block-system col-span-6 sm:col-span-12 res:col-span-6" data-aos="fade-right">

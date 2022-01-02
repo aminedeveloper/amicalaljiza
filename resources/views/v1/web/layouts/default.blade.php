@@ -47,7 +47,7 @@
         }
 
         .background-overlay {
-            background-color: rgba(0, 0, 0, 0.3);
+            background-color: rgba(0, 0, 0, 0.164)
         }
 
         .image-title {
@@ -71,7 +71,7 @@
             width: 69%;
             margin-left: auto;
             margin-right: auto;
-            background-color: rgba(88, 88, 88, 0.568);
+            background-color: rgba(255, 255, 255, 0.404);
         }
 
         .count {
@@ -162,7 +162,7 @@
 
         setTimeout(function() {
             $('.image-title').css('background-image', 'url("/assets/web/img/slider2.jpg")').fadeIn(4000);
-        }, 17000);
+        }, 20000);
 
         $(window).on("load resize", function() {
 
