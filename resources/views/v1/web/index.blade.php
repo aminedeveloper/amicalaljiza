@@ -9,7 +9,8 @@
                     @if ($new->id)
                         @if ($new->extension == 'mp4')
                             @if (in_array('acceuil', explode(',', $new->type)))
-                                <div id="news_{{$new->id}}"  @if ($new->id == $topnews->id) style="display:block;" @else style="display:none;" @endif class="col-span-8 sm:col-span-12 res:col-span-12 divnews">
+                                <div id="news_{{ $new->id }}" @if ($new->id == $topnews->id) style="display:block;" @else style="display:none;" @endif
+                                    class="col-span-8 sm:col-span-12 res:col-span-12 divnews">
                                     <div class="col-span-8 sm:col-span-12 res:col-span-6" data-aos="fade-right">
                                         <video width="600" height="400" controls loop="true">
                                             <source src="/{{ $new->path }}" type="video/mp4">
@@ -18,10 +19,8 @@
                                         </video>
                                     </div>
                                     <div class="head-title col-span-8 sm:col-span-12 res:col-span-6">
-                                      
-                                            <h2> {{ $new->name }} </h2>
-                
-                                     
+
+                                        <h4> {{ $new->name }} </h4>
                                         <span class="line"></span>
                                         <p>
                                             {{ $new->description }}
@@ -31,15 +30,16 @@
                             @endif
                         @else
                             @if (in_array('acceuil', explode(',', $new->type)))
-                                <div id="news_{{$new->id}}" @if ($new->id == $topnews->id) style="display:block;" @else style="display:none;" @endif class="col-span-8 sm:col-span-12 res:col-span-12 divnews">
+                                <div id="news_{{ $new->id }}" @if ($new->id == $topnews->id) style="display:block;" @else style="display:none;" @endif
+                                    class="col-span-8 sm:col-span-12 res:col-span-12 divnews">
                                     <div class="col-span-8 sm:col-span-12 res:col-span-6" data-aos="fade-right">
                                         <img src="{{ Storage::url($new->path) }}" alt="{{ $new->name }}">
                                     </div>
                                     <div class="head-title col-span-8 sm:col-span-12 res:col-span-6">
-                               
-                                            <h2> {{ $new->name }} </h2>
-                
-                                      
+
+                                        <h4> {{ $new->name }} </h4>
+
+
                                         <span class="line"></span>
                                         <p>
                                             {{ $new->description }}
@@ -51,7 +51,7 @@
                     @endif
                 @endforeach
 
-               
+
 
                 <div class="col-span-3 sm:col-span-12 res:col-span-12">
                     <div class="col-span-3 sm:col-span-12 res:col-span-12 grid grid-cols-12 gap-12">
@@ -65,7 +65,7 @@
                                                 <source src="/{{ $new->path }}" type="video/ogg">
                                                 Your browser does not support the video tag.
                                             </video>
-                                            <a news="news_{{$new->id}}" class="newsbtn" href="javascript:;">
+                                            <a news="news_{{ $new->id }}" class="newsbtn" href="javascript:;">
                                                 <p>{{ $new->name }}</p>
                                             </a>
                                             <span class="line"></span>
@@ -78,7 +78,7 @@
                                                 <img style="width: 128px;" src="{{ Storage::url($new->path) }}"
                                                     alt="client-1">
                                             </a>
-                                            <a news="news_{{$new->id}}" href="javascript:;" class="newsbtn">
+                                            <a news="news_{{ $new->id }}" href="javascript:;" class="newsbtn">
                                                 <p>{{ $new->name }}</p>
                                             </a>
                                             <span class="line"></span>
@@ -131,10 +131,10 @@
                 <div class="portfolio-button col-span-6 sm:col-span-12 res:col-span-12">
                     <a href="#" class="button-basic-1">Voir Tous Les Projets</a>
                 </div>
-            </div> 
+            </div>
             <div class="portfolio-block-wrap">
                 <div id="mobile-filter-id" class="mobile-filter clearfix">
-                    <button id="filter-icon"> 
+                    <button id="filter-icon">
                         <span class="bar bar-1"></span>
                         <span class="bar bar-2"></span>
                         <span class="bar bar-3"></span>
@@ -143,7 +143,7 @@
                 </div>
                 <div id="filters" class="button-group">
                     <button class="button is-checked" data-filter="*">Tout</button>
-                        
+
                     @foreach ($tranches as $tranche)
                         <button class="button"
                             data-filter=".tranche_{{ $tranche->id }}">{{ $tranche->name }}</button>
@@ -160,7 +160,8 @@
                                             <div class="caption-inside">
                                                 <h3 class="portfolio-loop-title ih-fade-down ih-delay-sm">
                                                     {{ $project->name }} </h3>
-                                                <h5 class="portfolio-category ih-fade-up ih-delay-sm"> {{ $project->category->name }}</h5>
+                                                <h5 class="portfolio-category ih-fade-up ih-delay-sm">
+                                                    {{ $project->category->name }}</h5>
                                             </div>
                                         </figcaption>
                                     </figure>
@@ -340,7 +341,7 @@
                         </div>
                     </div>
                 </div> --}}
-                
+
             </div>
             <div class="team-block-grid grid grid-cols-12 gap-12">
 
@@ -397,38 +398,38 @@
                 </div>
 
                 <div class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
-                       <div class="swiper-slide">
-                            <div class="carousel-slide testimonial-content">
-                                <div class="testimonial-details clearfix">
-                                    <div class="testimonial-image">
-                                        <img src="/assets/web/img/image010.jpg" alt="Patrick Johanson">
-                                    </div>
-                                    <div class="testimonial-detail-inner">
-                                        <h5 class="testi-author"> Taoufik EL OUDNI</h5>
-                                        <cite class="testi-job">
-                                            TRESORIER </cite>
-                                    </div>
+                    <div class="swiper-slide">
+                        <div class="carousel-slide testimonial-content">
+                            <div class="testimonial-details clearfix">
+                                <div class="testimonial-image">
+                                    <img src="/assets/web/img/image010.jpg" alt="Patrick Johanson">
+                                </div>
+                                <div class="testimonial-detail-inner">
+                                    <h5 class="testi-author"> Taoufik EL OUDNI</h5>
+                                    <cite class="testi-job">
+                                        TRESORIER </cite>
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </div>
 
 
                 <div class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
-                     <div class="swiper-slide">
-                            <div class="carousel-slide testimonial-content">
-                                <div class="testimonial-details clearfix">
-                                    <div class="testimonial-image">
-                                        <img src="/assets/web/img/image006.jpg" alt="Patrick Johanson">
-                                    </div>
-                                    <div class="testimonial-detail-inner">
-                                        <h5 class="testi-author"> Marouan HAMDOUNI</h5>
-                                        <cite class="testi-job">
-                                            VICE TRESORIER </cite>
-                                    </div>
+                    <div class="swiper-slide">
+                        <div class="carousel-slide testimonial-content">
+                            <div class="testimonial-details clearfix">
+                                <div class="testimonial-image">
+                                    <img src="/assets/web/img/image006.jpg" alt="Patrick Johanson">
+                                </div>
+                                <div class="testimonial-detail-inner">
+                                    <h5 class="testi-author"> Marouan HAMDOUNI</h5>
+                                    <cite class="testi-job">
+                                        VICE TRESORIER </cite>
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </div>
 
                 <div class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
@@ -449,7 +450,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
                     <div class="swiper-slide">
                         <div class="carousel-slide testimonial-content">
@@ -499,7 +500,7 @@
                     <span class="line"></span>
                 </div>
                 <div class="blog-button col-span-6 sm:col-span-12 res:col-span-12">
-                    <a href="{{route('nouveautes')}}" class="button-basic-3">Voir toutes les actualités</a>
+                    <a href="{{ route('nouveautes') }}" class="button-basic-3">Voir toutes les actualités</a>
                 </div>
             </div>
             <div class="blog-section blog-title-wrap grid grid-cols-12 gap-20">
@@ -508,17 +509,18 @@
                         <div class="post-head clearfix">
                             <div class="date">
                                 <a href="singlepost.html">
-                                    <span class="thedate">{{$new->created_at->format('d')}}</span>
-                                    <span class="month">{{$new->created_at->format('F')}}</span><span class="year">{{$new->created_at->format('Y')}}</span>
+                                    <span class="thedate">{{ $new->created_at->format('d') }}</span>
+                                    <span class="month">{{ $new->created_at->format('F') }}</span><span
+                                        class="year">{{ $new->created_at->format('Y') }}</span>
                                 </a>
                             </div>
                             <div class="block-title clearfix">
                                 <h3>
-                                    <a href="{{route('nouveautes.show',$new->id)}}">{{$new->name}}</a>
+                                    <a href="{{ route('nouveautes.show', $new->id) }}">{{ $new->name }}</a>
                                 </h3>
                                 <div class="meta-wrapper clearfix">
                                     <span class="author">
-                                        <a href="{{route('nouveautes.show',$new->id)}}">
+                                        <a href="{{ route('nouveautes.show', $new->id) }}">
                                             <span class="author-name">
                                                 <span class="author-separator">by</span><span class="vcard">
                                                     amicale-aljiza</span>
@@ -529,7 +531,7 @@
                             </div>
                         </div>
                         <div class="post-thumb">
-                            <a href="{{route('nouveautes.show',$new->id)}}">
+                            <a href="{{ route('nouveautes.show', $new->id) }}">
                                 @if ($new->extension == 'mp4')
                                     <video width="500" height="300" controls loop="true">
                                         <source src="/{{ $new->path }}?{{ $new->id }}" type="video/mp4">
@@ -537,10 +539,10 @@
                                         Your browser does not support the video tag.
                                     </video>
                                 @else
-                                    <img src="{{Storage::url($new->path)}}"
-                                    alt="Phasellus molestie feugiat hendrerit Interdum">
+                                    <img src="{{ Storage::url($new->path) }}"
+                                        alt="Phasellus molestie feugiat hendrerit Interdum">
                                 @endif
-                               
+
                                 <div class="gedung-overlay"></div>
                             </a>
                         </div>
@@ -548,11 +550,12 @@
                             <div class="post-content">
                                 <div class="post-text">
                                     <p>
-                                        {{$new->description}}
+                                        {{ $new->description }}
                                     </p>
                                 </div>
                                 <span class="btn-more">
-                                    <a href="{{route('nouveautes.show',$new->id)}}" class="read-more">Lire la suite</a>
+                                    <a href="{{ route('nouveautes.show', $new->id) }}" class="read-more">Lire la
+                                        suite</a>
                                 </span>
                             </div>
                         </div>
@@ -605,13 +608,13 @@
 
 @section('scripts')
     <script>
-        $('.newsbtn').click(function(){
+        $('.newsbtn').click(function() {
             let id = $(this).attr("news");
             let old = $('.divnews');
             for (let i = 0; i < old.length; i++) {
                 $(old[i]).hide();
             }
-            $('#'+id).show();
+            $('#' + id).show();
         });
     </script>
 @endsection
