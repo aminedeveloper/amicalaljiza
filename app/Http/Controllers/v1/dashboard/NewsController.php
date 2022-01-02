@@ -107,7 +107,9 @@ class NewsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $news = News::where('id',$id)->first();
+
+        return view('v1.dashboard.news.edit',compact('news'));
     }
 
     /**
@@ -119,7 +121,53 @@ class NewsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $news = News::where('id',$id)->first();
+
+        if(count($request->type) == 2)
+        {
+           foreach ($request->type as $key => $value) {
+               $news->type .= $value .',';
+           }
+        }
+        if(count($request->type) == 1)
+        {
+            foreach ($request->type as $key => $value) {
+                $news->type = $value ;
+            }
+        }
+
+        $news->status = $request->status;
+        $news->name = $request->name;
+        $news->description = $request->description;
+        $news->category = $request->category;
+        $news->step = $request->step;
+ 
+
+        if($request->attachement->getClientOriginalExtension() == 'mp4')
+        {
+            $file = $request->attachement;
+            $filename = $file->getClientOriginalName();
+            $path = public_path().'/news/';
+            $file->move($path, $filename);
+
+        }else{
+            $filename = date('d-m-Y');
+            $filename .= pathinfo($request->attachement->getClientOriginalName(), PATHINFO_FILENAME);
+            $filename .= '-' . time() . '-' . Str::random(4);
+            $filename .= '.' . $request->attachement->getClientOriginalExtension();
+            $filename = strtolower($filename);
+            Storage::disk('public')->putFileAs('news' , $request->attachement, $filename);
+        }
+        
+
+        $news->extension = $request->attachement->getClientOriginalExtension();
+        $path = 'news/' . $filename;
+        $news->path = $path;
+        $news->save();
+
+        alert()->success('Félicitation','Nouvelle a été bien Editer');
+
+        return redirect(route('admin.nouveautes.index'));
     }
 
     /**
@@ -130,6 +178,9 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $news = News::where('id',$id)->first();
+        $news->delete();
+
+        return redirect(route('admin.nouveautes.index'));
     }
 }
