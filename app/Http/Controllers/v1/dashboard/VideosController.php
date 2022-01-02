@@ -48,10 +48,10 @@ class VideosController extends Controller
             $filename = $file->getClientOriginalName();
             $path = 'assets/videos/';
             $file->move($path, $filename);
-
+            $path = 'videos/' . $filename;
+            $video->path = $path;
        }
-       $path = 'videos/' . $filename;
-       $video->path = $path;
+    
        $video->save();
        alert()->success('Félicitation','Video a été bien ajouté');
        return redirect(route('admin.videos.index'));
@@ -76,9 +76,9 @@ class VideosController extends Controller
      */
     public function edit($id)
     {
-        $photo = Photo::where('id',$id)->first() ?? abort(404);
+        $video = Video::where('id',$id)->first() ?? abort(404);
         $albums = Album::get();
-        return view('v1.dashboard.photos.edit',compact('albums','photo'));
+        return view('v1.dashboard.videos.edit',compact('albums','video'));
     }
 
     /**
@@ -90,23 +90,20 @@ class VideosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $photo = Photo::where('id',$id)->first() ?? abort(404);
-        $photo->description = $request->description;
-        $photo->album_id = $request->album;
-        if($request->avatar){
-            $filename = date('d-m-Y');
-            $filename .= pathinfo($request->avatar->getClientOriginalName(), PATHINFO_FILENAME);
-            $filename .= '-' . time() . '-' . Str::random(4);
-            $filename .= '.' . $request->avatar->getClientOriginalExtension();
-            $filename = strtolower($filename);
-            Storage::disk('public')->putFileAs('photos' , $request->avatar, $filename);
-            //    $news->extension = $request->attachement->getClientOriginalExtension();
-            $path = 'photos/' . $filename;
-            $photo->path = $path;
+        $video = Video::where('id',$id)->first() ?? abort(404);
+        $video->description = $request->description;
+        $video->album_id = $request->album;
+        if($request->attachement){
+            $file = $request->attachement;
+            $filename = $file->getClientOriginalName();
+            $path = 'assets/videos/';
+            $file->move($path, $filename);
+            $path = 'videos/' . $filename;
+            $video->path = $path;
        }
-       $photo->save();
-       alert()->success('Félicitation','Photo a été bien modifié');
-       return redirect(route('admin.photos.index'));
+       $video->save();
+       alert()->success('Félicitation','Video a été bien modifié');
+       return redirect(route('admin.videos.index'));
     }
 
     /**
@@ -117,9 +114,9 @@ class VideosController extends Controller
      */
     public function destroy($id)
     {
-        $photo = Photo::where('id',$id)->first() ?? abort(404);
-        $photo->delete();
-        alert()->success('Félicitation','Photo a été bien supprimé');
-        return redirect(route('admin.photos.index'));
+        $video = Video::where('id',$id)->first() ?? abort(404);
+        $video->delete();
+        alert()->success('Félicitation','Video a été bien supprimé');
+        return redirect(route('admin.videos.index'));
     }
 }

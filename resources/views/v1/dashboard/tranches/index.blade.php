@@ -11,7 +11,7 @@
                                     transform="rotate(-90 11.364 20.364)" fill="black"></rect>
                                 <rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="black"></rect>
                             </svg>
-                        </span>
+                        </span> 
                         Ajouter une tranche
                     </a>
                 </div>
@@ -32,7 +32,20 @@
                         <tbody class="text-gray-600 fw-bold">
                            @foreach ($tranches as $tranche )
                                <tr>
-                                  <td> {{ $tranche->name }} </td>
+                                  <td>
+                                    <div class="d-flex align-items-center">
+                                        <!--begin::Avatar-->
+                                        <div class="symbol symbol-50px me-5">
+                                            <img src="{{Storage::url($tranche->path)}}" class="" alt="">
+                                        </div>
+                                        <!--end::Avatar-->
+                                        <!--begin::Text-->
+                                        <div class="flex-grow-1">
+                                            <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">{{$tranche->name}}</a>
+                                        </div>
+                                        <!--end::Text-->
+                                    </div>
+                                  </td>
                                    <td>{{date('d-m-Y', strtotime($tranche->created_at))}}</td>
                                    <td>
                                         <a href="{{ route('admin.tranches.edit',$tranche->id) }}" class=" btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">

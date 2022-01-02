@@ -28,7 +28,7 @@
 
                 </div>
 
-                <div class="grid portfolio-block-grid">
+                <div class="grid portfolio-block-grid"> 
                     @foreach ($tranches as $tranche)
                         <div class="element-item transition tranche_{{ $tranche->id }} column-3"
                             data-category="transition">

@@ -30,7 +30,7 @@
                     </ul>
                 </li>
                 <li class="menu-item"><a href="{{route('nouveautes')}}" class="menu-link">Nouveautés</a></li>
-                <li class="menu-item"><a href="{{route('projects')}}" class="menu-link">Projets</a>
+                <li class="menu-item"><a href="{{route('projects')}}" class="menu-link">Tranches</a>
                     <ul class="dropdown">
                         @foreach ($tranches as $tranche)
                             <li class="menu-item"><a href="{{route('tranches',$tranche->id)}}">{{$tranche->name}}</a></li>

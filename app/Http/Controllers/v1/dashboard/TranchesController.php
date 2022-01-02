@@ -5,9 +5,11 @@ namespace App\Http\Controllers\v1\dashboard;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Tranche;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class TranchesController extends Controller
-{
+{ 
     /**
      * Display a listing of the resource.
      *
@@ -34,11 +36,22 @@ class TranchesController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
-     */
+     */ 
     public function store(Request $request)
     {
        $tranche = new Tranche();
        $tranche->name = $request->name;
+       if($request->avatar){
+            $filename = date('d-m-Y');
+            $filename .= pathinfo($request->avatar->getClientOriginalName(), PATHINFO_FILENAME);
+            $filename .= '-' . time() . '-' . Str::random(4);
+            $filename .= '.' . $request->avatar->getClientOriginalExtension();
+            $filename = strtolower($filename);
+            Storage::disk('public')->putFileAs('tranches' , $request->avatar, $filename);
+            //    $news->extension = $request->attachement->getClientOriginalExtension();
+            $path = 'tranches/' . $filename;
+            $tranche->path = $path;
+        }
        $tranche->save();
        alert()->success('Félicitation','tranche a été bien modifié');
        return redirect(route('admin.tranches.index'));
@@ -78,6 +91,17 @@ class TranchesController extends Controller
     {
         $tranche = Tranche::where('id',$id)->first() ?? abort(404);
         $tranche->name = $request->name;
+        if($request->avatar){
+            $filename = date('d-m-Y');
+            $filename .= pathinfo($request->avatar->getClientOriginalName(), PATHINFO_FILENAME);
+            $filename .= '-' . time() . '-' . Str::random(4);
+            $filename .= '.' . $request->avatar->getClientOriginalExtension();
+            $filename = strtolower($filename);
+            Storage::disk('public')->putFileAs('tranches' , $request->avatar, $filename);
+            //    $news->extension = $request->attachement->getClientOriginalExtension();
+            $path = 'tranches/' . $filename;
+            $tranche->path = $path;
+        }
         $tranche->save();
         alert()->success('Félicitation','tranche a été bien modifié');
         return redirect(route('admin.tranches.index'));

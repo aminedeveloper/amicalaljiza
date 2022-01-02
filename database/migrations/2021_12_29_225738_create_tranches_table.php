@@ -16,7 +16,8 @@ class CreateTranchesTable extends Migration
         Schema::create('tranches', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-
+            $table->string('path');
+ 
             $table->softDeletes();
             $table->timestamps();
         });

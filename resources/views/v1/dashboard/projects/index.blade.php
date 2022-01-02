@@ -1,5 +1,5 @@
 @extends('v1.dashboard.layouts.default')
-@section('title', 'Listes des Projects')
+@section('title', 'Listes des Projects') 
 
 @section('content')
     <div class="card">

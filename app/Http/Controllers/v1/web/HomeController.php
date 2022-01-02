@@ -18,8 +18,8 @@ class HomeController extends Controller
       $news = News::where('status',1)->orderBy('step', 'DESC')->take(4)->get();
       $topnews = News::orderBy('step', 'DESC')->first();
 
- 
-      return view('v1.web.index',compact('news','topnews'));
+      $tranches = Tranche::get();
+      return view('v1.web.index',compact('news','topnews','tranches'));
    }
 
    public function about()

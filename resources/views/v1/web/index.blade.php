@@ -131,10 +131,10 @@
                 <div class="portfolio-button col-span-6 sm:col-span-12 res:col-span-12">
                     <a href="#" class="button-basic-1">Voir Tous Les Projets</a>
                 </div>
-            </div>
+            </div> 
             <div class="portfolio-block-wrap">
                 <div id="mobile-filter-id" class="mobile-filter clearfix">
-                    <button id="filter-icon">
+                    <button id="filter-icon"> 
                         <span class="bar bar-1"></span>
                         <span class="bar bar-2"></span>
                         <span class="bar bar-3"></span>
@@ -143,76 +143,31 @@
                 </div>
                 <div id="filters" class="button-group">
                     <button class="button is-checked" data-filter="*">Tout</button>
-                    <button class="button" data-filter=".tranche-1">Tranche 1</button>
-                    <button class="button" data-filter=".tranche-2">Tranche 2</button>
-                    <button class="button" data-filter=".tranche-3">Tranche 3</button>
-                    <button class="button" data-filter=".tranche-4">Tranche 4</button>
+                        
+                    @foreach ($tranches as $tranche)
+                        <button class="button"
+                            data-filter=".tranche_{{ $tranche->id }}">{{ $tranche->name }}</button>
+                    @endforeach
                 </div>
                 <div class="grid portfolio-block-grid">
-                    <div class="element-item transition tranche-1 tablet-column-3  column-3" data-category="transition">
-                        <div class="item-wrap">
-                            <a href="single-porto.html">
-                                <figure class="portfolio-image">
-                                    <img src="/assets/web/img/vue1.jpg" alt="Porto Image 1">
-                                    <figcaption>
-                                        <div class="caption-inside">
-                                            <h3 class="portfolio-loop-title ih-fade-down ih-delay-sm">
-                                                Jacob Villa </h3>
-                                            <h5 class="portfolio-category ih-fade-up ih-delay-sm">Commercial</h5>
-                                        </div>
-                                    </figcaption>
-                                </figure>
-                            </a>
+                    @foreach ($tranche->projects as $project)
+                        <div class="element-item transition tranche-1 tablet-column-3  column-3" data-category="transition">
+                            <div class="item-wrap">
+                                <a href="javascript:;">
+                                    <figure class="portfolio-image">
+                                        <img src="{{ Storage::url($project->path) }}" alt="Porto Image 1">
+                                        <figcaption>
+                                            <div class="caption-inside">
+                                                <h3 class="portfolio-loop-title ih-fade-down ih-delay-sm">
+                                                    {{ $project->name }} </h3>
+                                                <h5 class="portfolio-category ih-fade-up ih-delay-sm"> {{ $project->category->name }}</h5>
+                                            </div>
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="element-item transition tranche-2 tablet-column-3 column-3" data-category="transition">
-                        <div class="item-wrap">
-                            <a href="single-porto.html">
-                                <figure class="portfolio-image">
-                                    <img src="/assets/web/img/vue1.jpg" alt="Porto Image 2">
-                                    <figcaption>
-                                        <div class="caption-inside">
-                                            <h3 class="portfolio-loop-title ih-fade-down ih-delay-sm">
-                                                Katora Villa </h3>
-                                            <h5 class="portfolio-category ih-fade-up ih-delay-sm">Building</h5>
-                                        </div>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="element-item transition tranche-3 tablet-column-3 column-3" data-category="transition">
-                        <div class="item-wrap">
-                            <a href="single-porto.html">
-                                <figure class="portfolio-image">
-                                    <img src="/assets/web/img/vue1.jpg" alt="Porto Image 3">
-                                    <figcaption>
-                                        <div class="caption-inside">
-                                            <h3 class="portfolio-loop-title ih-fade-down ih-delay-sm">
-                                                Barco Villa </h3>
-                                            <h5 class="portfolio-category ih-fade-up ih-delay-sm">Commercial</h5>
-                                        </div>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="element-item transition tranche-4 tablet-column-3 column-3" data-category="transition">
-                        <div class="item-wrap">
-                            <a href="single-porto.html">
-                                <figure class="portfolio-image">
-                                    <img src="/assets/web/img/vue1.jpg" alt="Porto Image 4">
-                                    <figcaption>
-                                        <div class="caption-inside">
-                                            <h3 class="portfolio-loop-title ih-fade-down ih-delay-sm">
-                                                Bertie Appartment </h3>
-                                            <h5 class="portfolio-category ih-fade-up ih-delay-sm">Residential</h5>
-                                        </div>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
