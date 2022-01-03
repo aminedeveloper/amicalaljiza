@@ -49,7 +49,7 @@
             </div>
             <div class="row mb-7">
                 <div class="col-md-6">
-                    <label class="required fw-bold fs-6 mb-2">Categorie</label>
+                    <label class="fw-bold fs-6 mb-2">Categorie</label>
                     <input type="text" name="category" class="form-control form-control-solid mb-3 mb-lg-0"
                         placeholder="Categorie">
                 </div>
