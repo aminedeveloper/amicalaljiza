@@ -15,11 +15,20 @@ class HomeController extends Controller
 {
    public function index()
    {
+ 
       $news = News::where('status',1)->orderBy('step', 'DESC')->take(4)->get();
       $topnews = News::orderBy('step', 'DESC')->first();
 
       $tranches = Tranche::get();
       return view('v1.web.index',compact('news','topnews','tranches'));
+   }
+
+   public function news()
+   {
+      $news = News::where('status',1)->orderBy('step', 'DESC')->take(4)->get();
+      $topnews = News::orderBy('step', 'DESC')->first();
+
+      return view('v1.web.news',compact('news','topnews'));
    }
 
    public function about()

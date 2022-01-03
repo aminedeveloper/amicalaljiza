@@ -71,7 +71,7 @@
             width: 69%;
             margin-left: auto;
             margin-right: auto;
-            background-color: rgba(255, 255, 255, 0.404);
+            background-color: white;
         }
 
         .count {

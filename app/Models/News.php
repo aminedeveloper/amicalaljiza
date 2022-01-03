@@ -10,4 +10,10 @@ class News extends Model
 {
     use HasFactory,SoftDeletes;
     protected $dates = ['created_at'];
+
+    
+    public function page($page)
+    {
+        return in_array($page, explode(',', $this->type));
+    }
 }

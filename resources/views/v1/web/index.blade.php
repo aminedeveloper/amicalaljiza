@@ -5,7 +5,8 @@
     <div class="banner-goal news-articles">
         <div class="container">
             <div class="banner-goal-wrap grid grid-cols-12 gap-20">
-                @foreach ($news as $new)
+
+                {{-- @foreach ($news as $new)
                     @if ($new->id)
                         @if ($new->extension == 'mp4')
                             @if (in_array('acceuil', explode(',', $new->type)))
@@ -50,9 +51,6 @@
                         @endif
                     @endif
                 @endforeach
-
-
-
                 <div class="col-span-3 sm:col-span-12 res:col-span-12">
                     <div class="col-span-3 sm:col-span-12 res:col-span-12 grid grid-cols-12 gap-12">
                         @foreach ($news as $new)
@@ -88,6 +86,12 @@
                             @endif
                         @endforeach
                     </div>
+                </div> --}}
+                
+                <div class="col-span-12 sm:col-span-12 res:col-span-12">
+                    <iframe id="inlineFrameExample" title="Inline Frame Example" width="100%" frameBorder="0" height=700px
+                        src="{{route('news')}}">">
+                    </iframe>
                 </div>
             </div>
         </div>
