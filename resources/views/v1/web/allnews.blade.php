@@ -61,7 +61,7 @@
                             <div class="entry__img-holder post-list__img-holder">
                                 <a href="{{route('nouveautes.show',$new->id)}}">
                                     <div class="thumb-container thumb-75">
-                                        <img data-src="{{Storage::link($new->path)}}" src="{{Storage::link($new->path)}}" class="entry__img lazyload"
+                                        <img data-src="{{Storage::url($new->path)}}" src="{{Storage::url($new->path)}}" class="entry__img lazyload"
                                             alt="">
                                     </div>
                                 </a>
@@ -113,7 +113,7 @@
                                 <div class="entry__img-holder">
                                     <a href="{{route('nouveautes.show',$new->id)}}">
                                         <div class="thumb-container thumb-75">
-                                            <img data-src="{{Storage::link($new->path)}}" src="{{Storage::link($new->path)}}" class="entry__img lazyload"
+                                            <img data-src="{{Storage::url($new->path)}}" src="{{Storage::url($new->path)}}" class="entry__img lazyload"
                                                 alt="">
                                         </div>
                                     </a>
