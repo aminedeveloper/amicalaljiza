@@ -8,7 +8,7 @@
     <div class="col-12 mt-3">
         <div class="row">
 
-            <div class="col-md-6">
+            <div class="col-md-6"> 
                 <label class="required fs-5 fw-bold mb-2">Album</label>
                 <select class="form-select" name="album" data-control="select2"  data-placeholder="Selecter un album">
                     <option></option>

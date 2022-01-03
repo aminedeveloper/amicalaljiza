@@ -50,17 +50,23 @@
 @section('content')
 
     <!-- PORTFOLIO BLOCK -->
-    <div class="portfolio-block page-porto">
+    <div class="portfolio-block page-porto"> 
         <div class="container">
             <div id="gallery">
-                @foreach ($videos as $video)
-                    <video width="200" height="100" poster="/assets/web/img/vue1.jpg" controls>
-                        <source src="/{{$video->path}}" type="video/mp4">
-                        <source src="/{{$video->path}}" type="video/ogg">
-                        Your browser does not support the video tag.
-                    </video>
-                @endforeach
-
+                <div class="system-block-wrap grid grid-cols-12 gap-20">
+                    @foreach ($videos as $video)
+                        @foreach ($video->video as $item)
+                            <div style="margin-left: 68px;" class="block-system col-span-4 sm:col-span-12 res:col-span-4">
+                                <video width="200" height="100" poster="/assets/web/img/vue1.jpg" controls>
+                                    <source src="/{{$item->path}}" type="video/mp4">
+                                    <source src="/{{$item->path}}" type="video/ogg">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        @endforeach
+                    @endforeach
+                  
+                </div>
             </div>
         </div>
     </div>

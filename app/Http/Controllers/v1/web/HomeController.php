@@ -34,9 +34,10 @@ class HomeController extends Controller
 
    public function allnews()
    {
-      $news = News::where('status',1)->orderBy('step', 'DESC')->get();
+      $news = News::where('status',1)->orderBy('step', 'ASC')->take(4)->get();
+      $topNews = News::where('status',1)->orderBy('step', 'DESC')->get();
 
-      return view('v1.web.allnews',compact('news'));
+      return view('v1.web.allnews',compact('news','topNews'));
    }
 
    public function about()

@@ -108,7 +108,7 @@
 
                     <!-- Slider -->
                     <div id="owl-posts" class="owl-carousel owl-theme">
-                        @foreach ($news as $new)
+                        @foreach ($topNews as $new)
                             <article class="entry">
                                 <div class="entry__img-holder">
                                     <a href="{{route('nouveautes.show',$new->id)}}">

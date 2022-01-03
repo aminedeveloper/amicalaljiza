@@ -21,7 +21,7 @@
         }
 
         @media (max-width: 1200px) {
-            #gallery {
+            #gallery { 
                 -moz-column-count: 4;
                 -webkit-column-count: 4;
                 column-count: 4;
@@ -46,7 +46,7 @@
 
     <!-- PORTFOLIO BLOCK -->
     <div class="portfolio-block page-porto">
-        <div class="container">
+        <div class="container"> 
             <div id="gallery">
                 @foreach ($photos as $photo)
                     @foreach ($photo->photo as $item)
@@ -54,7 +54,6 @@
                             <img src="{{ Storage::url($item->path) }}">
                         </a>
                     @endforeach
-                   
                 @endforeach
 
             </div>

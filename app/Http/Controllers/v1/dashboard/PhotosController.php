@@ -62,7 +62,7 @@ class PhotosController extends Controller
                 $photo->type = $request->type;
 
             }
-            else{
+            else{ 
                 if($request->avatar){
                     $filename = date('d-m-Y');
                     $filename .= pathinfo($request->avatar->getClientOriginalName(), PATHINFO_FILENAME);

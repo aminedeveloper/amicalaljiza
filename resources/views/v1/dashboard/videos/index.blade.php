@@ -3,10 +3,10 @@
 
 @section('content')
     <div class="card">
-        <div class="card-header border-0 pt-6"> 
+        <div class="card-header border-0 pt-6">
             <div class="card-toolbar">
                 <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
-                    <a href="{{route('admin.videos.create')}}" type="button" class="btn btn-primary">
+                    <a href="{{ route('admin.videos.create') }}" type="button" class="btn btn-primary">
                         <span class="svg-icon svg-icon-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1"
@@ -22,30 +22,39 @@
         <div class="card-body pt-0">
             <div id="kt_table_users_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                 <div class="table-responsive">
-                    <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer"
-                        role="grid">
+                    <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer" role="grid">
                         <thead>
                             <tr>
                                 <th>Description</th>
-                                <th>Album</th>
+                                <th>Type</th>
                                 <th>Video</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody class="text-gray-600 fw-bold">
-                            @foreach ($videos as $video )
-                                 <tr>
-                                  <td>{{ $video->description }}</td>
-                                  <td>{{ $video->album->name }}</td>
-                                   <td>
-                                    <video width="200" height="100" controls>
-                                        <source src="/{{$video->path}}" type="video/mp4">
-                                        <source src="/{{$video->path}}" type="video/ogg">
-                                        Your browser does not support the video tag.
-                                      </video>
-                                   </td>
-                                   <td>
-                                        <a href="{{ route('admin.videos.edit',$video->id) }}" class=" btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                            @foreach ($videos as $video)
+                                <tr>
+                                    <td>{{ $video->description }}</td>
+                                    <td>@if ($video->album) {{ $video->album->name }} @else  {{ $video->type }} @endif</td>
+                                    <td>
+                                        @if ($video->album)
+                                            <video width="200" height="100" controls>
+                                                <source src="/{{ $video->media() }}?{{ $video->id }}" type="video/mp4">
+                                                <source src="/{{ $video->media() }}?{{ $video->id }}" type="video/ogg">
+                                                Your browser does not support the video tag.
+                                            </video>
+                                        @else
+                                            <video width="200" height="100" controls>
+                                                <source src="/{{ $video->path }}?{{ $video->id }}" type="video/mp4">
+                                                <source src="/{{ $video->path }}?{{ $video->id }}" type="video/ogg">
+                                                Your browser does not support the video tag.
+                                            </video>
+                                        @endif
+
+                                    </td>
+                                    <td>
+                                        <a href="{{ route('admin.videos.edit', $video->id) }}"
+                                            class=" btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                             <span class="svg-icon svg-icon-3">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                     viewBox="0 0 24 24" fill="none">
@@ -58,27 +67,31 @@
                                                 </svg>
                                             </span>
                                         </a>
-                                        <form style="display:inline-block" method="POST" action="{{ route('admin.videos.destroy',$video->id) }}">
-                                           @csrf
-                                           @method('DELETE')
+                                        <form style="display:inline-block" method="POST"
+                                            action="{{ route('admin.videos.destroy', $video->id) }}">
+                                            @csrf
+                                            @method('DELETE')
 
-                                            <button type="submit"   class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                           <span class="svg-icon svg-icon-3">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                    <path
-                                                        d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z"
-                                                        fill="black"></path>
-                                                    <path opacity="0.5"
-                                                        d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z"
-                                                        fill="black"></path>
-                                                    <path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z"
-                                                        fill="black"></path>
-                                                </svg>
-                                            </span>
+                                            <button type="submit"
+                                                class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                <span class="svg-icon svg-icon-3">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" fill="none">
+                                                        <path
+                                                            d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z"
+                                                            fill="black"></path>
+                                                        <path opacity="0.5"
+                                                            d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z"
+                                                            fill="black"></path>
+                                                        <path opacity="0.5"
+                                                            d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z"
+                                                            fill="black"></path>
+                                                    </svg>
+                                                </span>
                                             </button>
                                         </form>
-                                 </td>
-                               </tr>
+                                    </td>
+                                </tr>
                             @endforeach
                         </tbody>
                     </table>

@@ -15,11 +15,12 @@ class CreateVideosTable extends Migration
     {
         Schema::create('videos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('album_id');
+            $table->unsignedBigInteger('album_id')->nullable();
             $table->foreign('album_id')->references('id')->on('albums')->onDelete('cascade');
 
             $table->string('description');
-            $table->string('path');
+            $table->string('path')->nullable();
+            $table->string('type')->nullable();
 
             $table->softDeletes();
             $table->timestamps();

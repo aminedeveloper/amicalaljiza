@@ -30,7 +30,7 @@
                                 <th>Type</th>
                                 <th>Image</th>
                                 <th>Actions</th>
-                            </tr>
+                            </tr> 
                         </thead>
                         <tbody class="text-gray-600 fw-bold">
                             @foreach ($photos as $photo )

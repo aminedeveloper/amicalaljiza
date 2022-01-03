@@ -20,5 +20,5 @@ class Photo extends Model
     public function image()
     {
         return TranchePhoto::where('photo_id',$this->id)->first()->path;
-    }
+    } 
 }

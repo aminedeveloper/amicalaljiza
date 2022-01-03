@@ -4,6 +4,7 @@ namespace App\Http\Controllers\v1\dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Models\Album;
+use App\Models\TrancheVideos;
 use App\Models\Video;
 use Illuminate\Http\Request;
 
@@ -42,17 +43,38 @@ class VideosController extends Controller
     {
         $video = new  Video(); 
         $video->description = $request->description;
-        $video->album_id = $request->album;
-        if($request->attachement){
-            $file = $request->attachement;
-            $filename = $file->getClientOriginalName();
-            $path = 'assets/videos/';
-            $file->move($path, $filename);
-            $path = 'videos/' . $filename;
-            $video->path = $path;
-       }
-    
+        if($request->type == 'recents')
+        {
+            if($request->attachement){
+                $file = $request->attachement;
+                $filename = $file->getClientOriginalName();
+                $path = 'videos/';
+                $file->move($path, $filename);
+                $path = 'videos/' . $filename;
+                $video->path = $path;
+            }
+            $video->type = $request->type;
+
+        }else{
+            if($request->attachement){
+                $file = $request->attachement;
+                $filename = $file->getClientOriginalName();
+                $path = 'videos/';
+                $file->move($path, $filename);
+                $path = 'videos/' . $filename;
+            }
+            $video->album_id = $request->album;
+
+        }
+     
        $video->save();
+       if($request->type != 'recents')
+       {
+           $tranchesVideos = new TrancheVideos();
+           $tranchesVideos->video_id = $video->id;
+           $tranchesVideos->path = $path;
+           $tranchesVideos->save();
+       }
        alert()->success('Félicitation','Video a été bien ajouté');
        return redirect(route('admin.videos.index'));
     }
@@ -67,7 +89,7 @@ class VideosController extends Controller
     {
         //
     }
-
+ 
     /**
      * Show the form for editing the specified resource.
      *
