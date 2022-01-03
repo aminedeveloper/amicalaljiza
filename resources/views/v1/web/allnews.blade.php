@@ -96,14 +96,14 @@
                 <section class="section mb-20">
                     <div class="title-wrap">
                         <h3 class="section-title section-title--sm">More News</h3>
-                        {{-- <div class="carousel-nav">
+                       <div class="carousel-nav">
                             <button class="carousel-nav__btn carousel-nav__btn--prev" aria-label="previous slide">
                                 prev
                             </button>
                             <button class="carousel-nav__btn carousel-nav__btn--next" aria-label="next slide">
                                 next
                             </button>
-                        </div> --}}
+                        </div>  
                     </div>
 
                     <!-- Slider -->
