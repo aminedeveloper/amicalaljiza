@@ -24,9 +24,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class,'index'])->name('home');
 Route::get('/newsshow', [HomeController::class,'news'])->name('news');
+Route::get('/allnews', [HomeController::class,'allnews'])->name('allnews');
 Route::get('/about', [HomeController::class,'about'])->name('about');
 Route::get('/team', [HomeController::class,'team'])->name('team');
-Route::get('/partners', [HomeController::class,'partners'])->name('partners');
+Route::get('/partners', [HomeController::class,'partners'])->name('partners'); 
 Route::get('/mosquee', [HomeController::class,'mosquee'])->name('mosquee');
 Route::get('/contact', [HomeController::class,'contact'])->name('contact');
 Route::get('/nouveautes', [HomeController::class,'nouveautes'])->name('nouveautes');

@@ -1,6 +1,6 @@
 @extends('v1.dashboard.layouts.default')
 @section('title', 'Listes des Photos')
-
+ 
 @section('content')
     <div class="card">
         <div class="card-header border-0 pt-6"> 
@@ -27,7 +27,7 @@
                         <thead>
                             <tr>
                                 <th>Description</th>
-                                <th>Album</th>
+                                <th>Type</th>
                                 <th>Image</th>
                                 <th>Actions</th>
                             </tr>
@@ -36,9 +36,13 @@
                             @foreach ($photos as $photo )
                                  <tr>
                                   <td>{{ $photo->description }}</td>
-                                  <td>{{ $photo->album->name }}</td>
+                                  <td>@if($photo->album) {{ $photo->album->name }} @else  {{$photo->type}} @endif</td>
                                    <td>
-                                      <img  width="90px" height="90px" src="{{Storage::url($photo->path)}}">
+                                    @if($photo->album) 
+                                      <img  width="90px" height="90px" src="{{Storage::url($photo->image())}}">
+                                    @else  
+                                        <img  width="90px" height="90px" src="{{Storage::url($photo->path)}}">
+                                    @endif
                                    </td>
                                    <td>
                                         <a href="{{ route('admin.photos.edit',$photo->id) }}" class=" btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">

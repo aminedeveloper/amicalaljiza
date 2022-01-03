@@ -16,9 +16,7 @@
         #gallery img {
             width: 100% !important;
             height: auto !important;
-            filter: grayscale(100%);
-            transition: filter 2s;
-            margin-bottom: 5px;
+             margin-bottom: 5px;
             /* to match column gap */
         }
 
@@ -37,10 +35,7 @@
                 column-count: 3;
             }
         }
-
-        #gallery img:hover {
-            filter: none;
-        }
+ 
 
     </style>
     <!-- Magnific Popup core CSS file -->
@@ -54,9 +49,12 @@
         <div class="container">
             <div id="gallery">
                 @foreach ($photos as $photo)
-                    <a class="test-popup-link" href="{{ Storage::url($photo->path) }}">
-                        <img src="{{ Storage::url($photo->path) }}">
-                    </a>
+                    @foreach ($photo->photo as $item)
+                        <a class="test-popup-link" href="{{ Storage::url($item->path) }}">
+                            <img src="{{ Storage::url($item->path) }}">
+                        </a>
+                    @endforeach
+                   
                 @endforeach
 
             </div>

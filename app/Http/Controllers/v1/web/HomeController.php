@@ -20,15 +20,23 @@ class HomeController extends Controller
       $topnews = News::orderBy('step', 'DESC')->first();
 
       $tranches = Tranche::get();
+      
       return view('v1.web.index',compact('news','topnews','tranches'));
    }
-
+   
    public function news()
    {
       $news = News::where('status',1)->orderBy('step', 'DESC')->take(4)->get();
       $topnews = News::orderBy('step', 'DESC')->first();
 
       return view('v1.web.news',compact('news','topnews'));
+   }
+
+   public function allnews()
+   {
+      $news = News::where('status',1)->orderBy('step', 'DESC')->get();
+
+      return view('v1.web.allnews',compact('news'));
    }
 
    public function about()
@@ -86,8 +94,9 @@ class HomeController extends Controller
 
    public function galleries($id) 
    {
-      $album = Album::where('id',$id)->first();
-      return view('v1.web.pages.single.gallery',compact('album'));
+      $photos = Photo::where('album_id',$id)->get();
+ 
+      return view('v1.web.pages.single.gallery',compact('photos'));
    }
 
    public function lastPhotos()

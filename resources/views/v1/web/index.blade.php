@@ -94,7 +94,7 @@
                     </iframe>
                 </div>
             </div>
-        </div>
+        </div> 
     </div>
     <!-- BANNER GOAL END -->
 
@@ -152,26 +152,28 @@
                         <button class="button"
                             data-filter=".tranche_{{ $tranche->id }}">{{ $tranche->name }}</button>
                     @endforeach
-                </div>
+                </div> 
                 <div class="grid portfolio-block-grid">
-                    @foreach ($tranche->projects as $project)
-                        <div class="element-item transition tranche-1 tablet-column-3  column-3" data-category="transition">
-                            <div class="item-wrap">
-                                <a href="javascript:;">
-                                    <figure class="portfolio-image">
-                                        <img src="{{ Storage::url($project->path) }}" alt="Porto Image 1">
-                                        <figcaption>
-                                            <div class="caption-inside">
-                                                <h3 class="portfolio-loop-title ih-fade-down ih-delay-sm">
-                                                    {{ $project->name }} </h3>
-                                                <h5 class="portfolio-category ih-fade-up ih-delay-sm">
-                                                    {{ $project->category->name }}</h5>
-                                            </div>
-                                        </figcaption>
-                                    </figure>
-                                </a>
+                    @foreach ($tranches as $tranche)
+                        @foreach ($tranche->projects as $project)
+                            <div class="element-item transition tranche-1 tablet-column-3  column-3" data-category="transition">
+                                <div class="item-wrap">
+                                    <a href="javascript:;">
+                                        <figure class="portfolio-image">
+                                            <img src="{{ Storage::url($project->path) }}" alt="Porto Image 1">
+                                            <figcaption>
+                                                <div class="caption-inside">
+                                                    <h3 class="portfolio-loop-title ih-fade-down ih-delay-sm">
+                                                        {{ $project->name }} </h3>
+                                                    <h5 class="portfolio-category ih-fade-up ih-delay-sm">
+                                                        {{ $project->category->name }}</h5>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
+                        @endforeach
                     @endforeach
                 </div>
             </div>
