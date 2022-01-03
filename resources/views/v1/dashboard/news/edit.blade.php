@@ -8,14 +8,14 @@
             <div class="row mb-7">
                 <div class="col-md-6">
                     <div class="form-check form-check-custom form-check-solid">
-                        <input class="form-check-input" type="checkbox" value="acceuil" id="acceuil" name="type[]" />
+                        <input class="form-check-input" @if (in_array('acceuil', explode(',', $new->type))) checked  @endif type="checkbox" value="acceuil" id="acceuil" name="type[]" />
                         <label class="form-check-label" for="acceuil">
                             Page d'accueil
                         </label>
                     </div>
 
                     <label class="form-check form-check-custom form-check-solid mt-5">
-                        <input class="form-check-input" type="checkbox" value="news" id="news" name="type[]" />
+                        <input class="form-check-input" @if (in_array('news', explode(',', $new->type))) checked  @endif type="checkbox" value="news" id="news" name="type[]" />
                         <span class="form-check-label" for="news">
                             Page d'actualités
                         </span>
@@ -71,9 +71,47 @@
                 </div>
                 <div class="col-md-6">
                     <button type="submit" class="btn btn-primary">
-                        Editer
+                        Editer 
                     </button>
                 </div>
+            </div>
+            <div class="row mb-7">
+                @if($new->extension == 'mp4')
+                    <video width="200" height="100" controls>
+                        <source src="/{{$new->path}}" type="video/mp4">
+                        <source src="/{{$new->path}}" type="video/ogg">
+                        Your browser does not support the video tag.
+                    </video>
+                @else
+                
+                    <div class="col-12 mt-3">
+                        <!--begin::Image input-->
+                        <div class="image-input image-input-outline" data-kt-image-input="true"
+                            style="background-image: url('{{Storage::url($new->path)}}')">
+                            <div class="image-input-wrapper w-450px h-325px"
+                                style="background-image: url('{{Storage::url($new->path)}}')">
+                            </div>
+                            <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
+                                data-kt-image-input-action="change" data-bs-toggle="tooltip" data-bs-dismiss="click"
+                                title="Change avatar">
+                                <i class="bi bi-pencil-fill fs-7"></i>
+                                <input type="file" name="avatar" required accept=".png, .jpg, .jpeg" />
+                                <input type="hidden" name="avatar_remove" />
+                            </label>
+                            <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
+                                data-kt-image-input-action="cancel" data-bs-toggle="tooltip" data-bs-dismiss="click"
+                                title="Cancel avatar">
+                                <i class="bi bi-x fs-2"></i>
+                            </span>
+                            <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
+                                data-kt-image-input-action="remove" data-bs-toggle="tooltip" data-bs-dismiss="click"
+                                title="Remove avatar">
+                                <i class="bi bi-x fs-2"></i>
+                            </span>
+                        </div>
+                    </div>
+                    
+                @endif
             </div>
         </form>
     </div>
