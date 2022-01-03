@@ -34,7 +34,7 @@
 
 </head>
 
-<body class="bg-light">
+<body style="background-color: white;" class="bg-light">
 
 
 
@@ -98,10 +98,10 @@
                         <h3 class="section-title section-title--sm">More News</h3>
                        <div class="carousel-nav">
                             <button class="carousel-nav__btn carousel-nav__btn--prev" aria-label="previous slide">
-                                prev
+                               <
                             </button>
                             <button class="carousel-nav__btn carousel-nav__btn--next" aria-label="next slide">
-                                next
+                                >
                             </button>
                         </div>  
                     </div>
