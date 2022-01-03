@@ -8,14 +8,14 @@
             <div class="row mb-7">
                 <div class="col-md-6">
                     <div class="form-check form-check-custom form-check-solid">
-                        <input class="form-check-input" @if (in_array('acceuil', explode(',', $new->type))) checked  @endif type="checkbox" value="acceuil" id="acceuil" name="type[]" />
+                        <input class="form-check-input" @if (in_array('acceuil', explode(',', $news->type))) checked  @endif type="checkbox" value="acceuil" id="acceuil" name="type[]" />
                         <label class="form-check-label" for="acceuil">
                             Page d'accueil
                         </label>
                     </div>
 
                     <label class="form-check form-check-custom form-check-solid mt-5">
-                        <input class="form-check-input" @if (in_array('news', explode(',', $new->type))) checked  @endif type="checkbox" value="news" id="news" name="type[]" />
+                        <input class="form-check-input" @if (in_array('news', explode(',', $news->type))) checked  @endif type="checkbox" value="news" id="news" name="type[]" />
                         <span class="form-check-label" for="news">
                             Page d'actualités
                         </span>
@@ -76,10 +76,10 @@
                 </div>
             </div>
             <div class="row mb-7">
-                @if($new->extension == 'mp4')
+                @if($news->extension == 'mp4')
                     <video width="200" height="100" controls>
-                        <source src="/{{$new->path}}" type="video/mp4">
-                        <source src="/{{$new->path}}" type="video/ogg">
+                        <source src="/{{$news->path}}" type="video/mp4">
+                        <source src="/{{$news->path}}" type="video/ogg">
                         Your browser does not support the video tag.
                     </video>
                 @else
@@ -87,9 +87,9 @@
                     <div class="col-12 mt-3">
                         <!--begin::Image input-->
                         <div class="image-input image-input-outline" data-kt-image-input="true"
-                            style="background-image: url('{{Storage::url($new->path)}}')">
+                            style="background-image: url('{{Storage::url($news->path)}}')">
                             <div class="image-input-wrapper w-450px h-325px"
-                                style="background-image: url('{{Storage::url($new->path)}}')">
+                                style="background-image: url('{{Storage::url($news->path)}}')">
                             </div>
                             <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
                                 data-kt-image-input-action="change" data-bs-toggle="tooltip" data-bs-dismiss="click"
