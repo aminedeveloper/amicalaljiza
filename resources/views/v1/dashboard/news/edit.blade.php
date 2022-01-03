@@ -77,19 +77,22 @@
             </div>
             <div class="row mb-7">
                 @if($news->extension == 'mp4')
-                    <video width="200" height="100" controls>
+                <div class="col-6 mt-3">
+                    <video width="300" height="100" controls>
                         <source src="/{{$news->path}}" type="video/mp4">
                         <source src="/{{$news->path}}" type="video/ogg">
                         Your browser does not support the video tag.
                     </video>
+                </div>
+               
                 @else
                 
                     <div class="col-12 mt-3">
                         <!--begin::Image input-->
                         <div class="image-input image-input-outline" data-kt-image-input="true"
-                            style="background-image: url('{{Storage::url($news->path)}}')">
+                            style="background-image: url({{Storage::url($news->path)}})">
                             <div class="image-input-wrapper w-450px h-325px"
-                                style="background-image: url('{{Storage::url($news->path)}}')">
+                                style="background-image: url({{Storage::url($news->path)}})">
                             </div>
                             <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
                                 data-kt-image-input-action="change" data-bs-toggle="tooltip" data-bs-dismiss="click"
