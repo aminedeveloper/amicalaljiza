@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTranchesTable extends Migration
+class CreateTrancheMediaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateTranchesTable extends Migration
      */
     public function up()
     {
-        Schema::create('tranches', function (Blueprint $table) {
+        Schema::create('tranche_media', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
- 
-            $table->softDeletes();
+            $table->unsignedBigInteger('tranche_id')->nullable();
+            $table->foreign('tranche_id')->references('id')->on('tranches')->onDelete('cascade');
+
+            $table->string('path');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateTranchesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tranches');
+        Schema::dropIfExists('tranche_media');
     }
 }

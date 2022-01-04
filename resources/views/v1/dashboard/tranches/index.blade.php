@@ -34,11 +34,14 @@
                                <tr>
                                   <td>
                                     <div class="d-flex align-items-center">
-                                        <!--begin::Avatar-->
+                                        @if ($tranche->image())
+                                               <!--begin::Avatar-->
                                         <div class="symbol symbol-50px me-5">
-                                            <img src="{{Storage::url($tranche->path)}}" class="" alt="">
+                                            <img src="{{Storage::url($tranche->image())}}" class="" alt="">
                                         </div>
                                         <!--end::Avatar-->
+                                        @endif
+                                     
                                         <!--begin::Text-->
                                         <div class="flex-grow-1">
                                             <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">{{$tranche->name}}</a>
