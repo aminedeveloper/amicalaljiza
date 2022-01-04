@@ -22,7 +22,7 @@
 
                 <div class="grid portfolio-block-grid">
                     <div class="element-item transition column-3" data-category="transition">
-                        @foreach ($tranche->projects as $project)
+                        @foreach ($tranche->media as $media)
                             <div class="col-span-4 sm:col-span-12 res:col-span-4">
                                 <div class="item-wrap">
                                     <a href="#">
