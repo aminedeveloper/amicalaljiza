@@ -15,7 +15,7 @@
                                     <div class="col-span-8 sm:col-span-12 res:col-span-6" data-aos="fade-right">
                                         <video width="600" height="400" controls loop="true">
                                             <source src="/{{ $new->path }}" type="video/mp4">
-                                            <source src="/{{ $new->path }}" type="video/ogg">
+                                            <source src="/{{ $new->path }}" type="video/ogg"> 
                                             Your browser does not support the video tag.
                                         </video>
                                     </div>
@@ -155,20 +155,12 @@
                 </div> 
                 <div class="grid portfolio-block-grid">
                     @foreach ($tranches as $tranche)
-                        @foreach ($tranche->projects as $project)
-                            <div class="element-item transition tranche-1 tablet-column-3  column-3" data-category="transition">
+                        @foreach ($tranche->media as $media)
+                            <div class="element-item transition tranche_{{ $tranche->id }} tablet-column-3  column-3" data-category="transition">
                                 <div class="item-wrap">
                                     <a href="javascript:;">
                                         <figure class="portfolio-image">
-                                            <img src="{{ Storage::url($project->path) }}" alt="Porto Image 1">
-                                            <figcaption>
-                                                <div class="caption-inside">
-                                                    <h3 class="portfolio-loop-title ih-fade-down ih-delay-sm">
-                                                        {{ $project->name }} </h3>
-                                                    <h5 class="portfolio-category ih-fade-up ih-delay-sm">
-                                                        {{ $project->category->name }}</h5>
-                                                </div>
-                                            </figcaption>
+                                            <img src="{{ Storage::url($media->path) }}" alt="Porto Image 1">
                                         </figure>
                                     </a>
                                 </div>

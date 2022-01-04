@@ -13,4 +13,14 @@ class Tranche extends Model
     {
         return $this->hasMany(Project::class);
     }
+
+    public function media()
+    {
+        return $this->hasMany(TrancheMedia::class);
+    }
+
+    public function image()
+    {
+        return TrancheMedia::where('tranche_id',$this->id)->first()->path;
+    }
 }

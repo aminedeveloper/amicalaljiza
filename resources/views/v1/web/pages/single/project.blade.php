@@ -5,7 +5,7 @@
         <div class="container">
             <div class="portfolio-title-wrap grid grid-cols-12 gap-20">
                 <div class="portfolio-title text-center head-title col-span-12 sm:col-span-12 res:col-span-12">
-                    <h2>Nos projets</h2>
+                    <h2>{{$tranche->name}}</h2>
                     <span data-aos="fade-up" class="line center"></span>
 
                 </div>
@@ -27,15 +27,7 @@
                                 <div class="item-wrap">
                                     <a href="#">
                                         <figure class="portfolio-image">
-                                            <img src="{{ Storage::url($project->path) }}" alt="Porto Image 1">
-                                            <figcaption>
-                                                <div class="caption-inside">
-                                                    <h3 class="portfolio-loop-title ih-fade-down ih-delay-sm">
-                                                        {{ $project->name }} </h3>
-                                                    <h5 class="portfolio-category ih-fade-up ih-delay-sm">
-                                                        {{ $project->category->name }}</h5>
-                                                </div>
-                                            </figcaption>
+                                            <img src="{{ Storage::url($media->path) }}" alt="Porto Image 1">
                                         </figure>
                                     </a>
                                 </div>

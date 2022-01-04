@@ -5,6 +5,7 @@ namespace App\Http\Controllers\v1\dashboard;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Tranche;
+use App\Models\TrancheMedia;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -13,7 +14,7 @@ class TranchesController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response 
      */
     public function index()
     {
@@ -41,18 +42,26 @@ class TranchesController extends Controller
     {
        $tranche = new Tranche();
        $tranche->name = $request->name;
-       if($request->avatar){
+       $tranche->save();
+       if($request->attachement){
+            foreach ($request->attachement as $media) {
             $filename = date('d-m-Y');
-            $filename .= pathinfo($request->avatar->getClientOriginalName(), PATHINFO_FILENAME);
+            $filename .= pathinfo($media->getClientOriginalName(), PATHINFO_FILENAME);
             $filename .= '-' . time() . '-' . Str::random(4);
-            $filename .= '.' . $request->avatar->getClientOriginalExtension();
+            $filename .= '.' . $media->getClientOriginalExtension();
             $filename = strtolower($filename);
-            Storage::disk('public')->putFileAs('tranches' , $request->avatar, $filename);
+            Storage::disk('public')->putFileAs('tranches' , $media, $filename);
             //    $news->extension = $request->attachement->getClientOriginalExtension();
             $path = 'tranches/' . $filename;
-            $tranche->path = $path;
+                $trancheMecia = new TrancheMedia();
+                $trancheMecia->tranche_id = $tranche->id;
+                $trancheMecia->path = $path;
+                $trancheMecia->save();
+            }
+
         }
-       $tranche->save();
+     
+
        alert()->success('Félicitation','tranche a été bien modifié');
        return redirect(route('admin.tranches.index'));
     }
@@ -91,18 +100,24 @@ class TranchesController extends Controller
     {
         $tranche = Tranche::where('id',$id)->first() ?? abort(404);
         $tranche->name = $request->name;
-        if($request->avatar){
+        $tranche->save();
+        if($request->attachement){
+            foreach ($request->attachement as $media) {
             $filename = date('d-m-Y');
-            $filename .= pathinfo($request->avatar->getClientOriginalName(), PATHINFO_FILENAME);
+            $filename .= pathinfo($media->getClientOriginalName(), PATHINFO_FILENAME);
             $filename .= '-' . time() . '-' . Str::random(4);
-            $filename .= '.' . $request->avatar->getClientOriginalExtension();
+            $filename .= '.' . $media->getClientOriginalExtension();
             $filename = strtolower($filename);
-            Storage::disk('public')->putFileAs('tranches' , $request->avatar, $filename);
+            Storage::disk('public')->putFileAs('tranches' , $media, $filename);
             //    $news->extension = $request->attachement->getClientOriginalExtension();
             $path = 'tranches/' . $filename;
-            $tranche->path = $path;
+                $trancheMecia = new TrancheMedia();
+                $trancheMecia->tranche_id = $tranche->id;
+                $trancheMecia->path = $path;
+                $trancheMecia->save();
+            }
+
         }
-        $tranche->save();
         alert()->success('Félicitation','tranche a été bien modifié');
         return redirect(route('admin.tranches.index'));
     }
