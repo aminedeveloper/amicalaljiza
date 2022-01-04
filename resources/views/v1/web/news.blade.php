@@ -404,7 +404,7 @@
                                         <img src="{{ Storage::url($new->path) }}" class="home-img" alt="Paper photo">
                                     @endif
                                     <h5 class="para" style="margin-top: 10px; color: dimgray;">
-                                       {{Str::words($new->description, 10, ' ...')}} <br><br>
+                                       {{$new->description}} <br><br>
                                        {{$new->name }}
                                     </h5>
                                 </div>
