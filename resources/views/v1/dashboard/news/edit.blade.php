@@ -98,7 +98,7 @@
                                 data-kt-image-input-action="change" data-bs-toggle="tooltip" data-bs-dismiss="click"
                                 title="Change avatar">
                                 <i class="bi bi-pencil-fill fs-7"></i>
-                                <input type="file" name="avatar" required accept=".png, .jpg, .jpeg" />
+                                <input type="file" name="avatar"  accept=".png, .jpg, .jpeg" />
                                 <input type="hidden" name="avatar_remove" />
                             </label>
                             <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
