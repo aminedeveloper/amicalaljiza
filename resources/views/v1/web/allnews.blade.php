@@ -57,38 +57,40 @@
 
                     </form>
                     @foreach ($news as $new)
-                        <article class="entry post-list">
-                            <div class="entry__img-holder post-list__img-holder">
-                                <a href="javascript:;">
-                                    <div class="thumb-container thumb-75">
-                                        <img data-src="{{Storage::url($new->path)}}" src="{{Storage::url($new->path)}}" class="entry__img lazyload"
-                                            alt="">
+                        @if (in_array('news', explode(',', $new->type)))
+                            <article class="entry post-list">
+                                <div class="entry__img-holder post-list__img-holder">
+                                    <a href="javascript:;">
+                                        <div class="thumb-container thumb-75">
+                                            <img data-src="{{Storage::url($new->path)}}" src="{{Storage::url($new->path)}}" class="entry__img lazyload"
+                                                alt="">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="entry__body post-list__body">
+                                    <div class="entry__header">
+                                        <a href="javascript:;" id="col" class="entry__meta-category">{{$new->category}}</a>
+                                        <h2 class="entry__title">
+                                            {{-- <a href="javascript:;"> {{$new->name}} </a> --}}
+                                        {{$new->name}}
+                                        </h2>
+                                        <ul class="entry__meta">
+                                            <li class="entry__meta-author">
+                                                <i class="ui-author"></i>
+                                                <a href="javascript:;">Amicale Aljiza</a>
+                                            </li>
+                                            <li class="entry__meta-date">
+                                                <i class="ui-date"></i>
+                                                {{$new->created_at}}
+                                            </li>
+                                        </ul>
                                     </div>
-                                </a>
-                            </div>
-                            <div class="entry__body post-list__body">
-                                <div class="entry__header">
-                                    <a href="javascript:;" id="col" class="entry__meta-category">{{$new->category}}</a>
-                                    <h2 class="entry__title">
-                                        {{-- <a href="javascript:;"> {{$new->name}} </a> --}}
-                                      {{$new->name}}
-                                    </h2>
-                                    <ul class="entry__meta">
-                                        <li class="entry__meta-author">
-                                            <i class="ui-author"></i>
-                                            <a href="javascript:;">Amicale Aljiza</a>
-                                        </li>
-                                        <li class="entry__meta-date">
-                                            <i class="ui-date"></i>
-                                            {{$new->created_at}}
-                                        </li>
-                                    </ul>
+                                    <div class="entry__excerpt">
+                                        <p>{{$new->description}}</p>
+                                    </div>
                                 </div>
-                                <div class="entry__excerpt">
-                                    <p>{{$new->description}}</p>
-                                </div>
-                            </div>
-                        </article>
+                            </article>
+                        @endif
                     @endforeach
                     
                 </section>
@@ -110,29 +112,31 @@
                     <!-- Slider -->
                     <div id="owl-posts" class="owl-carousel owl-theme">
                         @foreach ($topNews as $new)
-                            <article class="entry">
-                                <div class="entry__img-holder">
-                                    <a href="{{route('nouveautes.show',$new->id)}}">
-                                        <div class="thumb-container thumb-75">
-                                            <img data-src="{{Storage::url($new->path)}}" src="{{Storage::url($new->path)}}" class="entry__img lazyload"
-                                                alt="">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="entry__body">
-                                    <div class="entry__header">
-                                        <h2 class="entry__title entry__title--sm">
-                                            <a href="{{route('nouveautes.show',$new->id)}}"> {{$new->name}} </a>
-                                        </h2>
-                                        <ul class="entry__meta">
-                                            <li class="entry__meta-date">
-                                                <i class="ui-date"></i>
-                                                {{$new->created_at}}
-                                            </li>
-                                        </ul>
+                            @if (in_array('news', explode(',', $new->type)))
+                                <article class="entry">
+                                    <div class="entry__img-holder">
+                                        <a href="{{route('nouveautes.show',$new->id)}}">
+                                            <div class="thumb-container thumb-75">
+                                                <img data-src="{{Storage::url($new->path)}}" src="{{Storage::url($new->path)}}" class="entry__img lazyload"
+                                                    alt="">
+                                            </div>
+                                        </a>
                                     </div>
-                                </div>
-                            </article>
+                                    <div class="entry__body">
+                                        <div class="entry__header">
+                                            <h2 class="entry__title entry__title--sm">
+                                                <a href="{{route('nouveautes.show',$new->id)}}"> {{$new->name}} </a>
+                                            </h2>
+                                            <ul class="entry__meta">
+                                                <li class="entry__meta-date">
+                                                    <i class="ui-date"></i>
+                                                    {{$new->created_at}}
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </article>
+                            @endif
                         @endforeach
                     </div> <!-- end slider -->
                 </section>

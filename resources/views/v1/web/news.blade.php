@@ -365,49 +365,53 @@
             <div class="main">
                 <div class="home">
                     <div class="right">
-                        <h3 class="heading-3">ACTUALITES</h3>
+                        <h3 class="heading-3">ACTUALITES</h3> 
                         <div style="width: 20%; height: 5px; background-color: #FFC31D; border-radius: 5px;"></div>
                         <div class="lisssts">
                             <a class="btn" id="titles"> </a>
                             @foreach ($news as $new)
-                                <p class="titlep">
-                                    <a class="btn amine" news="#news_{{$new->id}}" id="titles">
-                                        <span
-                                            style="color:#FFC31D; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
-                                            >
-                                        </span>
-                                        {{$new->name}}
-                                    </a>
-                                </p>
+                                @if (in_array('acceuil', explode(',', $new->type)))
+                                    <p class="titlep">
+                                        <a class="btn amine" news="#news_{{$new->id}}" id="titles">
+                                            <span
+                                                style="color:#FFC31D; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+                                                >
+                                            </span>
+                                            {{$new->name}}
+                                        </a>
+                                    </p>
+                                @endif
                             @endforeach
                         </div>
                     </div>
-                    <div class="left">
+                    <div class="left"> 
                         <div class="img-slider">
                             @foreach ($news as $new)
-                                <div id="news_{{$new->id}}" class="slide @if($topnews->id == $new->id) active @endif">
+                                @if (in_array('acceuil', explode(',', $new->type)))
+                                    <div id="news_{{$new->id}}" class="slide @if($topnews->id == $new->id) active @endif">
 
-                                    <h3 style="margin-bottom: 10px; color:#FFC31D;">
-                                        {{$new->name }}</h3>
-                                    <div
-                                        style="width: 20%; height: 5px; background-color: #FFC31D; border-radius: 5px; margin-bottom: 10px;">
+                                        <h3 style="margin-bottom: 10px; color:#FFC31D;">
+                                            {{$new->name }}</h3>
+                                        <div
+                                            style="width: 20%; height: 5px; background-color: #FFC31D; border-radius: 5px; margin-bottom: 10px;">
+                                        </div>
+                                        @if ($new->extension == 'mp4')
+                                            <video width="500" height="400" controls> 
+                                                <source src="/{{ $new->path }}" type="video/mp4">
+                                            </video>
+                                        @elseif ($new->extension == 'pdf' || $new->extension == 'doc'  || $new->extension == 'docx')
+                                        <a href="/{{ $new->path }}">Téléchargez l\'annonce </a>
+
+                                        
+                                        @else
+                                            <img src="{{ Storage::url($new->path) }}" class="home-img" alt="Paper photo">
+                                        @endif
+                                        <h5 class="para" style="margin-top: 10px; color: dimgray;">
+                                        {{$new->description}} <br><br>
+                                        
+                                        </h5>
                                     </div>
-                                    @if ($new->extension == 'mp4')
-                                        <video width="500" height="400" controls> 
-                                            <source src="/{{ $new->path }}" type="video/mp4">
-                                        </video>
-                                    @elseif ($new->extension == 'pdf' || $new->extension == 'doc'  || $new->extension == 'docx')
-                                      <a href="/{{ $new->path }}">Téléchargez l\'annonce </a>
-
-                                    
-                                    @else
-                                        <img src="{{ Storage::url($new->path) }}" class="home-img" alt="Paper photo">
-                                    @endif
-                                    <h5 class="para" style="margin-top: 10px; color: dimgray;">
-                                       {{$new->description}} <br><br>
-                                       
-                                    </h5>
-                                </div>
+                                @endif
                             @endforeach
                         </div>
                     </div>
@@ -462,7 +466,7 @@
                                 i = 0;
                             }
                             if (i >= slides.length) {
-                                return;
+                                return; 
                             }
                             repeater();
                         }, 30000);
