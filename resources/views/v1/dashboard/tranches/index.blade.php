@@ -34,12 +34,17 @@
                                <tr>
                                   <td>
                                     <div class="d-flex align-items-center">
-                                        @if ($tranche->image())
+                                        @if($tranche->media->count() > 0)
+
+
+                                           @if ($tranche->image())
+
                                                <!--begin::Avatar-->
-                                        <div class="symbol symbol-50px me-5">
-                                            <img src="{{Storage::url($tranche->image())}}" class="" alt="">
-                                        </div>
-                                        <!--end::Avatar-->
+                                                <div class="symbol symbol-50px me-5">
+                                                    <img src="{{Storage::url($tranche->image())}}" class="" alt="">
+                                                </div>
+                                                <!--end::Avatar-->
+                                            @endif
                                         @endif
                                      
                                         <!--begin::Text-->

@@ -388,7 +388,7 @@
                                 <div id="news_{{$new->id}}" class="slide @if($topnews->id == $new->id) active @endif">
 
                                     <h3 style="margin-bottom: 10px; color:#FFC31D;">
-                                        NEWS</h3>
+                                        {{$new->name }}</h3>
                                     <div
                                         style="width: 20%; height: 5px; background-color: #FFC31D; border-radius: 5px; margin-bottom: 10px;">
                                     </div>
@@ -405,7 +405,7 @@
                                     @endif
                                     <h5 class="para" style="margin-top: 10px; color: dimgray;">
                                        {{$new->description}} <br><br>
-                                       {{$new->name }}
+                                       
                                     </h5>
                                 </div>
                             @endforeach
