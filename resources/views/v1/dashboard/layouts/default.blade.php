@@ -4,6 +4,7 @@
 <head>
     <base href="">
     <title> @yield('title')</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta name="description" content=" " />
     <meta name="keywords" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -123,6 +124,7 @@
     <script src="/assets/dashboard/js/custom/modals/upgrade-plan.js"></script>
     <script src="/assets/dashboard/plugins/custom/datatables/datatables.bundle.js"></script>
     @include('sweetalert::alert')
+    @yield('scripts')
     <script>
         $(document).ready(function() {
             $('.dataTable').DataTable();

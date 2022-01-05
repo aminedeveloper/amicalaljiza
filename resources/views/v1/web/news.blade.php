@@ -412,7 +412,7 @@
                         </div>
                     </div>
 
-                </div>
+                </div> 
             </div>
 
             <script src="/assets/web/js/jquery.3.5.1.min.js"></script>
@@ -465,7 +465,7 @@
                                 return;
                             }
                             repeater();
-                        }, 10000);
+                        }, 30000);
                     }
                     repeater();
                 }

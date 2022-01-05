@@ -135,4 +135,13 @@ class TranchesController extends Controller
         alert()->success('Félicitation','Tranche a été bien supprimé');
         return redirect(route('admin.tranches.index'));
     }
+
+    public function deletemedia(Request $request)
+    {
+        $trancheMedia = TrancheMedia::where('id',$request->id)->first() ?? abort(404);
+
+        $trancheMedia->delete();
+
+        return response()->json(['message'=>'de']);
+    }
 }

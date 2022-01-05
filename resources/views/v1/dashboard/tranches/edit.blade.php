@@ -13,9 +13,47 @@
                 <div class="custom-file">
                     <input type="file" class="form-control" multiple="multiple" id="customFile" name="attachement[]" />
                 </div>
-
             </div>
         </div>
         <input type="submit" class="btn btn-warning mt-2" value="Editer">
+        <div class="row">
+            @foreach ($tranche->media as $media)
+                <div id="media_{{ $media->id }}" class="col-4 mt-3 text-center">
+                    <div class="symbol symbol-150px me-5">
+                        <img src="{{ Storage::url($media->path) }}" class="" alt="">
+                    </div>
+                    <div class="mt-5">
+                        <button type="button" media="{{ $media->id }}" class="btn btn-danger deletemedia">Supprimer</button>
+                    </div>
+                </div>
+            @endforeach
+        </div>
     </form>
+@endsection
+
+@section('scripts')
+    <script>
+        $('.deletemedia').click(function() {
+            console.log('amine');
+            let id = $(this).attr('media');
+            let token = $('meta[name="csrf-token"]').attr('content');
+            $.ajax({
+                type: 'POST',
+                url: "{{ route('admin.tranches.media.delete') }}",
+                data: {
+                    'id': id,
+                    '_token': token,
+                },
+                success: function(response) {
+                    Swal.fire(
+                        'Félicitations',
+                        'Media a ete supprimer',
+                        'success'
+                    )
+                    $('#media_'+id).remove();
+                },
+            });
+
+        });
+    </script>
 @endsection

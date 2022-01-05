@@ -115,7 +115,7 @@
             <div style="margin-bottom: 131px;" class="main-hero">
                 <div class="image-title">
                     <div style="float: right" class="container">
-                        <h2>
+                        <h2 style="font-size: 70px;">
                             Fournir Une solution Innovante </h2>
                         <div class="button-view" data-aos="fade-up">
                             <a style="background-color: #FFC31D" href="{{ route('photos') }}"

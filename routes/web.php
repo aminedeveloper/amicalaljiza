@@ -50,7 +50,8 @@ Route::middleware(['auth'])->group(function(){
         Route::resource('photos',PhotosController::class);
         Route::resource('videos',VideosController::class);
         Route::resource('categories',CategoriesController::class);
-        
+        Route::post('/tranches/media/delete',[TranchesController::class,'deletemedia'])->name('tranches.media.delete');
+
     });
 
 

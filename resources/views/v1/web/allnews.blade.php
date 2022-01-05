@@ -59,7 +59,7 @@
                     @foreach ($news as $new)
                         <article class="entry post-list">
                             <div class="entry__img-holder post-list__img-holder">
-                                <a href="{{route('nouveautes.show',$new->id)}}">
+                                <a href="javascript:;">
                                     <div class="thumb-container thumb-75">
                                         <img data-src="{{Storage::url($new->path)}}" src="{{Storage::url($new->path)}}" class="entry__img lazyload"
                                             alt="">
@@ -68,14 +68,15 @@
                             </div>
                             <div class="entry__body post-list__body">
                                 <div class="entry__header">
-                                    <a href="#" id="col" class="entry__meta-category">{{$new->category}}</a>
+                                    <a href="javascript:;" id="col" class="entry__meta-category">{{$new->category}}</a>
                                     <h2 class="entry__title">
-                                        <a href="{{route('nouveautes.show',$new->id)}}"> {{$new->name}} </a>
+                                        {{-- <a href="javascript:;"> {{$new->name}} </a> --}}
+                                      {{$new->name}}
                                     </h2>
                                     <ul class="entry__meta">
                                         <li class="entry__meta-author">
                                             <i class="ui-author"></i>
-                                            <a href="#">Amicale Aljiza</a>
+                                            <a href="javascript:;">Amicale Aljiza</a>
                                         </li>
                                         <li class="entry__meta-date">
                                             <i class="ui-date"></i>

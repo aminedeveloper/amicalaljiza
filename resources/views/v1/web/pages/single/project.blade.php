@@ -1,7 +1,52 @@
+
 @extends('v1.web.layouts.default')
-@section('content') 
-       <!-- PORTFOLIO BLOCK -->
-       <div class="portfolio-block page-porto">
+@section('styles')
+    <style>
+        #gallery {
+            line-height: 0;
+            -webkit-column-count: 5;
+            /* split it into 5 columns */
+            -webkit-column-gap: 5px;
+            /* give it a 5px gap between columns */
+            -moz-column-count: 5;
+            -moz-column-gap: 5px;
+            column-count: 5;
+            column-gap: 5px;
+        }
+
+        #gallery img {
+            width: 100% !important;
+            height: auto !important;
+             margin-bottom: 5px;
+            /* to match column gap */
+        }
+
+        @media (max-width: 1200px) {
+            #gallery {
+                -moz-column-count: 4;
+                -webkit-column-count: 4;
+                column-count: 4;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            #gallery {
+                -moz-column-count: 3;
+                -webkit-column-count: 3;
+                column-count: 3;
+            }
+        }
+ 
+
+    </style>
+    <!-- Magnific Popup core CSS file -->
+    <link rel="stylesheet" href="/assets/web/css/magnific-popup.css">
+
+@endsection
+@section('content')
+
+    <!-- PORTFOLIO BLOCK --> 
+    <div class="portfolio-block page-porto">
         <div class="container">
             <div class="portfolio-title-wrap grid grid-cols-12 gap-20">
                 <div class="portfolio-title text-center head-title col-span-12 sm:col-span-12 res:col-span-12">
@@ -10,42 +55,14 @@
 
                 </div>
             </div>
-            <div class="portfolio-block-wrap text-center">
-                <div id="mobile-filter-id" class="mobile-filter clearfix">
-                    <button id="filter-icon">
-                        <span class="bar bar-1"></span>
-                        <span class="bar bar-2"></span>
-                        <span class="bar bar-3"></span>
-                        <span class="bar bar-4"></span>
-                    </button>
-                </div>
-
-                <div class="grid portfolio-block-grid">
-                    <div class="element-item transition column-3" data-category="transition">
-                        <div class="container">
-                            <div class="system-block-wrap grid grid-cols-12 gap-20">
-                                @foreach ($tranche->media as $media)
-                                    <div class="block-system col-span-4 sm:col-span-12 res:col-span-4">
-                                        <div class="item-wrap">
-                                            <a href="#">
-                                                <figure class="portfolio-image">
-                                                    <img src="{{ Storage::url($media->path) }}" alt="Porto Image 1">
-                                                </figure>
-                                            </a>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div id="gallery">
+                @foreach ($tranche->media as $media)
+                    <a class="test-popup-link" href="{{ Storage::url($media->path) }}">
+                        <img src="{{ Storage::url($media->path) }}">
+                    </a>
+                @endforeach
             </div>
         </div>
-        <!-- pagination has path -->
-            {{-- <div id="load-more-causes"><a href="page2.html"></a></div>
-            <p class="text-center">
-                <button class="view-more-button button-basic-1">Load more</button>
-            </p> --}}
     </div>
     <!-- PORTFOLIO BLOCK END -->
     <div class="banner-block">
@@ -57,7 +74,7 @@
                     </div>
                     <div class="system-text">
                         <h3>Appelez-nous</h3>
-                        <p >05 22 25 35 68</p>
+                        <p>05 22 25 35 68</p>
                     </div>
                 </div>
                 <div class="block-system col-span-4 sm:col-span-12 res:col-span-4">
@@ -66,7 +83,9 @@
                     </div>
                     <div class="system-text">
                         <h3>Nous Rendre Visite</h3>
-                        <a href="https://goo.gl/maps/vKVDU4kWevXFJ1cA7" target="_blank"><p>Amicale Al Jiza</p></a>
+                        <a href="https://goo.gl/maps/vKVDU4kWevXFJ1cA7" target="_blank">
+                            <p>Amicale Al Jiza</p>
+                        </a>
                     </div>
                 </div>
                 <div class="block-system col-span-4 sm:col-span-12 res:col-span-4">
@@ -82,4 +101,19 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('scripts')
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <script src="/assets/web/js/jquery.magnific-popup.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('.test-popup-link').magnificPopup({
+                type: 'image'
+                // other options
+            });
+        });
+    </script>
 @endsection
