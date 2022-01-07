@@ -16,7 +16,7 @@ class HomeController extends Controller
    public function index()
    {
  
-      $news = News::where('status',1)->orderBy('step', 'DESC')->take(4)->get();
+      $news = News::where('status',1)->orderBy('step', 'DESC')->take(6)->get();
       $topnews = News::orderBy('step', 'DESC')->first();
 
       $tranches = Tranche::get();
