@@ -13,7 +13,7 @@
             column-gap: 5px;
         }
 
-        #gallery img {
+        #gallery img { 
             width: 100% !important;
             height: auto !important;
             filter: grayscale(100%);

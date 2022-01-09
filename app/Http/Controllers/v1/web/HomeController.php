@@ -16,7 +16,6 @@ class HomeController extends Controller
    public function index()
    {
  
-      //return view('v1.web.gallery_grid');
       $news = News::where('status',1)->orderBy('step', 'DESC')->take(4)->get();
       $topnews = News::orderBy('step', 'DESC')->first();
 

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+ 
 <head>
     <title>Aha Magazine | Home</title>
 
@@ -117,8 +117,15 @@
                                     <div class="entry__img-holder">
                                         <a href="{{route('nouveautes.show',$new->id)}}">
                                             <div class="thumb-container thumb-75">
-                                                <img data-src="{{Storage::url($new->path)}}" src="{{Storage::url($new->path)}}" class="entry__img lazyload"
+                                                @if ($new->extension == 'mp4')
+                                                    <video width="500" height="400" controls> 
+                                                        <source src="/{{ $new->path }}" type="video/mp4">
+                                                    </video>
+                                                @else
+                                                    <img data-src="{{Storage::url($new->path)}}" src="{{Storage::url($new->path)}}" class="entry__img lazyload"
                                                     alt="">
+                                                @endif
+                                            
                                             </div>
                                         </a>
                                     </div>
