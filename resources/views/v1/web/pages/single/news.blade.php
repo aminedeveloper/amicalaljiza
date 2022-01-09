@@ -8,8 +8,8 @@
             <div class="single-post grid grid-cols-12 gap-20">
                 <div class="blog-single col-span-8 sm:col-span-12 res:col-span-12">
                     <div class="content-section">
-                        <div id="post-54" class="blog-item">
-                            <div class="post-head clearfix">
+                        <div id="post-54" class="blog-item"> 
+                            <div class="post-head clearfix"> 
                                 <div class="date">
                                     <a href="#">
                                         <span class="thedate">{{$new->created_at->format('d')}}</span>

@@ -122,8 +122,8 @@
                         @foreach ($topNews as $new)
                             @if (in_array('news', explode(',', $new->type)))
                                 <article class="entry">
-                                    <div style="    height: 200px;" class="entry__img-holder">
-                                        <a href="{{route('nouveautes.show',$new->id)}}">
+                                    <div style="    height: 200px;" class="entry__img-holder"> 
+                                        <a target="_blank" href="{{route('nouveautes.show',$new->id)}}">
                                             <div class="thumb-container thumb-75">
                                                 @if ($new->extension == 'mp4')
                                                     <video width="500" height="400" controls> 
@@ -140,7 +140,7 @@
                                     <div class="entry__body">
                                         <div class="entry__header">
                                             <h2 class="entry__title entry__title--sm">
-                                                <a href="{{route('nouveautes.show',$new->id)}}"> {{$new->name}} </a>
+                                                <a target="_blank" href="{{route('nouveautes.show',$new->id)}}"> {{$new->name}} </a>
                                             </h2>
                                             <ul class="entry__meta">
                                                 <li class="entry__meta-date">
