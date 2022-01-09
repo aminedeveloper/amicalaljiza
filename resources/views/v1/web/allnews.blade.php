@@ -59,7 +59,7 @@
                     @foreach ($news as $new)
                         @if (in_array('news', explode(',', $new->type)))
                             <article class="entry post-list">
-                                <div class="entry__img-holder post-list__img-holder">
+                                <div  style="    height: 200px;" class="entry__img-holder post-list__img-holder">
                                     <a href="javascript:;">
                                         <div class="thumb-container thumb-75">
                                             @if ($new->extension == 'mp4')
