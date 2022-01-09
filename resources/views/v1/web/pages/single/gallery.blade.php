@@ -20,7 +20,7 @@
         <div class="row">
 
             <div class="col-sm-12 col-md-12">
-                @foreach ($photos as $photo)
+                @foreach ($photos as $photo) 
                     <div class="col-md-3">
                         <div class="box-news-1">
                             <div class="media gbr">
