@@ -16,9 +16,7 @@
         #gallery img {
             width: 100% !important;
             height: auto !important;
-            filter: grayscale(100%);
-            transition: filter 2s;
-            margin-bottom: 5px;
+             margin-bottom: 5px;
             /* to match column gap */
         }
 
@@ -37,15 +35,12 @@
                 column-count: 3;
             }
         }
-
-        #gallery img:hover {
-            filter: none;
-        }
+ 
 
     </style>
     <!-- Magnific Popup core CSS file -->
     <link rel="stylesheet" href="/assets/web/css/magnific-popup.css">
-    <link rel="stylesheet" type="text/css" href="/assets/web/gallery/bootstrap.min.css" />
+
 @endsection
 @section('content')
 
@@ -53,25 +48,17 @@
     <div class="portfolio-block page-porto">
         <div class="container">
             <div id="gallery">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12 col-md-12">
-                            @foreach ($videos as $item)
-                                <div class="col-md-4">
-                                    <video width="300" height="300" poster="/assets/web/img/vue1.jpg" controls>
-                                        <source src="/{{ $item->path }}?{{ $item->id }}" type="video/mp4">
-                                        <source src="/{{ $item->path }}?{{ $item->id }}" type="video/ogg">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                </div>
+                @foreach ($photos as $photo)
+                    @foreach ($photo->photo as $item)
+                        <a class="test-popup-link" href="{{ Storage::url($item->path) }}">
+                            <img src="{{ Storage::url($item->path) }}">
+                        </a>
+                    @endforeach
+                   
+                @endforeach
 
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
-    </div>
     </div>
     <!-- PORTFOLIO BLOCK END -->
     <div class="banner-block">
@@ -114,7 +101,7 @@
 
 @section('scripts')
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script type="text/javascript" src="/assets/web/gallery/bootstrap.min.js"></script>
+
     <script src="/assets/web/js/jquery.magnific-popup.js"></script>
 
     <script>

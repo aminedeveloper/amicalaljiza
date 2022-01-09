@@ -16,6 +16,7 @@ class HomeController extends Controller
    public function index()
    {
  
+      //return view('v1.web.gallery_grid');
       $news = News::where('status',1)->orderBy('step', 'DESC')->take(4)->get();
       $topnews = News::orderBy('step', 'DESC')->first();
 
@@ -98,7 +99,7 @@ class HomeController extends Controller
       $photos = Photo::where('album_id',$id)->get();
  
       return view('v1.web.pages.single.gallery',compact('photos'));
-   }
+   } 
 
    public function lastPhotos()
    {
@@ -109,6 +110,7 @@ class HomeController extends Controller
    public function lastVideos()
    {
       $videos = Video::get();
+ 
       return view('v1.web.pages.last_videos',compact('videos'));
    }
 }
