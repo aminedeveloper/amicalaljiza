@@ -122,7 +122,7 @@
                         @foreach ($topNews as $new)
                             @if (in_array('news', explode(',', $new->type)))
                                 <article class="entry">
-                                    <div class="entry__img-holder">
+                                    <div style="    height: 200px;" class="entry__img-holder">
                                         <a href="{{route('nouveautes.show',$new->id)}}">
                                             <div class="thumb-container thumb-75">
                                                 @if ($new->extension == 'mp4')
