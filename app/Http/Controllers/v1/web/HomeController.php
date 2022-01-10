@@ -16,7 +16,7 @@ class HomeController extends Controller
    public function index()
    {
  
-      $news = News::where('status',1)->orderBy('step', 'DESC')->take(4)->get();
+      $news = News::where('status',1)->orderBy('step', 'DESC')->get();
       $topnews = News::orderBy('step', 'DESC')->first();
 
       $tranches = Tranche::get();
@@ -26,7 +26,7 @@ class HomeController extends Controller
    
    public function news()
    {
-      $news = News::where('status',1)->orderBy('step', 'DESC')->take(4)->get();
+      $news = News::where('status',1)->orderBy('step', 'DESC')->get();
       $topnews = News::orderBy('step', 'DESC')->first();
 
       return view('v1.web.news',compact('news','topnews'));
@@ -34,7 +34,7 @@ class HomeController extends Controller
 
    public function allnews()
    {
-      $news = News::where('status',1)->orderBy('step', 'ASC')->take(4)->get();
+      $news = News::where('status',1)->orderBy('step', 'ASC')->get();
       $topNews = News::where('status',1)->orderBy('step', 'DESC')->get();
 
       return view('v1.web.allnews',compact('news','topNews'));
