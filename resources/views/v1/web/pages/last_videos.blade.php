@@ -13,7 +13,7 @@
             column-gap: 5px;
         }
 
-        #gallery img { 
+        #gallery img {
             width: 100% !important;
             height: auto !important;
             filter: grayscale(100%);
@@ -57,14 +57,13 @@
                     <div class="row">
                         <div class="col-sm-12 col-md-12">
                             @foreach ($videos as $item)
-                                <div style="text-align: left" class="col-md-4">
+                                <div class="col-md-4">
+                                    {{ $item->description }}
                                     <video width="300" height="300" poster="/assets/web/img/vue1.jpg" controls>
                                         <source src="/{{ $item->path }}?{{ $item->id }}" type="video/mp4">
                                         <source src="/{{ $item->path }}?{{ $item->id }}" type="video/ogg">
                                         Your browser does not support the video tag.
                                     </video>
-                                <h2>{{$item->description}}</h2>
-
                                 </div>
                             @endforeach
                         </div>
