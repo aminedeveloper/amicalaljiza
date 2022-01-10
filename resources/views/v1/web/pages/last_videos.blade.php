@@ -57,14 +57,15 @@
                     <div class="row">
                         <div class="col-sm-12 col-md-12">
                             @foreach ($videos as $item)
-                                <div class="col-md-4">
+                                <div style="text-align: left" class="col-md-4">
                                     <video width="300" height="300" poster="/assets/web/img/vue1.jpg" controls>
                                         <source src="/{{ $item->path }}?{{ $item->id }}" type="video/mp4">
                                         <source src="/{{ $item->path }}?{{ $item->id }}" type="video/ogg">
                                         Your browser does not support the video tag.
                                     </video>
-                                </div>
+                                <h2>{{$item->description}}</h2>
 
+                                </div>
                             @endforeach
                         </div>
                     </div>
