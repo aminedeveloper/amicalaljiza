@@ -103,7 +103,7 @@
                     
                 </section>
 
-                <!-- Carousel posts -->
+                <!-- Carousel posts --> 
                 <section class="section mb-20">
                     <div class="title-wrap">
                         <h3 class="section-title section-title--sm">More News</h3>

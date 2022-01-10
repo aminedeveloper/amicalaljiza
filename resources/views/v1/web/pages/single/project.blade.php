@@ -1,67 +1,49 @@
-
 @extends('v1.web.layouts.default')
 @section('styles')
-    <style>
-        #gallery {
-            line-height: 0;
-            -webkit-column-count: 5;
-            /* split it into 5 columns */
-            -webkit-column-gap: 5px;
-            /* give it a 5px gap between columns */
-            -moz-column-count: 5;
-            -moz-column-gap: 5px;
-            column-count: 5;
-            column-gap: 5px;
-        }
-
-        #gallery img {
-            width: 100% !important;
-            height: auto !important;
-             margin-bottom: 5px;
-            /* to match column gap */
-        }
-
-        @media (max-width: 1200px) {
-            #gallery {
-                -moz-column-count: 4;
-                -webkit-column-count: 4;
-                column-count: 4;
-            }
-        }
-
-        @media (max-width: 1000px) {
-            #gallery {
-                -moz-column-count: 3;
-                -webkit-column-count: 3;
-                column-count: 3;
-            }
-        }
- 
-
-    </style>
-    <!-- Magnific Popup core CSS file -->
-    <link rel="stylesheet" href="/assets/web/css/magnific-popup.css">
-
+    <link rel="stylesheet" type="text/css" href="/assets/web/gallery/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/web/gallery/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/web/gallery/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/web/gallery/owl.theme.default.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/web/gallery/magnific-popup.css">
+    <link rel="stylesheet" type="text/css" href="/assets/web/gallery/style.css" />
+    <script type="text/javascript" src="/assets/web/gallery/modernizr.min.js"></script>
+    <script type="text/javascript" src="/assets/web/gallery/lightbox.js"></script>
+    <link href="/assets/web/gallery/lightbox.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/assets/web/gallery/jquery.fancybox.min.js"></script>
+    <link rel="stylesheet" href="/assets/web/gallery/jquery.fancybox.min.css">
 @endsection
 @section('content')
 
-    <!-- PORTFOLIO BLOCK --> 
-    <div class="portfolio-block page-porto">
-        <div class="container">
-            <div class="portfolio-title-wrap grid grid-cols-12 gap-20">
-                <div class="portfolio-title text-center head-title col-span-12 sm:col-span-12 res:col-span-12">
-                    <h2>{{$tranche->name}}</h2>
-                    <span data-aos="fade-up" class="line center"></span>
+    <!-- PORTFOLIO BLOCK -->
+    <div class="container">
+        <div class="row">
 
-                </div>
-            </div>
-            <div id="gallery">
+            <div class="col-sm-12 col-md-12">
+            
                 @foreach ($tranche->media as $media)
-                    <a class="test-popup-link" href="{{ Storage::url($media->path) }}">
-                        <img src="{{ Storage::url($media->path) }}">
-                    </a>
+                    <div class="col-md-3">
+                        <div class="box-news-1">
+                            <div class="media gbr">
+                                <a href="{{ Storage::url($media->path) }}" data-fancybox="gallery"><img
+                                        src="{{ Storage::url($media->path) }}" alt="" class="img-responsive"></a>
+                            </div>
+                            {{-- <div class="body">
+                                <div class="title">
+                                    {{ $photo->description }}
+                                </div>
+                                <div class="meta">
+                                    <span class="date"><i class="fa fa-clock-o"></i>
+                                        {{ $photo->created_at }}
+                                    </span>
+                                </div>
+                            </div> --}}
+                        </div>
+                    </div>
+
                 @endforeach
             </div>
+
         </div>
     </div>
     <!-- PORTFOLIO BLOCK END -->
@@ -104,16 +86,36 @@
 @endsection
 
 @section('scripts')
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/web/gallery/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/web/gallery/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/assets/web/gallery/jquery.superslides.js"></script>
+    <script type="text/javascript" src="/assets/web/gallery/owl.carousel.js"></script>
+    <script type="text/javascript" src="/assets/web/gallery/bootstrap-hover-dropdown.min.js"></script>
+    <script type="text/javascript" src="/assets/web/gallery/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript" src="/assets/web/gallery/easings.js"></script>
+    <script type="text/javascript" src="/assets/web/gallery/isotope.pkgd.min.js"></script>
 
-    <script src="/assets/web/js/jquery.magnific-popup.js"></script>
+    <!-- sendmail -->
+    <script type="text/javascript" src="/assets/web/gallery/validator.min.js"></script>
+    <script type="text/javascript" src="/assets/web/gallery/form-scripts.js"></script>
 
-    <script>
-        $(document).ready(function() {
-            $('.test-popup-link').magnificPopup({
-                type: 'image'
-                // other options
-            });
-        });
+    <script type='text/javascript' src='https://maps.google.com/maps/api/js?sensor=false&#038;ver=4.1.5'></script>
+
+    <script type="text/javascript" src="/assets/web/gallery/script.js"></script>
+    <script type="text/javascript">
+        function GetPostProj($id) {
+            const input = document.querySelector("#proj_id");
+            const form = document.querySelector("#PostPro");
+            input.value = $id;
+            form.submit();
+        }
+    </script>
+    <script type="text/javascript">
+        function GetPicAlbum($id) {
+            const input = document.querySelector("#album_id");
+            const form = document.querySelector("#PicAlbum");
+            input.value = $id;
+            form.submit();
+        }
     </script>
 @endsection
