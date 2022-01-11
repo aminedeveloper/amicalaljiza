@@ -55,16 +55,21 @@
             <div id="gallery">
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-12 col-md-12">
+                        <div class="system-block-wrap grid grid-cols-12 gap-20">
                             @foreach ($videos as $item)
-                                <div class="col-md-4">
-                                    
-                                    <video width="300" height="300" poster="/assets/web/img/vue1.jpg" controls>
-                                        <source src="/{{ $item->path }}?{{ $item->id }}" type="video/mp4">
-                                        <source src="/{{ $item->path }}?{{ $item->id }}" type="video/ogg">
-                                        Your browser does not support the video tag.
-                                    </video>
+                              
+                                <div class="block-system col-span-4 sm:col-span-12 res:col-span-4">
+                                     
+                                    <div class="system-text">
+                                       <video width="300" height="300" poster="/assets/web/img/vue1.jpg" controls>
+                                                <source src="/{{ $item->path }}?{{ $item->id }}" type="video/mp4">
+                                                <source src="/{{ $item->path }}?{{ $item->id }}" type="video/ogg">
+                                                Your browser does not support the video tag.
+                                        </video>
+                                        <p style="margin-top:25px;color:black" >{{ $item->description }}</p>
+                                    </div>
                                 </div>
+                                
                             @endforeach
                         </div>
                     </div>
@@ -104,7 +109,7 @@
                     <div class="system-text">
                         <h3>
                             Envoyez Un Message</h3>
-                        <p>Amicalealjiza@gmail.com</p>
+                        <a href="mailto:contact@amicalaljiza.com">Amicalealjiza@gmail.com</a>
                     </div>
                 </div>
             </div>
