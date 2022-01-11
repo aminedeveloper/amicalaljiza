@@ -50,7 +50,8 @@
                     <div class="system-text">
                         <h3>
                             Envoyez Un Message</h3>
-                        <p>Amicalealjiza@gmail.com</p>
+                                                <a href="mailto:contact@amicalaljiza.com">Amicalealjiza@gmail.com</a>
+
                     </div>
                 </div>
             </div>
