@@ -3,7 +3,7 @@
     <style>
         .videos-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
             grid-column-gap: 30px;
         }
 
@@ -27,9 +27,10 @@
                 <div class="container">
                     <div class="row">
                         <div class="system-block-wrap grid grid-cols-12 gap-20">
-                            @foreach ($videos as $item)
+                            <div class="videos-grid">
+                                @foreach ($videos as $item)
 
-                                {{-- <div class="block-system col-span-4 sm:col-span-12 res:col-span-4">
+                                    {{-- <div class="block-system col-span-4 sm:col-span-12 res:col-span-4">
                                      
                                     <div class="system-text">
                                        <video width="300" height="300" poster="/assets/web/img/vue1.jpg" controls>
@@ -40,7 +41,27 @@
                                         <p style="margin-top:25px;color:black" >{{ $item->description }}</p>
                                     </div>
                                 </div> --}}
-                                <div class="videos-grid">
+
+                                    <div class="videos-grid-video">
+                                        <h5 id="videos-grid">
+                                            {{ $item->description }}
+                                        </h5>
+                                        <video width="300" height="300" controls>
+                                            <source src="/{{ $item->path }}#t=0.1?{{ $item->id }}" type="video/mp4">
+                                            <source src="/{{ $item->path }}?{{ $item->id }}" type="video/ogg">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+                                    <div class="videos-grid-video">
+                                        <h5 id="videos-grid">
+                                            {{ $item->description }}
+                                        </h5>
+                                        <video width="300" height="300" controls>
+                                            <source src="/{{ $item->path }}#t=0.1?{{ $item->id }}" type="video/mp4">
+                                            <source src="/{{ $item->path }}?{{ $item->id }}" type="video/ogg">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
                                     <div class="videos-grid-video">
                                         <h5 id="videos-grid">
                                             {{ $item->description }}
@@ -52,8 +73,9 @@
                                         </video>
                                     </div>
 
-                                </div>
-                            @endforeach
+                                @endforeach
+                            </div>
+
                         </div>
                     </div>
                 </div>
