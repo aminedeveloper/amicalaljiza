@@ -287,7 +287,7 @@
         article>p {
             font-size: 20px;
             margin-bottom: 20px;
-
+ 
             columns: 3 25ch;
             column-gap: 40px;
             hyphens: auto;
@@ -364,7 +364,7 @@
 
             <div class="main">
                 <div class="home">
-                    <div class="right">
+                    <div style="border-right: 2px solid #FFC31D;" class="right">
                         <h3 class="heading-3">ACTUALITES</h3> 
                         <div style="width: 20%; height: 5px; background-color: #FFC31D; border-radius: 5px;"></div>
                         <div class="lisssts">
