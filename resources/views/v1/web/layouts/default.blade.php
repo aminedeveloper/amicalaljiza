@@ -68,7 +68,7 @@
         .news-articles {
             z-index: 33;
             margin-top: -125px;
-            width: 69%;
+            width: 86%;
             margin-left: auto;
             margin-right: auto;
             background-color: white;
