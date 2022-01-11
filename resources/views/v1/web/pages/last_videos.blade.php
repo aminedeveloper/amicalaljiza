@@ -1,50 +1,21 @@
 @extends('v1.web.layouts.default')
 @section('styles')
     <style>
-        #gallery {
-            line-height: 0;
-            -webkit-column-count: 5;
-            /* split it into 5 columns */
-            -webkit-column-gap: 5px;
-            /* give it a 5px gap between columns */
-            -moz-column-count: 5;
-            -moz-column-gap: 5px;
-            column-count: 5;
-            column-gap: 5px;
+        .videos-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 30px;
         }
 
-        #gallery img {
-            width: 100% !important;
-            height: auto !important;
-            filter: grayscale(100%);
-            transition: filter 2s;
-            margin-bottom: 5px;
-            /* to match column gap */
-        }
+        .videos-grid-video {}
 
-        @media (max-width: 1200px) {
-            #gallery {
-                -moz-column-count: 4;
-                -webkit-column-count: 4;
-                column-count: 4;
-            }
-        }
-
-        @media (max-width: 1000px) {
-            #gallery {
-                -moz-column-count: 3;
-                -webkit-column-count: 3;
-                column-count: 3;
-            }
-        }
-
-        #gallery img:hover {
-            filter: none;
+        .videos-grid-video>iframe {
+            height: 278px;
         }
 
     </style>
     <!-- Magnific Popup core CSS file -->
-    <link rel="stylesheet" href="/assets/web/css/magnific-popup.css">
+    {{-- <link rel="stylesheet" href="/assets/web/css/magnific-popup.css"> --}}
     <link rel="stylesheet" type="text/css" href="/assets/web/gallery/bootstrap.min.css" />
 @endsection
 @section('content')
@@ -57,8 +28,8 @@
                     <div class="row">
                         <div class="system-block-wrap grid grid-cols-12 gap-20">
                             @foreach ($videos as $item)
-                              
-                                <div class="block-system col-span-4 sm:col-span-12 res:col-span-4">
+
+                                {{-- <div class="block-system col-span-4 sm:col-span-12 res:col-span-4">
                                      
                                     <div class="system-text">
                                        <video width="300" height="300" poster="/assets/web/img/vue1.jpg" controls>
@@ -68,8 +39,20 @@
                                         </video>
                                         <p style="margin-top:25px;color:black" >{{ $item->description }}</p>
                                     </div>
+                                </div> --}}
+                                <div class="videos-grid">
+                                    <div class="videos-grid-video">
+                                        <h5 id="videos-grid">
+                                            {{ $item->description }}
+                                        </h5>
+                                        <video width="300" height="300" controls>
+                                            <source src="/{{ $item->path }}#t=0.1?{{ $item->id }}" type="video/mp4">
+                                            <source src="/{{ $item->path }}?{{ $item->id }}" type="video/ogg">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+
                                 </div>
-                                
                             @endforeach
                         </div>
                     </div>
