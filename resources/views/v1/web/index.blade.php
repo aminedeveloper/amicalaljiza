@@ -87,14 +87,14 @@
                         @endforeach
                     </div>
                 </div> --}}
-                
+
                 <div class="col-span-12 sm:col-span-12 res:col-span-12">
                     <iframe id="inlineFrameExample" title="Inline Frame Example" width="100%" frameBorder="0" height=700px
-                        src="{{route('news')}}">">
+                        src="{{ route('news') }}">">
                     </iframe>
                 </div>
             </div>
-        </div> 
+        </div>
     </div>
     <!-- BANNER GOAL END -->
 
@@ -152,11 +152,12 @@
                         <button class="button"
                             data-filter=".tranche_{{ $tranche->id }}">{{ $tranche->name }}</button>
                     @endforeach
-                </div> 
+                </div>
                 <div class="grid portfolio-block-grid">
                     @foreach ($tranches as $tranche)
                         @foreach ($tranche->media as $media)
-                            <div class="element-item transition tranche_{{ $tranche->id }} tablet-column-3  column-3" data-category="transition">
+                            <div class="element-item transition tranche_{{ $tranche->id }} tablet-column-3  column-3"
+                                data-category="transition">
                                 <div class="item-wrap">
                                     <a href="javascript:;">
                                         <figure class="portfolio-image">
@@ -344,17 +345,18 @@
             <div class="team-block-grid grid grid-cols-12 gap-12">
 
 
+
                 <div class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
                     <div class="swiper-slide">
                         <div class="carousel-slide testimonial-content">
                             <div class="testimonial-details clearfix">
                                 <div class="testimonial-image">
-                                    <img src="/assets/web/img/image008.jpg" alt="Mohammed En-nejjar">
+                                    <img src="/assets/web/img/image001.jpg" alt="Hamid RAHNAOUI">
                                 </div>
                                 <div class="testimonial-detail-inner">
-                                    <h5 class="testi-author">Mohammed En-nejjar</h5>
+                                    <h5 class="testi-author">HAMID RAHNAOUI</h5>
                                     <cite class="testi-job">
-                                        Vice S </cite>
+                                        President </cite>
                                 </div>
                             </div>
                         </div>
@@ -378,7 +380,7 @@
                     </div>
                 </div>
 
-                <div class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
+    <div class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
                     <div class="swiper-slide">
                         <div class="carousel-slide testimonial-content">
                             <div class="testimonial-details clearfix">
@@ -395,7 +397,28 @@
                     </div>
                 </div>
 
-                <div class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
+
+
+
+
+   <div class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
+                    <div class="swiper-slide">
+                        <div class="carousel-slide testimonial-content">
+                            <div class="testimonial-details clearfix">
+                                <div class="testimonial-image">
+                                    <img src="/assets/web/img/image004.jpg" alt="Patrick Johanson">
+                                </div>
+                                <div class="testimonial-detail-inner">
+                                    <h5 class="testi-author"> ISSAM ATOUF</h5>
+                                    <cite class="testi-job">
+                                     SECRETAIRE GENERAL</cite>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+ <div class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
                     <div class="swiper-slide">
                         <div class="carousel-slide testimonial-content">
                             <div class="testimonial-details clearfix">
@@ -411,6 +434,28 @@
                         </div>
                     </div>
                 </div>
+                <div class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
+                    <div class="swiper-slide">
+                        <div class="carousel-slide testimonial-content">
+                            <div class="testimonial-details clearfix">
+                                <div class="testimonial-image">
+                                    <img src="/assets/web/img/image008.jpg" alt="Mohammed En-nejjar">
+                                </div>
+                                <div class="testimonial-detail-inner">
+                                    <h5 class="testi-author">Mohammed En-nejjar</h5>
+                                    <cite class="testi-job">
+                                        Vice S </cite>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            
+
+               
 
 
                 <div class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
@@ -594,7 +639,7 @@
                     <div class="system-text">
                         <h3>
                             Envoyez Un Message</h3>
-                                               <a href="mailto:contact@amicalaljiza.com">Amicalealjiza@gmail.com</a>
+                        <a href="mailto:contact@amicalaljiza.com">Amicalealjiza@gmail.com</a>
 
                     </div>
                 </div>

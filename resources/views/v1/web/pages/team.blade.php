@@ -41,15 +41,14 @@
                         class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
                         <div class="team-inner-block clearfix">
                             <img src="/assets/web/img/image001.jpg" alt="team-1">
-                            <div class="team-details clearfix">
-                                <div class="inner-team-details">
+                            <div class="team-details clearfix" style="width: 100%;">
+                                <div class="inner-team-details" >
                                     <h3 class="team-name">
                                         Hamid RAHNAOUI
                                     </h3>
                                     <h5 class="team-job">PRESIDENT</h5>
                                     <div class="team-bio">
-                                        <p>Lorem ipsum gravida nibh vel velit aliqunean auctor sollicitudin lorem quis
-                                            bibendum .</p>
+                                     
                                     </div>
                                     <div class="team-socials clearfix">
                                         <ul>
@@ -74,15 +73,14 @@
                     <div class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
                         <div class="team-inner-block clearfix">
                             <img src="/assets/web/img/image003.jpg" alt="team-1">
-                            <div class="team-details clearfix">
+                            <div class="team-details clearfix"  style="width: 100%;">
                                 <div class="inner-team-details">
                                     <h3 class="team-name">
                                         Abdelilah FAHMI
                                     </h3>
                                     <h5 class="team-job">1er VICE PRESIDENT</h5>
                                     <div class="team-bio">
-                                        <p>Lorem ipsum gravida nibh vel velit aliqunean auctor sollicitudin lorem quis
-                                            bibendum .</p>
+                                       
                                     </div>
                                     <div class="team-socials clearfix">
                                         <ul>
@@ -106,15 +104,14 @@
                     <div class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
                         <div class="team-inner-block clearfix">
                             <img src="/assets/web/img/image002.jpg" alt="team-1">
-                            <div class="team-details clearfix">
-                                <div class="inner-team-details">
+                            <div class="team-details clearfix" style="width: 100%;">
+                                <div class="inner-team-details" >
                                     <h3 class="team-name">
                                         ABDELLATIF EL ALAMI
                                     </h3>
                                     <h5 class="team-job">2ème VICE PRESIDENT</h5>
                                     <div class="team-bio">
-                                        <p>Lorem ipsum gravida nibh vel velit aliqunean auctor sollicitudin lorem quis
-                                            bibendum .</p>
+                                        
                                     </div>
                                     <div class="team-socials clearfix">
                                         <ul>
@@ -138,15 +135,14 @@
                     <div class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
                         <div class="team-inner-block clearfix">
                             <img src="/assets/web/img/image004.jpg" alt="team-1">
-                            <div class="team-details clearfix">
+                            <div class="team-details clearfix"  style="width: 100%;">
                                 <div class="inner-team-details">
                                     <h3 class="team-name">
                                         Issam ATOUF
                                     </h3>
                                     <h5 class="team-job">SECRETAIRE GENERAL</h5>
                                     <div class="team-bio">
-                                        <p>Lorem ipsum gravida nibh vel velit aliqunean auctor sollicitudin lorem quis
-                                            bibendum .</p>
+                                     
                                     </div>
                                     <div class="team-socials clearfix">
                                         <ul>
@@ -170,15 +166,14 @@
                     <div class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
                         <div class="team-inner-block clearfix">
                             <img src="/assets/web/img/image010.jpg" alt="team-1">
-                            <div class="team-details clearfix">
-                                <div class="inner-team-details">
+                            <div class="team-details clearfix" style="width: 100%;">
+                                <div class="inner-team-details" >
                                     <h3 class="team-name">
                                         Taoufik EL OUDNI
                                     </h3>
                                     <h5 class="team-job">TRESORIER</h5>
                                     <div class="team-bio">
-                                        <p>Lorem ipsum gravida nibh vel velit aliqunean auctor sollicitudin lorem quis
-                                            bibendum .</p>
+                                        
                                     </div>
                                     <div class="team-socials clearfix">
                                         <ul>
@@ -202,14 +197,13 @@
                     <div class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
                         <div class="team-inner-block clearfix">
                             <img src="/assets/web/img/image008 (1).jpg" alt="team-1">
-                            <div class="team-details clearfix">
-                                <div class="inner-team-details">
+                            <div class="team-details clearfix" style="width: 100%;">
+                                <div class="inner-team-details" >
                                     <h3 class="team-name">
                                         Mohamed EN NAJJAR</h3>
                                     <h5 class="team-job">VICE SECRETAIRE GENERAL</h5>
                                     <div class="team-bio">
-                                        <p>Lorem ipsum gravida nibh vel velit aliqunean auctor sollicitudin lorem quis
-                                            bibendum .</p>
+                                       
                                     </div>
                                     <div class="team-socials clearfix">
                                         <ul>
@@ -233,16 +227,15 @@
                     <div class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
                         <div class="team-inner-block clearfix">
                             <img src="/assets/web/img/image006.jpg" alt="team-1">
-                            <div class="team-details clearfix">
-                                <div class="inner-team-details">
+                            <div class="team-details clearfix" style="width: 100%;">
+                                <div class="inner-team-details" >
                                     <h3 class="team-name">
                                         Marouan HAMDOUNI
                                     </h3>
                                     <h5 class="team-job">VICE TRESORIER
                                     </h5>
                                     <div class="team-bio">
-                                        <p>Lorem ipsum gravida nibh vel velit aliqunean auctor sollicitudin lorem quis
-                                            bibendum .</p>
+                                      
                                     </div>
                                     <div class="team-socials clearfix">
                                         <ul>
@@ -266,8 +259,8 @@
                     <div class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
                         <div class="team-inner-block clearfix">
                             <img src="/assets/web/img/image007.jpg" alt="team-1">
-                            <div class="team-details clearfix">
-                                <div class="inner-team-details">
+                            <div class="team-details clearfix" style="width: 100%;">
+                                <div class="inner-team-details" >
                                     <h3 class="team-name">
                                         Mohamed EL BOUANANI
 
@@ -276,8 +269,7 @@
 
                                     </h5>
                                     <div class="team-bio">
-                                        <p>Lorem ipsum gravida nibh vel velit aliqunean auctor sollicitudin lorem quis
-                                            bibendum .</p>
+                                       
                                     </div>
                                     <div class="team-socials clearfix">
                                         <ul>
@@ -301,8 +293,8 @@
                     <div class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
                         <div class="team-inner-block clearfix">
                             <img src="/assets/web/img/image005.jpg" alt="team-1">
-                            <div class="team-details clearfix">
-                                <div class="inner-team-details">
+                            <div class="team-details clearfix" style="width: 100%;">
+                                <div class="inner-team-details" >
                                     <h3 class="team-name">
                                         Larbi NOURI
 
@@ -312,8 +304,7 @@
 
                                     </h5>
                                     <div class="team-bio">
-                                        <p>Lorem ipsum gravida nibh vel velit aliqunean auctor sollicitudin lorem quis
-                                            bibendum .</p>
+                                       
                                     </div>
                                     <div class="team-socials clearfix">
                                         <ul>
@@ -336,8 +327,8 @@
                     <div class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
                         <div class="team-inner-block clearfix">
                             <img src="/assets/web/img/image009.jpg" alt="team-1">
-                            <div class="team-details clearfix">
-                                <div class="inner-team-details">
+                            <div class="team-details clearfix" style="width: 100%;">
+                                <div class="inner-team-details" >
                                     <h3 class="team-name">
                                         Mustapha OUDRHIRI
                                     </h3>
@@ -345,8 +336,7 @@
 
                                     </h5>
                                     <div class="team-bio">
-                                        <p>Lorem ipsum gravida nibh vel velit aliqunean auctor sollicitudin lorem quis
-                                            bibendum .</p>
+                                       
                                     </div>
                                     <div class="team-socials clearfix">
                                         <ul>
