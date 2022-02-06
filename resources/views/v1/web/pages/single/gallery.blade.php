@@ -17,10 +17,10 @@
 
     <!-- PORTFOLIO BLOCK -->
     <div class="container">
-        <div class="row"> 
+        <div class="row">
 
             <div class="col-sm-12 col-md-12">
-                @foreach ($photos as $photo) 
+                {{-- @foreach ($photos as $photo)  
                     <div class="col-md-3">
                         <div class="box-news-1">
                             <div class="media gbr">
@@ -40,7 +40,30 @@
                         </div>
                     </div>
 
-                @endforeach
+                @endforeach --}}
+
+                <div class="owl-carousel owl-theme">
+                    @foreach ($photos as $photo)
+                        <div class="item">
+                            <div class="box-news-1">
+                                <div class="media gbr">
+                                    <a href="{{ Storage::url($photo->image()) }}" data-fancybox="gallery"><img
+                                            src="{{ Storage::url($photo->image()) }}" alt="" class="img-responsive"></a>
+                                </div>
+                                <div class="body">
+                                    <div class="title">
+                                        {{ $photo->description }}
+                                    </div>
+                                    <div class="meta">
+                                        <span class="date"><i class="fa fa-clock-o"></i>
+                                            {{ $photo->created_at }}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
             </div>
 
         </div>
@@ -101,20 +124,24 @@
     <script type='text/javascript' src='https://maps.google.com/maps/api/js?sensor=false&#038;ver=4.1.5'></script>
 
     <script type="text/javascript" src="/assets/web/gallery/script.js"></script>
-    <script type="text/javascript">
-        function GetPostProj($id) {
-            const input = document.querySelector("#proj_id");
-            const form = document.querySelector("#PostPro");
-            input.value = $id;
-            form.submit();
-        }
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            autoplay:true,
+            margin: 10,
+            nav: true, 
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 5
+                }
+            }
+        })
     </script>
-    <script type="text/javascript">
-        function GetPicAlbum($id) {
-            const input = document.querySelector("#album_id");
-            const form = document.querySelector("#PicAlbum");
-            input.value = $id;
-            form.submit();
-        }
-    </script>
+
 @endsection

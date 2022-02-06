@@ -8,7 +8,7 @@
                     <h2>Nos projets</h2>
                     <span data-aos="fade-up" class="line center"></span>
 
-                </div>
+                </div> 
             </div>
             <div class="portfolio-block-wrap text-center">
                 <div id="mobile-filter-id" class="mobile-filter clearfix">
@@ -93,7 +93,7 @@
                     <div class="system-text">
                         <h3>
                             Envoyez Un Message</h3>
-                                               <a href="mailto:contact@amicalaljiza.com">Amicalealjiza@gmail.com</a>
+                                               <a href="mailto:Amicalealjiza@gmail.com">Amicalealjiza@gmail.com</a>
 
                     </div>
                 </div>

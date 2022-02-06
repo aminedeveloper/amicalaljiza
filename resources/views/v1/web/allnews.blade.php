@@ -179,13 +179,24 @@
     <script src="/assets/web/js/jquery.newsTicker.min.js"></script>
     <script src="/assets/web/js/modernizr.min.js"></script>
     <script src="/assets/web/js/scripts.js"></script>
-    <script type="text/javascript">
-        function GetPostProj($id) {
-            const input = document.querySelector("#proj_id");
-            const form = document.querySelector("#PostPro");
-            input.value = $id;
-            form.submit();
-        }
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            autoplay:true,
+            margin: 10,
+            nav: true, 
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 4
+                },
+                1000: {
+                    items: 5
+                }
+            }
+        })
     </script>
 
 </body>

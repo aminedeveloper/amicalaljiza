@@ -103,8 +103,8 @@
                             </span>
                         </div>
                         <div class="contact-submit clearfix">
-                            {{-- <a href="mailto:contact@amicalaljiza.com" class="button-basic-1">Laissez un message</a> --}}
-                                <form action="mailto:contact@amicalaljiza.com">
+                            {{-- <a href="mailto:Amicalealjiza@gmail.com" class="button-basic-1">Laissez un message</a> --}}
+                                <form action="mailto:Amicalealjiza@gmail.com">
                                         <input style="cursor:pointer" type="submit" value="Laissez un message"  class="button-basic-1">
                                 
                                 </form>

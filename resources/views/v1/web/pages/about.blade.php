@@ -440,7 +440,7 @@
                     <div class="system-text">
                         <h3>
                             Envoyez Un Message</h3>
-                                              <a href="mailto:contact@amicalaljiza.com">Amicalealjiza@gmail.com</a>
+                                              <a href="mailto:Amicalealjiza@gmail.com">Amicalealjiza@gmail.com</a>
 
                     </div>
                 </div>
