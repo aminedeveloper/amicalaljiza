@@ -189,8 +189,8 @@
                                         </div>
                                         <div class="testimonial-detail-inner">
                                             <h5 class="testi-author">Mohammed En-nejjar</h5>
-                                            <cite class="testi-job">
-                                                Vice S </cite>
+                                            <span class="testi-job">
+                                                Vice S </span>
                                         </div>
                                     </div>
                                 </div>
@@ -206,8 +206,8 @@
                                         </div>
                                         <div class="testimonial-detail-inner">
                                             <h5 class="testi-author">Abdelilah FAHMI</h5>
-                                            <cite class="testi-job">
-                                                1er VICE PRESIDENT </cite>
+                                            <span class="testi-job">
+                                                1er VICE PRESIDENT </span>
                                         </div>
                                     </div>
                                 </div>
@@ -223,8 +223,8 @@
                                         </div>
                                         <div class="testimonial-detail-inner">
                                             <h5 class="testi-author"> ABDELLATIF EL ALAMI</h5>
-                                            <cite class="testi-job">
-                                                2ème VICE PRESIDENT </cite>
+                                            <span class="testi-job">
+                                                2ème VICE PRESIDENT </span>
                                         </div>
                                     </div>
                                 </div>
@@ -240,8 +240,8 @@
                                         </div>
                                         <div class="testimonial-detail-inner">
                                             <h5 class="testi-author"> Taoufik EL OUDNI</h5>
-                                            <cite class="testi-job">
-                                                TRESORIER </cite>
+                                            <span class="testi-job">
+                                                TRESORIER </span>
                                         </div>
                                     </div>
                                 </div>
@@ -257,8 +257,8 @@
                                         </div>
                                         <div class="testimonial-detail-inner">
                                             <h5 class="testi-author"> Mohamed EN NAJJAR</h5>
-                                            <cite class="testi-job">
-                                                VICE SECRETAIRE GENERAL </cite>
+                                            <span class="testi-job">
+                                                VICE SECRETAIRE GENERAL </span>
                                         </div>
                                     </div>
                                 </div>
@@ -275,8 +275,8 @@
                                         </div>
                                         <div class="testimonial-detail-inner">
                                             <h5 class="testi-author"> Marouan HAMDOUNI</h5>
-                                            <cite class="testi-job">
-                                                VICE TRESORIER </cite>
+                                            <span class="testi-job">
+                                                VICE TRESORIER </span>
                                         </div>
                                     </div>
                                 </div>
@@ -294,8 +294,8 @@
                                             <h5 class="testi-author"> Mohamed EL BOUANANI
 
                                             </h5>
-                                            <cite class="testi-job">
-                                                CONSEILLER </cite>
+                                            <span class="testi-job">
+                                                CONSEILLER </span>
                                         </div>
                                     </div>
                                 </div>
@@ -313,8 +313,8 @@
                                             <h5 class="testi-author"> Larbi NOURI
 
                                             </h5>
-                                            <cite class="testi-job">
-                                                CONSEILLER </cite>
+                                            <span class="testi-job">
+                                                CONSEILLER </span>
                                         </div>
                                     </div>
                                 </div>
@@ -331,8 +331,8 @@
                                         <div class="testimonial-detail-inner">
                                             <h5 class="testi-author"> Mustapha OUDRHIRI
                                             </h5>
-                                            <cite class="testi-job">
-                                                CONSEILLER </cite>
+                                            <span class="testi-job">
+                                                CONSEILLER </span>
                                         </div>
                                     </div>
                                 </div>
@@ -355,8 +355,8 @@
                                 </div>
                                 <div class="testimonial-detail-inner">
                                     <h5 class="testi-author">HAMID RAHNAOUI</h5>
-                                    <cite class="testi-job">
-                                        President </cite>
+                                    <span class="testi-job">
+                                        President </span>
                                 </div>
                             </div>
                         </div>
@@ -372,15 +372,15 @@
                                 </div>
                                 <div class="testimonial-detail-inner">
                                     <h5 class="testi-author">Abdelilah FAHMI</h5>
-                                    <cite class="testi-job">
-                                        1er VICE PRESIDENT </cite>
+                                    <span class="testi-job">
+                                        1er VICE PRESIDENT </span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-    <div class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
+                <div class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
                     <div class="swiper-slide">
                         <div class="carousel-slide testimonial-content">
                             <div class="testimonial-details clearfix">
@@ -389,8 +389,8 @@
                                 </div>
                                 <div class="testimonial-detail-inner">
                                     <h5 class="testi-author"> ABDELLATIF EL ALAMI</h5>
-                                    <cite class="testi-job">
-                                        2ème VICE PRESIDENT </cite>
+                                    <span class="testi-job">
+                                        2ème VICE PRESIDENT </span>
                                 </div>
                             </div>
                         </div>
@@ -401,7 +401,7 @@
 
 
 
-   <div class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
+                <div class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
                     <div class="swiper-slide">
                         <div class="carousel-slide testimonial-content">
                             <div class="testimonial-details clearfix">
@@ -410,15 +410,15 @@
                                 </div>
                                 <div class="testimonial-detail-inner">
                                     <h5 class="testi-author"> ISSAM ATOUF</h5>
-                                    <cite class="testi-job">
-                                     SECRETAIRE GENERAL</cite>
+                                    <span class="testi-job">
+                                        SECRETAIRE GENERAL</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
- <div class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
+                <div class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
                     <div class="swiper-slide">
                         <div class="carousel-slide testimonial-content">
                             <div class="testimonial-details clearfix">
@@ -427,8 +427,8 @@
                                 </div>
                                 <div class="testimonial-detail-inner">
                                     <h5 class="testi-author"> Taoufik EL OUDNI</h5>
-                                    <cite class="testi-job">
-                                        TRESORIER </cite>
+                                    <span class="testi-job">
+                                        TRESORIER </span>
                                 </div>
                             </div>
                         </div>
@@ -443,8 +443,8 @@
                                 </div>
                                 <div class="testimonial-detail-inner">
                                     <h5 class="testi-author">Mohammed En-nejjar</h5>
-                                    <cite class="testi-job">
-                                        Vice S </cite>
+                                    <span class="testi-job">
+                                        Vice S </span>
                                 </div>
                             </div>
                         </div>
@@ -453,9 +453,9 @@
 
 
 
-            
 
-               
+
+
 
 
                 <div class="team-block-item col-span-3 sm:col-span-12 res:col-span-6">
@@ -467,8 +467,8 @@
                                 </div>
                                 <div class="testimonial-detail-inner">
                                     <h5 class="testi-author"> Marouan HAMDOUNI</h5>
-                                    <cite class="testi-job">
-                                        VICE TRESORIER </cite>
+                                    <span class="testi-job">
+                                        VICE TRESORIER </span>
                                 </div>
                             </div>
                         </div>
@@ -486,8 +486,8 @@
                                     <h5 class="testi-author"> Mohamed EL BOUANANI
 
                                     </h5>
-                                    <cite class="testi-job">
-                                        CONSEILLER </cite>
+                                    <span class="testi-job">
+                                        CONSEILLER </span>
                                 </div>
                             </div>
                         </div>
@@ -505,8 +505,8 @@
                                     <h5 class="testi-author"> Larbi NOURI
 
                                     </h5>
-                                    <cite class="testi-job">
-                                        CONSEILLER </cite>
+                                    <span class="testi-job">
+                                        CONSEILLER </span>
                                 </div>
                             </div>
                         </div>
@@ -523,8 +523,8 @@
                                 <div class="testimonial-detail-inner">
                                     <h5 class="testi-author"> Mustapha OUDRHIRI
                                     </h5>
-                                    <cite class="testi-job">
-                                        CONSEILLER </cite>
+                                    <span class="testi-job">
+                                        CONSEILLER </span>
                                 </div>
                             </div>
                         </div>

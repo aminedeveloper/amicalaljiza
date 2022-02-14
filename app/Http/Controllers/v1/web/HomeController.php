@@ -102,14 +102,14 @@ class HomeController extends Controller
 
    public function lastPhotos()
    {
-      $photos = Photo::get();
+      $photos = Photo::orderBy('id','DESC')->get();
 
       return view('v1.web.pages.last_photos',compact('photos'));
    }
 
    public function lastVideos()
    {
-      $videos = Video::get();
+      $videos = Video::orderBy('id','DESC')->get();
  
       return view('v1.web.pages.last_videos',compact('videos'));
    }
